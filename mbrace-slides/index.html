@@ -114,71 +114,72 @@
 <div class="tip" id="fs66">val data : (string * float) list<br /><br />Full name: Index.Propan.data</div>
 <div class="tip" id="fs67">val chart : GoogleChart<br /><br />Full name: Index.Propan.chart</div>
 <div class="tip" id="fs68">static member Chart.Show : chart:GoogleChart -&gt; GoogleChart</div>
-<div class="tip" id="fs69">val getLineCountAsync : uris:Uri list -&gt; Async&lt;int&gt;<br /><br />Full name: Index.getLineCountAsync</div>
-<div class="tip" id="fs70">val uris : Uri list</div>
-<div class="tip" id="fs71">Multiple items<br />type Uri =<br />&#160;&#160;new : uriString:string -&gt; Uri + 5 overloads<br />&#160;&#160;member AbsolutePath : string<br />&#160;&#160;member AbsoluteUri : string<br />&#160;&#160;member Authority : string<br />&#160;&#160;member DnsSafeHost : string<br />&#160;&#160;member Equals : comparand:obj -&gt; bool<br />&#160;&#160;member Fragment : string<br />&#160;&#160;member GetComponents : components:UriComponents * format:UriFormat -&gt; string<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member GetLeftPart : part:UriPartial -&gt; string<br />&#160;&#160;...<br /><br />Full name: System.Uri<br /><br />--------------------<br />Uri(uriString: string) : unit<br />Uri(uriString: string, uriKind: UriKind) : unit<br />Uri(baseUri: Uri, relativeUri: string) : unit<br />Uri(baseUri: Uri, relativeUri: Uri) : unit</div>
-<div class="tip" id="fs72">type &#39;T list = List&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Collections.list&lt;_&gt;</div>
-<div class="tip" id="fs73">val async : AsyncBuilder<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.async</div>
-<div class="tip" id="fs74">val getLines : (Uri -&gt; Async&lt;int&gt;)</div>
-<div class="tip" id="fs75">val uri : Uri</div>
-<div class="tip" id="fs76">val wc : WebClient</div>
-<div class="tip" id="fs77">Multiple items<br />type WebClient =<br />&#160;&#160;inherit Component<br />&#160;&#160;new : unit -&gt; WebClient<br />&#160;&#160;member BaseAddress : string with get, set<br />&#160;&#160;member CachePolicy : RequestCachePolicy with get, set<br />&#160;&#160;member CancelAsync : unit -&gt; unit<br />&#160;&#160;member Credentials : ICredentials with get, set<br />&#160;&#160;member DownloadData : address:string -&gt; byte[] + 1 overload<br />&#160;&#160;member DownloadDataAsync : address:Uri -&gt; unit + 1 overload<br />&#160;&#160;member DownloadFile : address:string * fileName:string -&gt; unit + 1 overload<br />&#160;&#160;member DownloadFileAsync : address:Uri * fileName:string -&gt; unit + 1 overload<br />&#160;&#160;member DownloadString : address:string -&gt; string + 1 overload<br />&#160;&#160;...<br /><br />Full name: System.Net.WebClient<br /><br />--------------------<br />WebClient() : unit</div>
-<div class="tip" id="fs78">val lines : string</div>
-<div class="tip" id="fs79">member WebClient.AsyncDownloadString : address:Uri -&gt; Async&lt;string&gt;</div>
-<div class="tip" id="fs80">property String.Length: int</div>
-<div class="tip" id="fs81">val sizes : int []</div>
-<div class="tip" id="fs82">static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;</div>
-<div class="tip" id="fs83">val u : Uri</div>
-<div class="tip" id="fs84">val sum : array:&#39;T [] -&gt; &#39;T (requires member ( + ) and member get_Zero)<br /><br />Full name: Microsoft.FSharp.Collections.Array.sum</div>
-<div class="tip" id="fs85">val getLineCount : cloudfiles:string list -&gt; &#39;a<br /><br />Full name: Index.getLineCount</div>
-<div class="tip" id="fs86">val cloudfiles : string list</div>
-<div class="tip" id="fs87">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.Operators.string<br /><br />--------------------<br />type string = String<br /><br />Full name: Microsoft.FSharp.Core.string</div>
-<div class="tip" id="fs88">type Parallel =<br />&#160;&#160;static member For : fromInclusive:int * toExclusive:int * body:Action&lt;int&gt; -&gt; ParallelLoopResult + 11 overloads<br />&#160;&#160;static member ForEach&lt;&#39;TSource&gt; : source:IEnumerable&lt;&#39;TSource&gt; * body:Action&lt;&#39;TSource&gt; -&gt; ParallelLoopResult + 19 overloads<br />&#160;&#160;static member Invoke : [&lt;ParamArray&gt;] actions:Action[] -&gt; unit + 1 overload<br /><br />Full name: System.Threading.Tasks.Parallel</div>
-<div class="tip" id="fs89">val loop : counter:int ref -&gt; inbox:MailboxProcessor&lt;int&gt; -&gt; Async&lt;&#39;a&gt;<br /><br />Full name: Index.loop</div>
-<div class="tip" id="fs90">val counter : int ref</div>
-<div class="tip" id="fs91">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
-<div class="tip" id="fs92">Multiple items<br />val ref : value:&#39;T -&gt; &#39;T ref<br /><br />Full name: Microsoft.FSharp.Core.Operators.ref<br /><br />--------------------<br />type &#39;T ref = Ref&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Core.ref&lt;_&gt;</div>
-<div class="tip" id="fs93">val inbox : MailboxProcessor&lt;int&gt;</div>
-<div class="tip" id="fs94">Multiple items<br />type MailboxProcessor&lt;&#39;Msg&gt; =<br />&#160;&#160;interface IDisposable<br />&#160;&#160;new : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;<br />&#160;&#160;member Post : message:&#39;Msg -&gt; unit<br />&#160;&#160;member PostAndAsyncReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; Async&lt;&#39;Reply&gt;<br />&#160;&#160;member PostAndReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; &#39;Reply<br />&#160;&#160;member PostAndTryAsyncReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; Async&lt;&#39;Reply option&gt;<br />&#160;&#160;member Receive : ?timeout:int -&gt; Async&lt;&#39;Msg&gt;<br />&#160;&#160;member Scan : scanner:(&#39;Msg -&gt; Async&lt;&#39;T&gt; option) * ?timeout:int -&gt; Async&lt;&#39;T&gt;<br />&#160;&#160;member Start : unit -&gt; unit<br />&#160;&#160;member TryPostAndReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; &#39;Reply option<br />&#160;&#160;...<br /><br />Full name: Microsoft.FSharp.Control.MailboxProcessor&lt;_&gt;<br /><br />--------------------<br />new : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:Threading.CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;</div>
-<div class="tip" id="fs95">val msg : int</div>
-<div class="tip" id="fs96">member MailboxProcessor.Receive : ?timeout:int -&gt; Async&lt;&#39;Msg&gt;</div>
-<div class="tip" id="fs97">val counter : int ref<br /><br />Full name: Index.counter</div>
-<div class="tip" id="fs98">val actor : MailboxProcessor&lt;int&gt;<br /><br />Full name: Index.actor</div>
-<div class="tip" id="fs99">static member MailboxProcessor.Start : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:Threading.CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;</div>
-<div class="tip" id="fs100">val i : int32</div>
-<div class="tip" id="fs101">member MailboxProcessor.Post : message:&#39;Msg -&gt; unit</div>
-<div class="tip" id="fs102">property Ref.Value: int</div>
-<div class="tip" id="fs103">static member CloudProcess.WhenAny : [&lt;ParamArray&gt;] procs:&#39;a [] -&gt; &#39;b</div>
-<div class="tip" id="fs104">val parMap : f:(&#39;T -&gt; &#39;S) -&gt; inputs:&#39;T list -&gt; &#39;a<br /><br />Full name: Index.parMap</div>
-<div class="tip" id="fs105">val f : (&#39;T -&gt; &#39;S)</div>
-<div class="tip" id="fs106">val inputs : &#39;T list</div>
-<div class="tip" id="fs107">property List.Length: int</div>
-<div class="tip" id="fs108">static member CloudProcess.WhenAll : [&lt;ParamArray&gt;] procs:&#39;a [] -&gt; &#39;b</div>
-<div class="tip" id="fs109">val append : list1:&#39;T list -&gt; list2:&#39;T list -&gt; &#39;T list<br /><br />Full name: Microsoft.FSharp.Collections.List.append</div>
-<div class="tip" id="fs110">Multiple items<br />module CloudFlow<br /><br />from MBrace.Flow<br /><br />--------------------<br />type CloudFlow =<br />&#160;&#160;static member OfArray : source:&#39;T [] -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudArrays : cloudArrays:seq&lt;#CloudArray&lt;&#39;T&gt;&gt; -&gt; LocalCloud&lt;PersistedCloudFlow&lt;&#39;T&gt;&gt;<br />&#160;&#160;static member OfCloudCollection : collection:ICloudCollection&lt;&#39;T&gt; * ?sizeThresholdPerWorker:(unit -&gt; int64) -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * serializer:ISerializer * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * ?deserializer:(Stream -&gt; seq&lt;&#39;T&gt;) * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * deserializer:(TextReader -&gt; seq&lt;&#39;T&gt;) * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectoryByLine : dirPath:string * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFileByLine : path:string * ?encoding:Encoding -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFileByLine : paths:seq&lt;string&gt; * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFiles : paths:seq&lt;string&gt; * serializer:ISerializer * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;...<br /><br />Full name: MBrace.Flow.CloudFlow<br /><br />--------------------<br />type CloudFlow&lt;&#39;T&gt; =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member WithEvaluators : collectorFactory:LocalCloud&lt;Collector&lt;&#39;T,&#39;S&gt;&gt; -&gt; projection:(&#39;S -&gt; LocalCloud&lt;&#39;R&gt;) -&gt; combiner:(&#39;R [] -&gt; LocalCloud&lt;&#39;R&gt;) -&gt; Cloud&lt;&#39;R&gt;<br />&#160;&#160;&#160;&#160;abstract member DegreeOfParallelism : int option<br />&#160;&#160;end<br /><br />Full name: MBrace.Flow.CloudFlow&lt;_&gt;</div>
-<div class="tip" id="fs111">static member CloudFlow.OfHttpFileByLine : urls:seq&lt;string&gt; * ?encoding:Text.Encoding -&gt; CloudFlow&lt;string&gt;<br />static member CloudFlow.OfHttpFileByLine : url:string * ?encoding:Text.Encoding -&gt; CloudFlow&lt;string&gt;</div>
-<div class="tip" id="fs112">val collect : f:(&#39;T -&gt; #seq&lt;&#39;R&gt;) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;R&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.collect</div>
-<div class="tip" id="fs113">val line : string</div>
-<div class="tip" id="fs114">String.Split([&lt;ParamArray&gt;] separator: char []) : string []<br />String.Split(separator: string [], options: StringSplitOptions) : string []<br />String.Split(separator: char [], options: StringSplitOptions) : string []<br />String.Split(separator: char [], count: int) : string []<br />String.Split(separator: string [], count: int, options: StringSplitOptions) : string []<br />String.Split(separator: char [], count: int, options: StringSplitOptions) : string []</div>
-<div class="tip" id="fs115">val map : f:(&#39;T -&gt; &#39;R) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;R&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.map</div>
-<div class="tip" id="fs116">val word : string</div>
-<div class="tip" id="fs117">String.Trim() : string<br />String.Trim([&lt;ParamArray&gt;] trimChars: char []) : string</div>
-<div class="tip" id="fs118">val filter : predicate:(&#39;T -&gt; bool) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;T&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.filter</div>
-<div class="tip" id="fs119">val countBy : projection:(&#39;T -&gt; &#39;Key) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;Key * int64&gt; (requires equality)<br /><br />Full name: MBrace.Flow.CloudFlow.countBy</div>
-<div class="tip" id="fs120">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
-<div class="tip" id="fs121">val sortByDescending : projection:(&#39;T -&gt; &#39;Key) -&gt; takeCount:int -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;T&gt; (requires comparison)<br /><br />Full name: MBrace.Flow.CloudFlow.sortByDescending</div>
-<div class="tip" id="fs122">val count : int64</div>
-<div class="tip" id="fs123">val toArray : flow:CloudFlow&lt;&#39;T&gt; -&gt; MBrace.Core.Cloud&lt;&#39;T []&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.toArray</div>
+<div class="tip" id="fs69">val locData : (string * float) list<br /><br />Full name: Index.Code.locData</div>
+<div class="tip" id="fs70">val chart : GoogleChart<br /><br />Full name: Index.Code.chart</div>
+<div class="tip" id="fs71">static member Chart.Bar : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />static member Chart.Bar : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart</div>
+<div class="tip" id="fs72">val getLineCountAsync : uris:Uri list -&gt; Async&lt;int&gt;<br /><br />Full name: Index.getLineCountAsync</div>
+<div class="tip" id="fs73">val uris : Uri list</div>
+<div class="tip" id="fs74">Multiple items<br />type Uri =<br />&#160;&#160;new : uriString:string -&gt; Uri + 5 overloads<br />&#160;&#160;member AbsolutePath : string<br />&#160;&#160;member AbsoluteUri : string<br />&#160;&#160;member Authority : string<br />&#160;&#160;member DnsSafeHost : string<br />&#160;&#160;member Equals : comparand:obj -&gt; bool<br />&#160;&#160;member Fragment : string<br />&#160;&#160;member GetComponents : components:UriComponents * format:UriFormat -&gt; string<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member GetLeftPart : part:UriPartial -&gt; string<br />&#160;&#160;...<br /><br />Full name: System.Uri<br /><br />--------------------<br />Uri(uriString: string) : unit<br />Uri(uriString: string, uriKind: UriKind) : unit<br />Uri(baseUri: Uri, relativeUri: string) : unit<br />Uri(baseUri: Uri, relativeUri: Uri) : unit</div>
+<div class="tip" id="fs75">type &#39;T list = List&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Collections.list&lt;_&gt;</div>
+<div class="tip" id="fs76">val async : AsyncBuilder<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.async</div>
+<div class="tip" id="fs77">val getLines : (Uri -&gt; Async&lt;int&gt;)</div>
+<div class="tip" id="fs78">val uri : Uri</div>
+<div class="tip" id="fs79">val wc : WebClient</div>
+<div class="tip" id="fs80">Multiple items<br />type WebClient =<br />&#160;&#160;inherit Component<br />&#160;&#160;new : unit -&gt; WebClient<br />&#160;&#160;member BaseAddress : string with get, set<br />&#160;&#160;member CachePolicy : RequestCachePolicy with get, set<br />&#160;&#160;member CancelAsync : unit -&gt; unit<br />&#160;&#160;member Credentials : ICredentials with get, set<br />&#160;&#160;member DownloadData : address:string -&gt; byte[] + 1 overload<br />&#160;&#160;member DownloadDataAsync : address:Uri -&gt; unit + 1 overload<br />&#160;&#160;member DownloadFile : address:string * fileName:string -&gt; unit + 1 overload<br />&#160;&#160;member DownloadFileAsync : address:Uri * fileName:string -&gt; unit + 1 overload<br />&#160;&#160;member DownloadString : address:string -&gt; string + 1 overload<br />&#160;&#160;...<br /><br />Full name: System.Net.WebClient<br /><br />--------------------<br />WebClient() : unit</div>
+<div class="tip" id="fs81">val lines : string</div>
+<div class="tip" id="fs82">member WebClient.AsyncDownloadString : address:Uri -&gt; Async&lt;string&gt;</div>
+<div class="tip" id="fs83">property String.Length: int</div>
+<div class="tip" id="fs84">val sizes : int []</div>
+<div class="tip" id="fs85">static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;</div>
+<div class="tip" id="fs86">val u : Uri</div>
+<div class="tip" id="fs87">val sum : array:&#39;T [] -&gt; &#39;T (requires member ( + ) and member get_Zero)<br /><br />Full name: Microsoft.FSharp.Collections.Array.sum</div>
+<div class="tip" id="fs88">val getLineCount : cloudfiles:string list -&gt; &#39;a<br /><br />Full name: Index.getLineCount</div>
+<div class="tip" id="fs89">val cloudfiles : string list</div>
+<div class="tip" id="fs90">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.Operators.string<br /><br />--------------------<br />type string = String<br /><br />Full name: Microsoft.FSharp.Core.string</div>
+<div class="tip" id="fs91">type Parallel =<br />&#160;&#160;static member For : fromInclusive:int * toExclusive:int * body:Action&lt;int&gt; -&gt; ParallelLoopResult + 11 overloads<br />&#160;&#160;static member ForEach&lt;&#39;TSource&gt; : source:IEnumerable&lt;&#39;TSource&gt; * body:Action&lt;&#39;TSource&gt; -&gt; ParallelLoopResult + 19 overloads<br />&#160;&#160;static member Invoke : [&lt;ParamArray&gt;] actions:Action[] -&gt; unit + 1 overload<br /><br />Full name: System.Threading.Tasks.Parallel</div>
+<div class="tip" id="fs92">val loop : counter:int ref -&gt; inbox:MailboxProcessor&lt;int&gt; -&gt; Async&lt;&#39;a&gt;<br /><br />Full name: Index.loop</div>
+<div class="tip" id="fs93">val counter : int ref</div>
+<div class="tip" id="fs94">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
+<div class="tip" id="fs95">Multiple items<br />val ref : value:&#39;T -&gt; &#39;T ref<br /><br />Full name: Microsoft.FSharp.Core.Operators.ref<br /><br />--------------------<br />type &#39;T ref = Ref&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Core.ref&lt;_&gt;</div>
+<div class="tip" id="fs96">val inbox : MailboxProcessor&lt;int&gt;</div>
+<div class="tip" id="fs97">Multiple items<br />type MailboxProcessor&lt;&#39;Msg&gt; =<br />&#160;&#160;interface IDisposable<br />&#160;&#160;new : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;<br />&#160;&#160;member Post : message:&#39;Msg -&gt; unit<br />&#160;&#160;member PostAndAsyncReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; Async&lt;&#39;Reply&gt;<br />&#160;&#160;member PostAndReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; &#39;Reply<br />&#160;&#160;member PostAndTryAsyncReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; Async&lt;&#39;Reply option&gt;<br />&#160;&#160;member Receive : ?timeout:int -&gt; Async&lt;&#39;Msg&gt;<br />&#160;&#160;member Scan : scanner:(&#39;Msg -&gt; Async&lt;&#39;T&gt; option) * ?timeout:int -&gt; Async&lt;&#39;T&gt;<br />&#160;&#160;member Start : unit -&gt; unit<br />&#160;&#160;member TryPostAndReply : buildMessage:(AsyncReplyChannel&lt;&#39;Reply&gt; -&gt; &#39;Msg) * ?timeout:int -&gt; &#39;Reply option<br />&#160;&#160;...<br /><br />Full name: Microsoft.FSharp.Control.MailboxProcessor&lt;_&gt;<br /><br />--------------------<br />new : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:Threading.CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;</div>
+<div class="tip" id="fs98">val msg : int</div>
+<div class="tip" id="fs99">member MailboxProcessor.Receive : ?timeout:int -&gt; Async&lt;&#39;Msg&gt;</div>
+<div class="tip" id="fs100">val counter : int ref<br /><br />Full name: Index.counter</div>
+<div class="tip" id="fs101">val actor : MailboxProcessor&lt;int&gt;<br /><br />Full name: Index.actor</div>
+<div class="tip" id="fs102">static member MailboxProcessor.Start : body:(MailboxProcessor&lt;&#39;Msg&gt; -&gt; Async&lt;unit&gt;) * ?cancellationToken:Threading.CancellationToken -&gt; MailboxProcessor&lt;&#39;Msg&gt;</div>
+<div class="tip" id="fs103">val i : int32</div>
+<div class="tip" id="fs104">member MailboxProcessor.Post : message:&#39;Msg -&gt; unit</div>
+<div class="tip" id="fs105">property Ref.Value: int</div>
+<div class="tip" id="fs106">static member CloudProcess.WhenAny : [&lt;ParamArray&gt;] procs:&#39;a [] -&gt; &#39;b</div>
+<div class="tip" id="fs107">val parMap : f:(&#39;T -&gt; &#39;S) -&gt; inputs:&#39;T list -&gt; &#39;a<br /><br />Full name: Index.parMap</div>
+<div class="tip" id="fs108">val f : (&#39;T -&gt; &#39;S)</div>
+<div class="tip" id="fs109">val inputs : &#39;T list</div>
+<div class="tip" id="fs110">property List.Length: int</div>
+<div class="tip" id="fs111">static member CloudProcess.WhenAll : [&lt;ParamArray&gt;] procs:&#39;a [] -&gt; &#39;b</div>
+<div class="tip" id="fs112">val append : list1:&#39;T list -&gt; list2:&#39;T list -&gt; &#39;T list<br /><br />Full name: Microsoft.FSharp.Collections.List.append</div>
+<div class="tip" id="fs113">Multiple items<br />module CloudFlow<br /><br />from MBrace.Flow<br /><br />--------------------<br />type CloudFlow =<br />&#160;&#160;static member OfArray : source:&#39;T [] -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudArrays : cloudArrays:seq&lt;#CloudArray&lt;&#39;T&gt;&gt; -&gt; LocalCloud&lt;PersistedCloudFlow&lt;&#39;T&gt;&gt;<br />&#160;&#160;static member OfCloudCollection : collection:ICloudCollection&lt;&#39;T&gt; * ?sizeThresholdPerWorker:(unit -&gt; int64) -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * serializer:ISerializer * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * ?deserializer:(Stream -&gt; seq&lt;&#39;T&gt;) * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectory : dirPath:string * deserializer:(TextReader -&gt; seq&lt;&#39;T&gt;) * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;static member OfCloudDirectoryByLine : dirPath:string * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFileByLine : path:string * ?encoding:Encoding -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFileByLine : paths:seq&lt;string&gt; * ?encoding:Encoding * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;string&gt;<br />&#160;&#160;static member OfCloudFiles : paths:seq&lt;string&gt; * serializer:ISerializer * ?sizeThresholdPerCore:int64 -&gt; CloudFlow&lt;&#39;T&gt;<br />&#160;&#160;...<br /><br />Full name: MBrace.Flow.CloudFlow<br /><br />--------------------<br />type CloudFlow&lt;&#39;T&gt; =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member WithEvaluators : collectorFactory:LocalCloud&lt;Collector&lt;&#39;T,&#39;S&gt;&gt; -&gt; projection:(&#39;S -&gt; LocalCloud&lt;&#39;R&gt;) -&gt; combiner:(&#39;R [] -&gt; LocalCloud&lt;&#39;R&gt;) -&gt; Cloud&lt;&#39;R&gt;<br />&#160;&#160;&#160;&#160;abstract member DegreeOfParallelism : int option<br />&#160;&#160;end<br /><br />Full name: MBrace.Flow.CloudFlow&lt;_&gt;</div>
+<div class="tip" id="fs114">static member CloudFlow.OfHttpFileByLine : urls:seq&lt;string&gt; * ?encoding:Text.Encoding -&gt; CloudFlow&lt;string&gt;<br />static member CloudFlow.OfHttpFileByLine : url:string * ?encoding:Text.Encoding -&gt; CloudFlow&lt;string&gt;</div>
+<div class="tip" id="fs115">val collect : f:(&#39;T -&gt; #seq&lt;&#39;R&gt;) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;R&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.collect</div>
+<div class="tip" id="fs116">val line : string</div>
+<div class="tip" id="fs117">String.Split([&lt;ParamArray&gt;] separator: char []) : string []<br />String.Split(separator: string [], options: StringSplitOptions) : string []<br />String.Split(separator: char [], options: StringSplitOptions) : string []<br />String.Split(separator: char [], count: int) : string []<br />String.Split(separator: string [], count: int, options: StringSplitOptions) : string []<br />String.Split(separator: char [], count: int, options: StringSplitOptions) : string []</div>
+<div class="tip" id="fs118">val map : f:(&#39;T -&gt; &#39;R) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;R&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.map</div>
+<div class="tip" id="fs119">val word : string</div>
+<div class="tip" id="fs120">String.Trim() : string<br />String.Trim([&lt;ParamArray&gt;] trimChars: char []) : string</div>
+<div class="tip" id="fs121">val filter : predicate:(&#39;T -&gt; bool) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;T&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.filter</div>
+<div class="tip" id="fs122">val countBy : projection:(&#39;T -&gt; &#39;Key) -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;Key * int64&gt; (requires equality)<br /><br />Full name: MBrace.Flow.CloudFlow.countBy</div>
+<div class="tip" id="fs123">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
+<div class="tip" id="fs124">val sortByDescending : projection:(&#39;T -&gt; &#39;Key) -&gt; takeCount:int -&gt; flow:CloudFlow&lt;&#39;T&gt; -&gt; CloudFlow&lt;&#39;T&gt; (requires comparison)<br /><br />Full name: MBrace.Flow.CloudFlow.sortByDescending</div>
+<div class="tip" id="fs125">val count : int64</div>
+<div class="tip" id="fs126">val toArray : flow:CloudFlow&lt;&#39;T&gt; -&gt; MBrace.Core.Cloud&lt;&#39;T []&gt;<br /><br />Full name: MBrace.Flow.CloudFlow.toArray</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section >
-
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+            <section data-background="images/mbrace1.png" data-background-size="1500px">
 
 <h3>MBrace</h3>
 
-<h4>REPL-driven scalable computation</h4>
+<h4>REPL driven scalable computation</h4>
 
 <h5>Eirik Tsarpalis</h5>
 
@@ -187,6 +188,8 @@
 <section >
 
 <section >
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <h3>About me</h3>
 
@@ -268,15 +271,15 @@
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs69', 154)" onmouseover="showTip(event, 'fs69', 154)" class="f">getLineCountAsync</span> (<span onmouseout="hideTip(event, 'fs70', 155)" onmouseover="showTip(event, 'fs70', 155)" class="i">uris</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs71', 156)" onmouseover="showTip(event, 'fs71', 156)" class="t">Uri</span> <span onmouseout="hideTip(event, 'fs72', 157)" onmouseover="showTip(event, 'fs72', 157)" class="t">list</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs73', 158)" onmouseover="showTip(event, 'fs73', 158)" class="i">async</span> {
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs74', 159)" onmouseover="showTip(event, 'fs74', 159)" class="f">getLines</span> (<span onmouseout="hideTip(event, 'fs75', 160)" onmouseover="showTip(event, 'fs75', 160)" class="i">uri</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs71', 161)" onmouseover="showTip(event, 'fs71', 161)" class="t">Uri</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs73', 162)" onmouseover="showTip(event, 'fs73', 162)" class="i">async</span> {
-        <span class="k">use</span> <span onmouseout="hideTip(event, 'fs76', 163)" onmouseover="showTip(event, 'fs76', 163)" class="i">wc</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs77', 164)" onmouseover="showTip(event, 'fs77', 164)" class="t">WebClient</span>()
-        <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs78', 165)" onmouseover="showTip(event, 'fs78', 165)" class="i">lines</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs76', 166)" onmouseover="showTip(event, 'fs76', 166)" class="i">wc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs79', 167)" onmouseover="showTip(event, 'fs79', 167)" class="f">AsyncDownloadString</span> <span onmouseout="hideTip(event, 'fs75', 168)" onmouseover="showTip(event, 'fs75', 168)" class="i">uri</span>
-        <span class="k">return</span> <span onmouseout="hideTip(event, 'fs78', 169)" onmouseover="showTip(event, 'fs78', 169)" class="i">lines</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs80', 170)" onmouseover="showTip(event, 'fs80', 170)" class="i">Length</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs72', 167)" onmouseover="showTip(event, 'fs72', 167)" class="f">getLineCountAsync</span> (<span onmouseout="hideTip(event, 'fs73', 168)" onmouseover="showTip(event, 'fs73', 168)" class="i">uris</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs74', 169)" onmouseover="showTip(event, 'fs74', 169)" class="t">Uri</span> <span onmouseout="hideTip(event, 'fs75', 170)" onmouseover="showTip(event, 'fs75', 170)" class="t">list</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs76', 171)" onmouseover="showTip(event, 'fs76', 171)" class="i">async</span> {
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs77', 172)" onmouseover="showTip(event, 'fs77', 172)" class="f">getLines</span> (<span onmouseout="hideTip(event, 'fs78', 173)" onmouseover="showTip(event, 'fs78', 173)" class="i">uri</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs74', 174)" onmouseover="showTip(event, 'fs74', 174)" class="t">Uri</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs76', 175)" onmouseover="showTip(event, 'fs76', 175)" class="i">async</span> {
+        <span class="k">use</span> <span onmouseout="hideTip(event, 'fs79', 176)" onmouseover="showTip(event, 'fs79', 176)" class="i">wc</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs80', 177)" onmouseover="showTip(event, 'fs80', 177)" class="t">WebClient</span>()
+        <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs81', 178)" onmouseover="showTip(event, 'fs81', 178)" class="i">lines</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs79', 179)" onmouseover="showTip(event, 'fs79', 179)" class="i">wc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs82', 180)" onmouseover="showTip(event, 'fs82', 180)" class="f">AsyncDownloadString</span> <span onmouseout="hideTip(event, 'fs78', 181)" onmouseover="showTip(event, 'fs78', 181)" class="i">uri</span>
+        <span class="k">return</span> <span onmouseout="hideTip(event, 'fs81', 182)" onmouseover="showTip(event, 'fs81', 182)" class="i">lines</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs83', 183)" onmouseover="showTip(event, 'fs83', 183)" class="i">Length</span>
     }
 
-    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs81', 171)" onmouseover="showTip(event, 'fs81', 171)" class="i">sizes</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs23', 172)" onmouseover="showTip(event, 'fs23', 172)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs82', 173)" onmouseover="showTip(event, 'fs82', 173)" class="f">Parallel</span> [<span class="k">for</span> <span onmouseout="hideTip(event, 'fs83', 174)" onmouseover="showTip(event, 'fs83', 174)" class="i">u</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs70', 175)" onmouseover="showTip(event, 'fs70', 175)" class="i">uris</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs74', 176)" onmouseover="showTip(event, 'fs74', 176)" class="f">getLines</span> <span onmouseout="hideTip(event, 'fs83', 177)" onmouseover="showTip(event, 'fs83', 177)" class="i">u</span>]
-    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs21', 178)" onmouseover="showTip(event, 'fs21', 178)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs84', 179)" onmouseover="showTip(event, 'fs84', 179)" class="f">sum</span> <span class="i">sizes</span>
+    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs84', 184)" onmouseover="showTip(event, 'fs84', 184)" class="i">sizes</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs23', 185)" onmouseover="showTip(event, 'fs23', 185)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs85', 186)" onmouseover="showTip(event, 'fs85', 186)" class="f">Parallel</span> [<span class="k">for</span> <span onmouseout="hideTip(event, 'fs86', 187)" onmouseover="showTip(event, 'fs86', 187)" class="i">u</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs73', 188)" onmouseover="showTip(event, 'fs73', 188)" class="i">uris</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs77', 189)" onmouseover="showTip(event, 'fs77', 189)" class="f">getLines</span> <span onmouseout="hideTip(event, 'fs86', 190)" onmouseover="showTip(event, 'fs86', 190)" class="i">u</span>]
+    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs21', 191)" onmouseover="showTip(event, 'fs21', 191)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs87', 192)" onmouseover="showTip(event, 'fs87', 192)" class="f">sum</span> <span class="i">sizes</span>
 }
 </code></pre></td>
 </tr>
@@ -298,14 +301,14 @@
 <span class="l">8: </span>
 <span class="l">9: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs85', 180)" onmouseover="showTip(event, 'fs85', 180)" class="f">getLineCount</span> (<span onmouseout="hideTip(event, 'fs86', 181)" onmouseover="showTip(event, 'fs86', 181)" class="i">cloudfiles</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs87', 182)" onmouseover="showTip(event, 'fs87', 182)" class="t">string</span> <span onmouseout="hideTip(event, 'fs72', 183)" onmouseover="showTip(event, 'fs72', 183)" class="t">list</span>) <span class="o">=</span> <span class="i">cloud</span> {
-    <span class="k">let</span> <span class="i">getLines</span> (<span class="i">cloudfile</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs87', 184)" onmouseover="showTip(event, 'fs87', 184)" class="i">string</span>) <span class="o">=</span> <span class="i">cloud</span> {
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs88', 193)" onmouseover="showTip(event, 'fs88', 193)" class="f">getLineCount</span> (<span onmouseout="hideTip(event, 'fs89', 194)" onmouseover="showTip(event, 'fs89', 194)" class="i">cloudfiles</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 195)" onmouseover="showTip(event, 'fs90', 195)" class="t">string</span> <span onmouseout="hideTip(event, 'fs75', 196)" onmouseover="showTip(event, 'fs75', 196)" class="t">list</span>) <span class="o">=</span> <span class="i">cloud</span> {
+    <span class="k">let</span> <span class="i">getLines</span> (<span class="i">cloudfile</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 197)" onmouseover="showTip(event, 'fs90', 197)" class="i">string</span>) <span class="o">=</span> <span class="i">cloud</span> {
         <span class="k">let!</span> <span class="i">lines</span> <span class="o">=</span> <span class="i">CloudFile</span><span class="o">.</span><span class="i">ReadAllLines</span> <span class="i">cloudfile</span>
         <span class="k">return</span> <span class="i">lines</span><span class="o">.</span><span class="i">Length</span>
     }
 
-    <span class="k">let!</span> <span class="i">sizes</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs88', 185)" onmouseover="showTip(event, 'fs88', 185)" class="i">Parallel</span> [<span class="k">for</span> <span class="i">f</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs86', 186)" onmouseover="showTip(event, 'fs86', 186)" class="i">cloudfiles</span> <span class="k">-&gt;</span> <span class="i">getLines</span> <span class="i">f</span>]
-    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs21', 187)" onmouseover="showTip(event, 'fs21', 187)" class="i">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs84', 188)" onmouseover="showTip(event, 'fs84', 188)" class="i">sum</span> <span class="i">sizes</span>
+    <span class="k">let!</span> <span class="i">sizes</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs91', 198)" onmouseover="showTip(event, 'fs91', 198)" class="i">Parallel</span> [<span class="k">for</span> <span class="i">f</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs89', 199)" onmouseover="showTip(event, 'fs89', 199)" class="i">cloudfiles</span> <span class="k">-&gt;</span> <span class="i">getLines</span> <span class="i">f</span>]
+    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs21', 200)" onmouseover="showTip(event, 'fs21', 200)" class="i">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs87', 201)" onmouseover="showTip(event, 'fs87', 201)" class="i">sum</span> <span class="i">sizes</span>
 }
 </code></pre></td>
 </tr>
@@ -332,16 +335,16 @@
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs89', 189)" onmouseover="showTip(event, 'fs89', 189)" class="f">loop</span> (<span onmouseout="hideTip(event, 'fs90', 190)" onmouseover="showTip(event, 'fs90', 190)" class="v">counter</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs91', 191)" onmouseover="showTip(event, 'fs91', 191)" class="t">int</span> <span onmouseout="hideTip(event, 'fs92', 192)" onmouseover="showTip(event, 'fs92', 192)" class="t">ref</span>) (<span onmouseout="hideTip(event, 'fs93', 193)" onmouseover="showTip(event, 'fs93', 193)" class="i">inbox</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs94', 194)" onmouseover="showTip(event, 'fs94', 194)" class="t">MailboxProcessor</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs91', 195)" onmouseover="showTip(event, 'fs91', 195)" class="t">int</span><span class="o">&gt;</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs73', 196)" onmouseover="showTip(event, 'fs73', 196)" class="i">async</span> {
-    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs95', 197)" onmouseover="showTip(event, 'fs95', 197)" class="i">msg</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs93', 198)" onmouseover="showTip(event, 'fs93', 198)" class="i">inbox</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs96', 199)" onmouseover="showTip(event, 'fs96', 199)" class="f">Receive</span>()
-    <span onmouseout="hideTip(event, 'fs90', 200)" onmouseover="showTip(event, 'fs90', 200)" class="v">counter</span> <span class="o">:=</span> <span class="o">!</span><span onmouseout="hideTip(event, 'fs90', 201)" onmouseover="showTip(event, 'fs90', 201)" class="v">counter</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs95', 202)" onmouseover="showTip(event, 'fs95', 202)" class="i">msg</span>
-    <span class="k">return!</span> <span onmouseout="hideTip(event, 'fs89', 203)" onmouseover="showTip(event, 'fs89', 203)" class="f">loop</span> <span onmouseout="hideTip(event, 'fs90', 204)" onmouseover="showTip(event, 'fs90', 204)" class="v">counter</span> <span onmouseout="hideTip(event, 'fs93', 205)" onmouseover="showTip(event, 'fs93', 205)" class="i">inbox</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs92', 202)" onmouseover="showTip(event, 'fs92', 202)" class="f">loop</span> (<span onmouseout="hideTip(event, 'fs93', 203)" onmouseover="showTip(event, 'fs93', 203)" class="v">counter</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs94', 204)" onmouseover="showTip(event, 'fs94', 204)" class="t">int</span> <span onmouseout="hideTip(event, 'fs95', 205)" onmouseover="showTip(event, 'fs95', 205)" class="t">ref</span>) (<span onmouseout="hideTip(event, 'fs96', 206)" onmouseover="showTip(event, 'fs96', 206)" class="i">inbox</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs97', 207)" onmouseover="showTip(event, 'fs97', 207)" class="t">MailboxProcessor</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs94', 208)" onmouseover="showTip(event, 'fs94', 208)" class="t">int</span><span class="o">&gt;</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs76', 209)" onmouseover="showTip(event, 'fs76', 209)" class="i">async</span> {
+    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs98', 210)" onmouseover="showTip(event, 'fs98', 210)" class="i">msg</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs96', 211)" onmouseover="showTip(event, 'fs96', 211)" class="i">inbox</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs99', 212)" onmouseover="showTip(event, 'fs99', 212)" class="f">Receive</span>()
+    <span onmouseout="hideTip(event, 'fs93', 213)" onmouseover="showTip(event, 'fs93', 213)" class="v">counter</span> <span class="o">:=</span> <span class="o">!</span><span onmouseout="hideTip(event, 'fs93', 214)" onmouseover="showTip(event, 'fs93', 214)" class="v">counter</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs98', 215)" onmouseover="showTip(event, 'fs98', 215)" class="i">msg</span>
+    <span class="k">return!</span> <span onmouseout="hideTip(event, 'fs92', 216)" onmouseover="showTip(event, 'fs92', 216)" class="f">loop</span> <span onmouseout="hideTip(event, 'fs93', 217)" onmouseover="showTip(event, 'fs93', 217)" class="v">counter</span> <span onmouseout="hideTip(event, 'fs96', 218)" onmouseover="showTip(event, 'fs96', 218)" class="i">inbox</span>
 }
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs97', 206)" onmouseover="showTip(event, 'fs97', 206)" class="v">counter</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs92', 207)" onmouseover="showTip(event, 'fs92', 207)" class="f">ref</span> <span class="n">0</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs98', 208)" onmouseover="showTip(event, 'fs98', 208)" class="i">actor</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs94', 209)" onmouseover="showTip(event, 'fs94', 209)" class="t">MailboxProcessor</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs99', 210)" onmouseover="showTip(event, 'fs99', 210)" class="f">Start</span> (<span onmouseout="hideTip(event, 'fs89', 211)" onmouseover="showTip(event, 'fs89', 211)" class="f">loop</span> <span onmouseout="hideTip(event, 'fs97', 212)" onmouseover="showTip(event, 'fs97', 212)" class="v">counter</span>)
-<span class="k">for</span> <span onmouseout="hideTip(event, 'fs100', 213)" onmouseover="showTip(event, 'fs100', 213)" class="i">i</span> <span class="k">in</span> <span class="n">1</span> <span class="o">..</span> <span class="n">100</span> <span class="k">do</span> <span onmouseout="hideTip(event, 'fs98', 214)" onmouseover="showTip(event, 'fs98', 214)" class="i">actor</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs101', 215)" onmouseover="showTip(event, 'fs101', 215)" class="f">Post</span> <span onmouseout="hideTip(event, 'fs100', 216)" onmouseover="showTip(event, 'fs100', 216)" class="i">i</span>
-<span class="o">!</span><span onmouseout="hideTip(event, 'fs97', 217)" onmouseover="showTip(event, 'fs97', 217)" class="v">counter</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs100', 219)" onmouseover="showTip(event, 'fs100', 219)" class="v">counter</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs95', 220)" onmouseover="showTip(event, 'fs95', 220)" class="f">ref</span> <span class="n">0</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs101', 221)" onmouseover="showTip(event, 'fs101', 221)" class="i">actor</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs97', 222)" onmouseover="showTip(event, 'fs97', 222)" class="t">MailboxProcessor</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs102', 223)" onmouseover="showTip(event, 'fs102', 223)" class="f">Start</span> (<span onmouseout="hideTip(event, 'fs92', 224)" onmouseover="showTip(event, 'fs92', 224)" class="f">loop</span> <span onmouseout="hideTip(event, 'fs100', 225)" onmouseover="showTip(event, 'fs100', 225)" class="v">counter</span>)
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs103', 226)" onmouseover="showTip(event, 'fs103', 226)" class="i">i</span> <span class="k">in</span> <span class="n">1</span> <span class="o">..</span> <span class="n">100</span> <span class="k">do</span> <span onmouseout="hideTip(event, 'fs101', 227)" onmouseover="showTip(event, 'fs101', 227)" class="i">actor</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs104', 228)" onmouseover="showTip(event, 'fs104', 228)" class="f">Post</span> <span onmouseout="hideTip(event, 'fs103', 229)" onmouseover="showTip(event, 'fs103', 229)" class="i">i</span>
+<span class="o">!</span><span onmouseout="hideTip(event, 'fs100', 230)" onmouseover="showTip(event, 'fs100', 230)" class="v">counter</span>
 </code></pre></td>
 </tr>
 </table>
@@ -367,17 +370,17 @@
 <span class="l">13: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">cloud</span> {
-    <span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs89', 218)" onmouseover="showTip(event, 'fs89', 218)" class="i">loop</span> (<span onmouseout="hideTip(event, 'fs97', 219)" onmouseover="showTip(event, 'fs97', 219)" class="i">counter</span> <span class="o">:</span> <span class="i">CloudAtom</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs91', 220)" onmouseover="showTip(event, 'fs91', 220)" class="i">int</span><span class="o">&gt;</span>) (<span class="i">queue</span> <span class="o">:</span> <span class="i">CloudQueue</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs91', 221)" onmouseover="showTip(event, 'fs91', 221)" class="i">int</span><span class="o">&gt;</span>) <span class="o">=</span> <span class="i">cloud</span> {
+    <span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs92', 231)" onmouseover="showTip(event, 'fs92', 231)" class="i">loop</span> (<span onmouseout="hideTip(event, 'fs100', 232)" onmouseover="showTip(event, 'fs100', 232)" class="i">counter</span> <span class="o">:</span> <span class="i">CloudAtom</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs94', 233)" onmouseover="showTip(event, 'fs94', 233)" class="i">int</span><span class="o">&gt;</span>) (<span class="i">queue</span> <span class="o">:</span> <span class="i">CloudQueue</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs94', 234)" onmouseover="showTip(event, 'fs94', 234)" class="i">int</span><span class="o">&gt;</span>) <span class="o">=</span> <span class="i">cloud</span> {
         <span class="k">let!</span> <span class="i">msg</span> <span class="o">=</span> <span class="i">queue</span><span class="o">.</span><span class="i">DequeueAsync</span>()
-        <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs97', 222)" onmouseover="showTip(event, 'fs97', 222)" class="i">counter</span><span class="o">.</span><span class="i">UpdateAsync</span>(<span class="k">fun</span> <span class="i">c</span> <span class="k">-&gt;</span> <span class="i">c</span> <span class="o">+</span> <span class="i">msg</span>)
-        <span class="k">return!</span> <span onmouseout="hideTip(event, 'fs89', 223)" onmouseover="showTip(event, 'fs89', 223)" class="i">loop</span> <span onmouseout="hideTip(event, 'fs97', 224)" onmouseover="showTip(event, 'fs97', 224)" class="i">counter</span> <span class="i">queue</span>
+        <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs100', 235)" onmouseover="showTip(event, 'fs100', 235)" class="i">counter</span><span class="o">.</span><span class="i">UpdateAsync</span>(<span class="k">fun</span> <span class="i">c</span> <span class="k">-&gt;</span> <span class="i">c</span> <span class="o">+</span> <span class="i">msg</span>)
+        <span class="k">return!</span> <span onmouseout="hideTip(event, 'fs92', 236)" onmouseover="showTip(event, 'fs92', 236)" class="i">loop</span> <span onmouseout="hideTip(event, 'fs100', 237)" onmouseover="showTip(event, 'fs100', 237)" class="i">counter</span> <span class="i">queue</span>
     }
 
-    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs97', 225)" onmouseover="showTip(event, 'fs97', 225)" class="i">counter</span> <span class="o">=</span> <span class="i">CloudAtom</span><span class="o">.</span><span class="i">New</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs91', 226)" onmouseover="showTip(event, 'fs91', 226)" class="i">int</span><span class="o">&gt;</span>(<span class="i">initial</span> <span class="o">=</span> <span class="n">0</span>)
-    <span class="k">let!</span> <span class="i">queue</span> <span class="o">=</span> <span class="i">CloudQueue</span><span class="o">.</span><span class="i">New</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs91', 227)" onmouseover="showTip(event, 'fs91', 227)" class="i">int</span><span class="o">&gt;</span> ()
-    <span class="k">let!</span> _ <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs89', 228)" onmouseover="showTip(event, 'fs89', 228)" class="i">loop</span> <span onmouseout="hideTip(event, 'fs97', 229)" onmouseover="showTip(event, 'fs97', 229)" class="i">counter</span> <span class="i">queue</span>)
-    <span class="k">for</span> <span onmouseout="hideTip(event, 'fs100', 230)" onmouseover="showTip(event, 'fs100', 230)" class="i">i</span> <span class="k">in</span> <span class="n">1</span> <span class="o">..</span> <span class="n">100</span> <span class="k">do</span> <span class="i">queue</span><span class="o">.</span><span class="i">Enqueue</span> <span onmouseout="hideTip(event, 'fs100', 231)" onmouseover="showTip(event, 'fs100', 231)" class="i">i</span>
-    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs97', 232)" onmouseover="showTip(event, 'fs97', 232)" class="i">counter</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs102', 233)" onmouseover="showTip(event, 'fs102', 233)" class="i">Value</span>
+    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs100', 238)" onmouseover="showTip(event, 'fs100', 238)" class="i">counter</span> <span class="o">=</span> <span class="i">CloudAtom</span><span class="o">.</span><span class="i">New</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs94', 239)" onmouseover="showTip(event, 'fs94', 239)" class="i">int</span><span class="o">&gt;</span>(<span class="i">initial</span> <span class="o">=</span> <span class="n">0</span>)
+    <span class="k">let!</span> <span class="i">queue</span> <span class="o">=</span> <span class="i">CloudQueue</span><span class="o">.</span><span class="i">New</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs94', 240)" onmouseover="showTip(event, 'fs94', 240)" class="i">int</span><span class="o">&gt;</span> ()
+    <span class="k">let!</span> _ <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs92', 241)" onmouseover="showTip(event, 'fs92', 241)" class="i">loop</span> <span onmouseout="hideTip(event, 'fs100', 242)" onmouseover="showTip(event, 'fs100', 242)" class="i">counter</span> <span class="i">queue</span>)
+    <span class="k">for</span> <span onmouseout="hideTip(event, 'fs103', 243)" onmouseover="showTip(event, 'fs103', 243)" class="i">i</span> <span class="k">in</span> <span class="n">1</span> <span class="o">..</span> <span class="n">100</span> <span class="k">do</span> <span class="i">queue</span><span class="o">.</span><span class="i">Enqueue</span> <span onmouseout="hideTip(event, 'fs103', 244)" onmouseover="showTip(event, 'fs103', 244)" class="i">i</span>
+    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs100', 245)" onmouseover="showTip(event, 'fs100', 245)" class="i">counter</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs105', 246)" onmouseover="showTip(event, 'fs105', 246)" class="i">Value</span>
 }
 </code></pre></td>
 </tr>
@@ -418,9 +421,9 @@
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">cloud</span> {
     <span class="k">let!</span> <span class="i">cts</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateCancellationTokenSource</span>()
     <span class="k">try</span>
-        <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs15', 234)" onmouseover="showTip(event, 'fs15', 234)" class="i">workA</span>, <span class="i">cancellationToken</span> <span class="o">=</span> <span class="i">cts</span><span class="o">.</span><span class="i">Token</span>)
-        <span class="k">let!</span> <span class="i">procB</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs16', 235)" onmouseover="showTip(event, 'fs16', 235)" class="i">workB</span>, <span class="i">cancellationToken</span> <span class="o">=</span> <span class="i">cts</span><span class="o">.</span><span class="i">Token</span>)
-        <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs17', 236)" onmouseover="showTip(event, 'fs17', 236)" class="i">CloudProcess</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs103', 237)" onmouseover="showTip(event, 'fs103', 237)" class="i">WhenAny</span>(<span class="i">procA</span>, <span class="i">procB</span>)
+        <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs15', 247)" onmouseover="showTip(event, 'fs15', 247)" class="i">workA</span>, <span class="i">cancellationToken</span> <span class="o">=</span> <span class="i">cts</span><span class="o">.</span><span class="i">Token</span>)
+        <span class="k">let!</span> <span class="i">procB</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span onmouseout="hideTip(event, 'fs16', 248)" onmouseover="showTip(event, 'fs16', 248)" class="i">workB</span>, <span class="i">cancellationToken</span> <span class="o">=</span> <span class="i">cts</span><span class="o">.</span><span class="i">Token</span>)
+        <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs17', 249)" onmouseover="showTip(event, 'fs17', 249)" class="i">CloudProcess</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs106', 250)" onmouseover="showTip(event, 'fs106', 250)" class="i">WhenAny</span>(<span class="i">procA</span>, <span class="i">procB</span>)
 
     <span class="k">finally</span>
         <span class="i">cts</span><span class="o">.</span><span class="i">Cancel</span>()
@@ -445,14 +448,14 @@
 <span class="l">8: </span>
 <span class="l">9: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs104', 238)" onmouseover="showTip(event, 'fs104', 238)" class="f">parMap</span> (<span onmouseout="hideTip(event, 'fs105', 239)" onmouseover="showTip(event, 'fs105', 239)" class="f">f</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">S</span>) (<span onmouseout="hideTip(event, 'fs106', 240)" onmouseover="showTip(event, 'fs106', 240)" class="i">inputs</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span onmouseout="hideTip(event, 'fs72', 241)" onmouseover="showTip(event, 'fs72', 241)" class="t">list</span>) <span class="o">=</span> <span class="i">cloud</span> {
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs107', 251)" onmouseover="showTip(event, 'fs107', 251)" class="f">parMap</span> (<span onmouseout="hideTip(event, 'fs108', 252)" onmouseover="showTip(event, 'fs108', 252)" class="f">f</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">S</span>) (<span onmouseout="hideTip(event, 'fs109', 253)" onmouseover="showTip(event, 'fs109', 253)" class="i">inputs</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span onmouseout="hideTip(event, 'fs75', 254)" onmouseover="showTip(event, 'fs75', 254)" class="t">list</span>) <span class="o">=</span> <span class="i">cloud</span> {
     <span class="k">let!</span> [|<span class="i">beefyMachine</span> ; <span class="i">weakLaptop</span>|] <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">GetAvailableWorkers</span>()
-    <span class="k">let</span> <span class="i">C</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs106', 242)" onmouseover="showTip(event, 'fs106', 242)" class="i">inputs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs107', 243)" onmouseover="showTip(event, 'fs107', 243)" class="i">Length</span> <span class="o">*</span> <span class="n">2</span> <span class="o">/</span> <span class="n">3</span>
-    <span class="k">let</span> <span class="i">seqMap</span> <span class="i">ts</span> <span class="o">=</span> <span class="i">cloud</span> { <span class="k">return</span> <span onmouseout="hideTip(event, 'fs33', 244)" onmouseover="showTip(event, 'fs33', 244)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs35', 245)" onmouseover="showTip(event, 'fs35', 245)" class="i">map</span> <span onmouseout="hideTip(event, 'fs105', 246)" onmouseover="showTip(event, 'fs105', 246)" class="i">f</span> <span class="i">ts</span> }
-    <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs106', 247)" onmouseover="showTip(event, 'fs106', 247)" class="i">inputs</span><span class="o">.</span>[<span class="o">..</span><span class="i">C</span><span class="o">-</span><span class="n">1</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">beefyMachine</span>)
-    <span class="k">let!</span> <span class="i">procB</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs106', 248)" onmouseover="showTip(event, 'fs106', 248)" class="i">inputs</span><span class="o">.</span>[<span class="i">C</span><span class="o">..</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">weakLaptop</span>)
-    <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs17', 249)" onmouseover="showTip(event, 'fs17', 249)" class="i">CloudProcess</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs108', 250)" onmouseover="showTip(event, 'fs108', 250)" class="i">WhenAll</span>(<span class="i">procA</span>, <span class="i">procB</span>)
-    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs33', 251)" onmouseover="showTip(event, 'fs33', 251)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs109', 252)" onmouseover="showTip(event, 'fs109', 252)" class="i">append</span> <span class="i">procA</span><span class="o">.</span><span class="i">Result</span> <span class="i">procB</span><span class="o">.</span><span class="i">Result</span>
+    <span class="k">let</span> <span class="i">C</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs109', 255)" onmouseover="showTip(event, 'fs109', 255)" class="i">inputs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs110', 256)" onmouseover="showTip(event, 'fs110', 256)" class="i">Length</span> <span class="o">*</span> <span class="n">2</span> <span class="o">/</span> <span class="n">3</span>
+    <span class="k">let</span> <span class="i">seqMap</span> <span class="i">ts</span> <span class="o">=</span> <span class="i">cloud</span> { <span class="k">return</span> <span onmouseout="hideTip(event, 'fs33', 257)" onmouseover="showTip(event, 'fs33', 257)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs35', 258)" onmouseover="showTip(event, 'fs35', 258)" class="i">map</span> <span onmouseout="hideTip(event, 'fs108', 259)" onmouseover="showTip(event, 'fs108', 259)" class="i">f</span> <span class="i">ts</span> }
+    <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs109', 260)" onmouseover="showTip(event, 'fs109', 260)" class="i">inputs</span><span class="o">.</span>[<span class="o">..</span><span class="i">C</span><span class="o">-</span><span class="n">1</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">beefyMachine</span>)
+    <span class="k">let!</span> <span class="i">procB</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs109', 261)" onmouseover="showTip(event, 'fs109', 261)" class="i">inputs</span><span class="o">.</span>[<span class="i">C</span><span class="o">..</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">weakLaptop</span>)
+    <span class="k">do!</span> <span onmouseout="hideTip(event, 'fs17', 262)" onmouseover="showTip(event, 'fs17', 262)" class="i">CloudProcess</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs111', 263)" onmouseover="showTip(event, 'fs111', 263)" class="i">WhenAll</span>(<span class="i">procA</span>, <span class="i">procB</span>)
+    <span class="k">return</span> <span onmouseout="hideTip(event, 'fs33', 264)" onmouseover="showTip(event, 'fs33', 264)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs112', 265)" onmouseover="showTip(event, 'fs112', 265)" class="i">append</span> <span class="i">procA</span><span class="o">.</span><span class="i">Result</span> <span class="i">procB</span><span class="o">.</span><span class="i">Result</span>
 }
 </code></pre></td>
 </tr>
@@ -500,13 +503,13 @@
 <span class="l">8: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp">[ <span class="s">&quot;http://dumps.wikimedia.org/other/static_html_dumps/current/en/html.lst&quot;</span> ]
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 253)" onmouseover="showTip(event, 'fs110', 253)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs111', 254)" onmouseover="showTip(event, 'fs111', 254)" class="f">OfHttpFileByLine</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 255)" onmouseover="showTip(event, 'fs110', 255)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs112', 256)" onmouseover="showTip(event, 'fs112', 256)" class="f">collect</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs113', 257)" onmouseover="showTip(event, 'fs113', 257)" class="i">line</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs113', 258)" onmouseover="showTip(event, 'fs113', 258)" class="i">line</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs114', 259)" onmouseover="showTip(event, 'fs114', 259)" class="f">Split</span>(<span class="s">&#39; &#39;</span>))
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 260)" onmouseover="showTip(event, 'fs110', 260)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs115', 261)" onmouseover="showTip(event, 'fs115', 261)" class="f">map</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs116', 262)" onmouseover="showTip(event, 'fs116', 262)" class="i">word</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs116', 263)" onmouseover="showTip(event, 'fs116', 263)" class="i">word</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs117', 264)" onmouseover="showTip(event, 'fs117', 264)" class="f">Trim</span>())
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 265)" onmouseover="showTip(event, 'fs110', 265)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs118', 266)" onmouseover="showTip(event, 'fs118', 266)" class="f">filter</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs116', 267)" onmouseover="showTip(event, 'fs116', 267)" class="i">word</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs116', 268)" onmouseover="showTip(event, 'fs116', 268)" class="i">word</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs80', 269)" onmouseover="showTip(event, 'fs80', 269)" class="i">Length</span> <span class="o">&gt;</span> <span class="n">3</span>)
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 270)" onmouseover="showTip(event, 'fs110', 270)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs119', 271)" onmouseover="showTip(event, 'fs119', 271)" class="f">countBy</span> <span onmouseout="hideTip(event, 'fs120', 272)" onmouseover="showTip(event, 'fs120', 272)" class="f">id</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 273)" onmouseover="showTip(event, 'fs110', 273)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs121', 274)" onmouseover="showTip(event, 'fs121', 274)" class="f">sortByDescending</span> (<span class="k">fun</span> (_,<span onmouseout="hideTip(event, 'fs122', 275)" onmouseover="showTip(event, 'fs122', 275)" class="i">count</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs122', 276)" onmouseover="showTip(event, 'fs122', 276)" class="i">count</span>) <span class="n">100</span>
-<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs110', 277)" onmouseover="showTip(event, 'fs110', 277)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs123', 278)" onmouseover="showTip(event, 'fs123', 278)" class="f">toArray</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 266)" onmouseover="showTip(event, 'fs113', 266)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs114', 267)" onmouseover="showTip(event, 'fs114', 267)" class="f">OfHttpFileByLine</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 268)" onmouseover="showTip(event, 'fs113', 268)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs115', 269)" onmouseover="showTip(event, 'fs115', 269)" class="f">collect</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs116', 270)" onmouseover="showTip(event, 'fs116', 270)" class="i">line</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs116', 271)" onmouseover="showTip(event, 'fs116', 271)" class="i">line</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs117', 272)" onmouseover="showTip(event, 'fs117', 272)" class="f">Split</span>(<span class="s">&#39; &#39;</span>))
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 273)" onmouseover="showTip(event, 'fs113', 273)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs118', 274)" onmouseover="showTip(event, 'fs118', 274)" class="f">map</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs119', 275)" onmouseover="showTip(event, 'fs119', 275)" class="i">word</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs119', 276)" onmouseover="showTip(event, 'fs119', 276)" class="i">word</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs120', 277)" onmouseover="showTip(event, 'fs120', 277)" class="f">Trim</span>())
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 278)" onmouseover="showTip(event, 'fs113', 278)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs121', 279)" onmouseover="showTip(event, 'fs121', 279)" class="f">filter</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs119', 280)" onmouseover="showTip(event, 'fs119', 280)" class="i">word</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs119', 281)" onmouseover="showTip(event, 'fs119', 281)" class="i">word</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs83', 282)" onmouseover="showTip(event, 'fs83', 282)" class="i">Length</span> <span class="o">&gt;</span> <span class="n">3</span>)
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 283)" onmouseover="showTip(event, 'fs113', 283)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs122', 284)" onmouseover="showTip(event, 'fs122', 284)" class="f">countBy</span> <span onmouseout="hideTip(event, 'fs123', 285)" onmouseover="showTip(event, 'fs123', 285)" class="f">id</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 286)" onmouseover="showTip(event, 'fs113', 286)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs124', 287)" onmouseover="showTip(event, 'fs124', 287)" class="f">sortByDescending</span> (<span class="k">fun</span> (_,<span onmouseout="hideTip(event, 'fs125', 288)" onmouseover="showTip(event, 'fs125', 288)" class="i">count</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs125', 289)" onmouseover="showTip(event, 'fs125', 289)" class="i">count</span>) <span class="n">100</span>
+<span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs113', 290)" onmouseover="showTip(event, 'fs113', 290)" class="t">CloudFlow</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs126', 291)" onmouseover="showTip(event, 'fs126', 291)" class="f">toArray</span>
 </code></pre></td>
 </tr>
 </table>
@@ -539,15 +542,15 @@
 
 </section>
 
-<section >
+<section data-background="images/mbrace1.png" data-background-size="1500px">
 
 <h1>Demo Time</h1>
 
 </section>
 
-<section >
+<section data-background="images/mbrace1.png" data-background-size="1500px">
 
-<h2>Case Studies</h2>
+<h1>Case Studies</h1>
 
 </section>
 
@@ -658,10 +661,10 @@ chart.draw(data, options);
 <h3>The Client</h3>
 
 <ul>
+<li><a href="http://propulsionanalytics.com/">propulsionanalytics.com</a></li>
 <li>Ship engine simulation</li>
 <li>Estimate performance</li>
 <li>Diagnose engine faults</li>
-<li><a href="http://propulsionanalytics.com/">propulsionanalytics.com</a></li>
 </ul>
 
 </section>
@@ -711,9 +714,88 @@ chart.draw(data, options);
 
 </section>
 
+<section data-background="images/mbrace1.png" data-background-size="1500px">
+
+<h1>Project Status</h1>
+
+</section>
+
 <section >
 
-<h2>Project Overview</h2>
+<h3>MBrace</h3>
+
+<ul>
+<li>Open sourced one year ago.</li>
+<li>Has transformed to a different project.</li>
+<li>No longer purely maintained by Nessos.</li>
+<li>Final steps towards 1.0 milestone.</li>
+<li>Currently in beta.</li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>The MBrace Stack</h3>
+
+<p><img src="images/mbrace-stack.png" alt="MBrace Stack" /></p>
+
+</section>
+
+<section >
+
+<h3>Project Sizes</h3>
+
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]})
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "MBrace.Core"}, {"v": 7676}]}, {"c" : [{"v": "MBrace.Flow"}, {"v": 2497}]}, {"c" : [{"v": "MBrace.Runtime"}, {"v": 8569}]}, {"c" : [{"v": "MBrace.Tests"}, {"v": 5431}]}, {"c" : [{"v": "MBrace.Thespian"}, {"v": 2898}]}, {"c" : [{"v": "MBrace.Azure"}, {"v": 6003}]}]});
+var options = {"hAxis":{"title":"Lines of Code"},"legend":{"position":"none"}, "width":1000, "height":500 };
+var chart = new google.visualization.BarChart(document.getElementById('94b151c9-166a-4938-93c7-e0db7bbf9828'));
+chart.draw(data, options);
+}
+</script>
+<div id="94b151c9-166a-4938-93c7-e0db7bbf9828" style="align: center;" />
+
+</section>
+
+<section >
+
+<h3>Key People</h3>
+
+<ul>
+<li>Nick Palladinos <a href="https://twitter.com/nickpalladinos/">@nickpalladinos</a> (Nessos)</li>
+<li>Kostas Rontogiannis (Nessos, MBrace.Azure)</li>
+<li>Isaac Abraham <a href="https://twitter.com/isaac_abraham/">@isaac_abraham</a> (MBrace.Azure)</li>
+<li>Yan Cui <a href="https://twitter.com/theburningmonk/">@theburningmonk</a> (MBrace.AWS)</li>
+<li>Don Syme <a href="https://twitter.com/dsyme/">@dsyme</a> (MSR, project advisor)</li>
+</ul>
+
+</section>
+
+<section >
+
+<h1>Get Involved!</h1>
+
+</section>
+
+<section >
+
+<h3>How can I contribute?</h3>
+
+<ul>
+<li>MBrace libraries</li>
+<li>MBrace runtimes</li>
+<li>MBrace for C#</li>
+<li>Documentation</li>
+</ul>
+
+</section>
+
+<section data-background="images/mbrace1.png" data-background-size="1500px">
+
+<h1>Thank you!</h1>
 
 </section>
 
