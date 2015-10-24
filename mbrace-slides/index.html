@@ -213,9 +213,9 @@
 <li>Open source F# projects
 <ul>
 <li>MBrace</li>
-<li>FsPickler, Vagabond, LinqOptimizer, GpuLinq, Streams</li>
+<li>LinqOptimizer, GpuLinq, Streams</li>
 </ul></li>
-<li>@nickpalladinos, @anirothan, @krontogiannis</li>
+<li>@nickpalladinos, @krontogiannis</li>
 </ul>
 
 <p><a href="https://github.com/nessos">https://github.com/nessos</a></p>
@@ -674,9 +674,9 @@ chart.draw(data, options);
 <h3>The Problem</h3>
 
 <ul>
-<li>Core simulations performed by legacy code</li>
+<li>Core simulations performed using legacy code</li>
 <li>Fortran based, single threaded, command line</li>
-<li>Simulation program difficult to modify</li>
+<li>Simulation code difficult to modify</li>
 <li>One file per execution</li>
 <li>Millions of files per simulation</li>
 </ul>
@@ -690,6 +690,22 @@ chart.draw(data, options);
 <ul>
 <li>Scale out simulation using MBrace</li>
 <li>Deploy legacy code across an Azure cluster</li>
+<li>Store input and output files in blob storage</li>
+<li>200 lines of F# code</li>
+</ul>
+
+</section>
+
+<section author="Eirik Tsarpalis" description="REPL-driven scalable computation" theme="simple" title="MBrace: REPL-driven scalable computation" transition="default">
+
+<h3>Performance</h3>
+
+<ul>
+<li>Tested with 1000 sample input files</li>
+<li>Each file ~10K, taking ~20sec to process</li>
+<li>MBrace.Azure cluster using A3 (Quad core) workers</li>
+<li>Tested clusters of 4, 8, 16 and 32 workers</li>
+<li>Input size constant across cluster sizes</li>
 </ul>
 
 </section>
