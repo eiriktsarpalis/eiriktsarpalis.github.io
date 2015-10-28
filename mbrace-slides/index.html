@@ -204,10 +204,9 @@
 <li>MBrace</li>
 <li>LinqOptimizer, GpuLinq, Streams</li>
 </ul></li>
-<li>@nickpalladinos, @krontogiannis</li>
 </ul>
 
-<p><a href="https://github.com/nessos">https://github.com/nessos</a></p>
+<h4><a href="https://github.com/nessos"><a href="https://github.com/nessos">https://github.com/nessos</a></a></h4>
 
 </section>
 
@@ -237,8 +236,7 @@
 <li>Programming Model</li>
 <li>Demo Time</li>
 <li>Case Studies</li>
-<li>Development Overview</li>
-<li>Future</li>
+<li>Project Overview</li>
 </ul>
 
 </section>
@@ -438,10 +436,10 @@
 <span class="l">9: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs97', 224)" onmouseover="showTip(event, 'fs97', 224)" class="f">parMap</span> (<span onmouseout="hideTip(event, 'fs98', 225)" onmouseover="showTip(event, 'fs98', 225)" class="f">f</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">S</span>) (<span onmouseout="hideTip(event, 'fs99', 226)" onmouseover="showTip(event, 'fs99', 226)" class="i">inputs</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span onmouseout="hideTip(event, 'fs64', 227)" onmouseover="showTip(event, 'fs64', 227)" class="t">list</span>) <span class="o">=</span> <span class="i">cloud</span> {
-    <span class="k">let!</span> [|<span class="i">beefyMachine</span> ; <span class="i">weakLaptop</span>|] <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">GetAvailableWorkers</span>()
+    <span class="k">let!</span> [|<span class="i">beefyWorkstation</span> ; <span class="i">weakLaptop</span>|] <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">GetAvailableWorkers</span>()
     <span class="k">let</span> <span class="i">C</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs99', 228)" onmouseover="showTip(event, 'fs99', 228)" class="i">inputs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs100', 229)" onmouseover="showTip(event, 'fs100', 229)" class="i">Length</span> <span class="o">*</span> <span class="n">2</span> <span class="o">/</span> <span class="n">3</span>
     <span class="k">let</span> <span class="i">seqMap</span> <span class="i">ts</span> <span class="o">=</span> <span class="i">cloud</span> { <span class="k">return</span> <span onmouseout="hideTip(event, 'fs22', 230)" onmouseover="showTip(event, 'fs22', 230)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs24', 231)" onmouseover="showTip(event, 'fs24', 231)" class="i">map</span> <span onmouseout="hideTip(event, 'fs98', 232)" onmouseover="showTip(event, 'fs98', 232)" class="i">f</span> <span class="i">ts</span> }
-    <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs99', 233)" onmouseover="showTip(event, 'fs99', 233)" class="i">inputs</span><span class="o">.</span>[<span class="o">..</span><span class="i">C</span><span class="o">-</span><span class="n">1</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">beefyMachine</span>)
+    <span class="k">let!</span> <span class="i">procA</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs99', 233)" onmouseover="showTip(event, 'fs99', 233)" class="i">inputs</span><span class="o">.</span>[<span class="o">..</span><span class="i">C</span><span class="o">-</span><span class="n">1</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">beefyWorkstation</span>)
     <span class="k">let!</span> <span class="i">procB</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">CreateProcess</span>(<span class="i">seqMap</span> <span onmouseout="hideTip(event, 'fs99', 234)" onmouseover="showTip(event, 'fs99', 234)" class="i">inputs</span><span class="o">.</span>[<span class="i">C</span><span class="o">..</span>], <span class="i">target</span> <span class="o">=</span> <span class="i">weakLaptop</span>)
     <span class="k">do!</span> <span class="i">Cloud</span><span class="o">.</span><span class="i">WhenAll</span>(<span class="i">procA</span>, <span class="i">procB</span>)
     <span class="k">return</span> <span onmouseout="hideTip(event, 'fs22', 235)" onmouseover="showTip(event, 'fs22', 235)" class="i">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs101', 236)" onmouseover="showTip(event, 'fs101', 236)" class="i">append</span> <span class="i">procA</span><span class="o">.</span><span class="i">Result</span> <span class="i">procB</span><span class="o">.</span><span class="i">Result</span>
@@ -732,7 +730,7 @@ chart.draw(data, options);
 <ul>
 <li>Open sourced one year ago</li>
 <li>Has transformed to a different project</li>
-<li>No longer purely maintained by Nessos</li>
+<li>No longer exclusively maintained by Nessos</li>
 <li>Final steps towards 1.0 milestone</li>
 <li>Currently in beta</li>
 </ul>
@@ -749,7 +747,7 @@ chart.draw(data, options);
 
 <section >
 
-<h3>Project Sizes</h3>
+<h3>Project Size</h3>
 
 <script type="text/javascript">
 google.load("visualization", "1", {packages:["corechart"]})
