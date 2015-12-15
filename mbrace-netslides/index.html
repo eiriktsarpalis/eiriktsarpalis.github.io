@@ -347,7 +347,7 @@
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp">Enumerable.Range(1, 100)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp">Enumerable.Range(1, 10)
     .Select(i <span class="o">=</span><span class="o">&gt;</span> CloudBuilder.FromFunc(() <span class="o">=</span><span class="o">&gt;</span> 100 <span class="o">/</span> (5 <span class="o">-</span> i)))
     .Parallel()
     .OnSuccess(x <span class="o">=</span><span class="o">&gt;</span> x.Sum())
