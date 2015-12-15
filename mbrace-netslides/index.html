@@ -300,7 +300,7 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="csharp">CloudFile
     .Enumerate(<span class="s">"/container"</span>)
-    .OnSuccess(files <span class="o">=</span><span class="o">&gt;</span> files.Select(f <span class="o">=</span><span class="o">&gt;</span> CloudFile.GetSize(f.Path))
+    .OnSuccess(files <span class="o">=</span><span class="o">&gt;</span> files.Select(f <span class="o">=</span><span class="o">&gt;</span> CloudFile.GetSize(f.Path)))
     .Bind(cmp <span class="o">=</span><span class="o">&gt;</span> cmp.Parallel())
     .OnSuccess(sizes <span class="o">=</span><span class="o">&gt;</span> sizes.Sum());
 </code></pre></td></tr></table>
@@ -484,11 +484,11 @@
 <td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> path <span class="o">=</span> <span class="s">"http://dumps.wikimedia.org/other/static_html_dumps/current/en/html.lst"</span>;
 
 CloudFlow.OfHttpFileByLine(path)
-    .SelectMany(line <span class="o">=</span><span class="o">&gt;</span> line.Split(<span class="s">' '</span>)
+    .SelectMany(line <span class="o">=</span><span class="o">&gt;</span> line.Split(<span class="s">' '</span>))
     .Select(word <span class="o">=</span><span class="o">&gt;</span> word.Trim())
     .Where(word <span class="o">=</span><span class="o">&gt;</span> word.Length <span class="o">&gt;</span> 3)
     .CountBy(word <span class="o">=</span><span class="o">&gt;</span> word)
-    .OrderByDescending(count <span class="o">=</span><span class="o">&gt;</span> count.Key)
+    .OrderByDescending(count <span class="o">=</span><span class="o">&gt;</span> count.Value)
     .ToArray()
 </code></pre></td></tr></table>
 
