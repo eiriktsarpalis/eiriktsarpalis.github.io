@@ -215,7 +215,7 @@
 
 <section author="Eirik Tsarpalis" description="REPL driven scalable computation" theme="simple" title="MBrace: REPL driven scalable computation" transition="default">
 
-<h3>Profile</h3>
+<h3>The Project</h3>
 
 <ul>
 <li>Started by Nessos</li>
@@ -325,7 +325,7 @@
 <span class="l">5: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">cloud</span> {
-    <span class="k">let!</span> <span class="i">files</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs36', 179)" onmouseover="showTip(event, 'fs36', 179)" class="i">File</span><span class="o">.</span><span class="i">Enumerate</span> <span class="s">&quot;hdfs://host/container&quot;</span>
+    <span class="k">let!</span> <span class="i">files</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs36', 179)" onmouseover="showTip(event, 'fs36', 179)" class="i">File</span><span class="o">.</span><span class="i">Enumerate</span> <span class="s">&quot;hdfs://host:9000/dir&quot;</span>
     <span class="k">let!</span> <span class="i">sizes</span> <span class="o">=</span> <span class="i">Cloud</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs80', 180)" onmouseover="showTip(event, 'fs80', 180)" class="i">Parallel</span> [<span class="k">for</span> <span class="i">f</span> <span class="k">in</span> <span class="i">files</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs36', 181)" onmouseover="showTip(event, 'fs36', 181)" class="i">File</span><span class="o">.</span><span class="i">GetSize</span> <span class="i">f</span><span class="o">.</span><span class="i">Path</span>]
     <span class="k">return</span> <span onmouseout="hideTip(event, 'fs83', 182)" onmouseover="showTip(event, 'fs83', 182)" class="i">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs84', 183)" onmouseover="showTip(event, 'fs84', 183)" class="i">sum</span> <span class="i">sizes</span>
 }
@@ -449,6 +449,8 @@
 
 <section author="Eirik Tsarpalis" description="REPL driven scalable computation" theme="simple" title="MBrace: REPL driven scalable computation" transition="default">
 
+<h3>Word Count</h3>
+
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -473,6 +475,8 @@
 </section>
 
 <section author="Eirik Tsarpalis" description="REPL driven scalable computation" theme="simple" title="MBrace: REPL driven scalable computation" transition="default">
+
+<h3>C# Word Count</h3>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -499,7 +503,7 @@ CloudFlow.OfHttpFileByLine(path)
 
 <section author="Eirik Tsarpalis" description="REPL driven scalable computation" theme="simple" title="MBrace: REPL driven scalable computation" transition="default">
 
-<h3>Profile</h3>
+<h3>MBrace.Flow</h3>
 
 <ul>
 <li>Inspired by Java 8 Streams</li>
@@ -563,6 +567,18 @@ chart.draw(data, options);
 <li>Transparent dependency management</li>
 <li>REPL driven development</li>
 <li>Rapid prototyping of cloud applications</li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>Future</h3>
+
+<ul>
+<li>AWS clusters</li>
+<li>Cross Platform / CoreCLR</li>
+<li>New Libraries</li>
 </ul>
 
 </section>
