@@ -51,169 +51,51 @@
 <div class="tip" id="fs3">namespace System.Threading.Tasks</div>
 <div class="tip" id="fs4">namespace System.Net</div>
 <div class="tip" id="fs5">namespace MBrace</div>
-<div class="tip" id="fs6">namespace MBrace.Core</div>
-<div class="tip" id="fs7">namespace MBrace.Core.Internals</div>
-<div class="tip" id="fs8">module BuilderAsyncExtensions<br /><br />from MBrace.Core</div>
-<div class="tip" id="fs9">namespace MBrace.Thespian</div>
-<div class="tip" id="fs10">namespace MBrace.Flow</div>
-<div class="tip" id="fs11">namespace Microsoft</div>
-<div class="tip" id="fs12">namespace Microsoft.FSharp</div>
-<div class="tip" id="fs13">namespace Microsoft.FSharp.Control</div>
-<div class="tip" id="fs14">namespace Nessos</div>
-<div class="tip" id="fs15">namespace Nessos.FsPickler</div>
-<div class="tip" id="fs16">namespace Nessos.FsPickler.Json</div>
-<div class="tip" id="fs17">type FsPickler =<br />&#160;&#160;static member CreateBsonSerializer : ?typeConverter:ITypeNameConverter -&gt; BsonSerializer<br />&#160;&#160;static member CreateJsonSerializer : ?indent:bool * ?omitHeader:bool * ?typeConverter:ITypeNameConverter -&gt; JsonSerializer<br /><br />Full name: Nessos.FsPickler.Json.FsPickler</div>
-<div class="tip" id="fs18">static member FsPickler.PickleToJson : x:&#39;T -&gt; string<br /><br />Full name: Index2.PickleToJson</div>
-<div class="tip" id="fs19">val x : &#39;T</div>
-<div class="tip" id="fs20">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />Full name: Microsoft.FSharp.Core.Operators.string<br /><br />--------------------<br />type string = String<br /><br />Full name: Microsoft.FSharp.Core.string</div>
-<div class="tip" id="fs21">val failwith : message:string -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.failwith</div>
-<div class="tip" id="fs22">namespace XPlot</div>
-<div class="tip" id="fs23">module GoogleCharts<br /><br />from XPlot</div>
-<div class="tip" id="fs24">val workA : obj<br /><br />Full name: Index2.workA</div>
-<div class="tip" id="fs25">val workB : obj<br /><br />Full name: Index2.workB</div>
-<div class="tip" id="fs26">val uris : Uri list<br /><br />Full name: Index2.uris</div>
-<div class="tip" id="fs27">module Unchecked<br /><br />from Microsoft.FSharp.Core.Operators</div>
-<div class="tip" id="fs28">val defaultof&lt;&#39;T&gt; : &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.Unchecked.defaultof</div>
-<div class="tip" id="fs29">Multiple items<br />type Uri =<br />&#160;&#160;new : uriString:string -&gt; Uri + 5 overloads<br />&#160;&#160;member AbsolutePath : string<br />&#160;&#160;member AbsoluteUri : string<br />&#160;&#160;member Authority : string<br />&#160;&#160;member DnsSafeHost : string<br />&#160;&#160;member Equals : comparand:obj -&gt; bool<br />&#160;&#160;member Fragment : string<br />&#160;&#160;member GetComponents : components:UriComponents * format:UriFormat -&gt; string<br />&#160;&#160;member GetHashCode : unit -&gt; int<br />&#160;&#160;member GetLeftPart : part:UriPartial -&gt; string<br />&#160;&#160;...<br /><br />Full name: System.Uri<br /><br />--------------------<br />Uri(uriString: string) : unit<br />Uri(uriString: string, uriKind: UriKind) : unit<br />Uri(baseUri: Uri, relativeUri: string) : unit<br />Uri(baseUri: Uri, relativeUri: Uri) : unit</div>
-<div class="tip" id="fs30">type &#39;T list = List&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Collections.list&lt;_&gt;</div>
-<div class="tip" id="fs31">val ( ??? )&lt;&#39;T&gt; : &#39;T<br /><br />Full name: Index2.( ??? )</div>
-<div class="tip" id="fs32">val cluster : MBrace.Runtime.MBraceClient<br /><br />Full name: Index2.cluster</div>
-<div class="tip" id="fs33">namespace MBrace.Runtime</div>
-<div class="tip" id="fs34">Multiple items<br />type MBraceClient =<br />&#160;&#160;new : runtime:IRuntimeManager * defaultFaultPolicy:FaultPolicy -&gt; MBraceClient<br />&#160;&#160;member AttachLogger : logger:ISystemLogger -&gt; IDisposable<br />&#160;&#160;member ClearAllProcesses : unit -&gt; unit<br />&#160;&#160;member ClearProcess : cloudProcess:CloudProcess&lt;&#39;T&gt; -&gt; unit<br />&#160;&#160;member ClearSystemLogs : unit -&gt; unit<br />&#160;&#160;member ClearSystemLogsAsync : unit -&gt; Async&lt;unit&gt;<br />&#160;&#160;member CreateCancellationTokenSource : ?parents:seq&lt;ICloudCancellationToken&gt; -&gt; ICloudCancellationTokenSource<br />&#160;&#160;member CreateProcess : workflow:Cloud&lt;&#39;T&gt; * ?cancellationToken:ICloudCancellationToken * ?faultPolicy:FaultPolicy * ?target:IWorkerRef * ?additionalResources:ResourceRegistry * ?taskName:string -&gt; CloudProcess&lt;&#39;T&gt;<br />&#160;&#160;member CreateProcessAsync : workflow:Cloud&lt;&#39;T&gt; * ?cancellationToken:ICloudCancellationToken * ?faultPolicy:FaultPolicy * ?target:IWorkerRef * ?additionalResources:ResourceRegistry * ?taskName:string -&gt; Async&lt;CloudProcess&lt;&#39;T&gt;&gt;<br />&#160;&#160;member FormatProcesses : unit -&gt; string<br />&#160;&#160;...<br /><br />Full name: MBrace.Runtime.MBraceClient<br /><br />--------------------<br />new : runtime:MBrace.Runtime.IRuntimeManager * defaultFaultPolicy:MBrace.Core.FaultPolicy -&gt; MBrace.Runtime.MBraceClient</div>
-<div class="tip" id="fs35">type ThreadPool =<br />&#160;&#160;static member BindHandle : osHandle:nativeint -&gt; bool + 1 overload<br />&#160;&#160;static member GetAvailableThreads : workerThreads:int * completionPortThreads:int -&gt; unit<br />&#160;&#160;static member GetMaxThreads : workerThreads:int * completionPortThreads:int -&gt; unit<br />&#160;&#160;static member GetMinThreads : workerThreads:int * completionPortThreads:int -&gt; unit<br />&#160;&#160;static member QueueUserWorkItem : callBack:WaitCallback -&gt; bool + 1 overload<br />&#160;&#160;static member RegisterWaitForSingleObject : waitObject:WaitHandle * callBack:WaitOrTimerCallback * state:obj * millisecondsTimeOutInterval:uint32 * executeOnlyOnce:bool -&gt; RegisteredWaitHandle + 3 overloads<br />&#160;&#160;static member SetMaxThreads : workerThreads:int * completionPortThreads:int -&gt; bool<br />&#160;&#160;static member SetMinThreads : workerThreads:int * completionPortThreads:int -&gt; bool<br />&#160;&#160;static member UnsafeQueueNativeOverlapped : overlapped:NativeOverlapped -&gt; bool<br />&#160;&#160;static member UnsafeQueueUserWorkItem : callBack:WaitCallback * state:obj -&gt; bool<br />&#160;&#160;...<br /><br />Full name: System.Threading.ThreadPool</div>
-<div class="tip" id="fs36">static member ThreadPool.QueueUserWorkItem : f:(unit -&gt; unit) -&gt; unit<br /><br />Full name: Index2.QueueUserWorkItem</div>
-<div class="tip" id="fs37">val f : (unit -&gt; unit)</div>
-<div class="tip" id="fs38">type unit = Unit<br /><br />Full name: Microsoft.FSharp.Core.unit</div>
-<div class="tip" id="fs39">static member ThreadPool.QueueUserWorkItem : f:(unit -&gt; unit) -&gt; unit<br />ThreadPool.QueueUserWorkItem(callBack: WaitCallback) : bool<br />ThreadPool.QueueUserWorkItem(callBack: WaitCallback, state: obj) : bool</div>
-<div class="tip" id="fs40">type WaitCallback =<br />&#160;&#160;delegate of obj -&gt; unit<br /><br />Full name: System.Threading.WaitCallback</div>
-<div class="tip" id="fs41">val ignore : value:&#39;T -&gt; unit<br /><br />Full name: Microsoft.FSharp.Core.Operators.ignore</div>
-<div class="tip" id="fs42">val dataSizes : int list<br /><br />Full name: Index2.Wordcount.dataSizes</div>
-<div class="tip" id="fs43">val clusterSizes : int list<br /><br />Full name: Index2.Wordcount.clusterSizes</div>
-<div class="tip" id="fs44">val downloadTimes : float list<br /><br />Full name: Index2.Wordcount.downloadTimes</div>
-<div class="tip" id="fs45">val wordCountTimes : float list<br /><br />Full name: Index2.Wordcount.wordCountTimes</div>
-<div class="tip" id="fs46">val labels : string list<br /><br />Full name: Index2.Wordcount.labels</div>
-<div class="tip" id="fs47">Multiple items<br />module List<br /><br />from Microsoft.FSharp.Collections<br /><br />--------------------<br />type List&lt;&#39;T&gt; =<br />&#160;&#160;| ( [] )<br />&#160;&#160;| ( :: ) of Head: &#39;T * Tail: &#39;T list<br />&#160;&#160;interface IEnumerable<br />&#160;&#160;interface IEnumerable&lt;&#39;T&gt;<br />&#160;&#160;member GetSlice : startIndex:int option * endIndex:int option -&gt; &#39;T list<br />&#160;&#160;member Head : &#39;T<br />&#160;&#160;member IsEmpty : bool<br />&#160;&#160;member Item : index:int -&gt; &#39;T with get<br />&#160;&#160;member Length : int<br />&#160;&#160;member Tail : &#39;T list<br />&#160;&#160;static member Cons : head:&#39;T * tail:&#39;T list -&gt; &#39;T list<br />&#160;&#160;static member Empty : &#39;T list<br /><br />Full name: Microsoft.FSharp.Collections.List&lt;_&gt;</div>
-<div class="tip" id="fs48">val zip : list1:&#39;T1 list -&gt; list2:&#39;T2 list -&gt; (&#39;T1 * &#39;T2) list<br /><br />Full name: Microsoft.FSharp.Collections.List.zip</div>
-<div class="tip" id="fs49">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; list:&#39;T list -&gt; &#39;U list<br /><br />Full name: Microsoft.FSharp.Collections.List.map</div>
-<div class="tip" id="fs50">val c : int</div>
-<div class="tip" id="fs51">val d : int</div>
-<div class="tip" id="fs52">val sprintf : format:Printf.StringFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.sprintf</div>
-<div class="tip" id="fs53">val downloadData : (string * float) list<br /><br />Full name: Index2.Wordcount.downloadData</div>
-<div class="tip" id="fs54">val wordCountData : (string * float) list<br /><br />Full name: Index2.Wordcount.wordCountData</div>
-<div class="tip" id="fs55">val chart : GoogleChart<br /><br />Full name: Index2.Wordcount.chart</div>
-<div class="tip" id="fs56">type Chart =<br />&#160;&#160;static member Annotation : data:seq&lt;#seq&lt;DateTime * &#39;V * string * string&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;V :&gt; value)<br />&#160;&#160;static member Annotation : data:seq&lt;DateTime * #value * string * string&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Area : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />&#160;&#160;static member Area : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Bar : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />&#160;&#160;static member Bar : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Bubble : data:seq&lt;string * #value * #value * #value * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Bubble : data:seq&lt;string * #value * #value * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Bubble : data:seq&lt;string * #value * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;static member Calendar : data:seq&lt;DateTime * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart<br />&#160;&#160;...<br /><br />Full name: XPlot.GoogleCharts.Chart</div>
-<div class="tip" id="fs57">static member Chart.Column : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />static member Chart.Column : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart</div>
-<div class="tip" id="fs58">static member Chart.WithXTitle : xTitle:string -&gt; chart:GoogleChart -&gt; GoogleChart</div>
-<div class="tip" id="fs59">static member Chart.WithYTitle : yTitle:string -&gt; chart:GoogleChart -&gt; GoogleChart</div>
-<div class="tip" id="fs60">static member Chart.WithSize : size:(int * int) -&gt; chart:GoogleChart -&gt; GoogleChart</div>
-<div class="tip" id="fs61">static member Chart.Show : chart:GoogleChart -&gt; GoogleChart</div>
-<div class="tip" id="fs62">val clusterSizes : int list<br /><br />Full name: Index2.KNN.clusterSizes</div>
-<div class="tip" id="fs63">val times : float list<br /><br />Full name: Index2.KNN.times</div>
-<div class="tip" id="fs64">val localLabel : string<br /><br />Full name: Index2.KNN.localLabel</div>
-<div class="tip" id="fs65">val localTime : float<br /><br />Full name: Index2.KNN.localTime</div>
-<div class="tip" id="fs66">val data : (string * float) list<br /><br />Full name: Index2.KNN.data</div>
-<div class="tip" id="fs67">val sz : int</div>
-<div class="tip" id="fs68">val t : float</div>
-<div class="tip" id="fs69">val chart : GoogleChart<br /><br />Full name: Index2.KNN.chart</div>
-<div class="tip" id="fs70">property GoogleChart.Html: string</div>
-<div class="tip" id="fs71">val clusterSizes : int list<br /><br />Full name: Index2.Propan.clusterSizes</div>
-<div class="tip" id="fs72">val times : float list<br /><br />Full name: Index2.Propan.times</div>
-<div class="tip" id="fs73">val localLabel : string<br /><br />Full name: Index2.Propan.localLabel</div>
-<div class="tip" id="fs74">val localTime : float<br /><br />Full name: Index2.Propan.localTime</div>
-<div class="tip" id="fs75">val data : (string * float) list<br /><br />Full name: Index2.Propan.data</div>
-<div class="tip" id="fs76">val chart : GoogleChart<br /><br />Full name: Index2.Propan.chart</div>
-<div class="tip" id="fs77">val locData : (string * float) list<br /><br />Full name: Index2.Code.locData</div>
-<div class="tip" id="fs78">val chart : GoogleChart<br /><br />Full name: Index2.Code.chart</div>
-<div class="tip" id="fs79">static member Chart.Bar : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />static member Chart.Bar : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart</div>
-<div class="tip" id="fs80">Multiple items<br />type ReflectedDefinitionAttribute =<br />&#160;&#160;inherit Attribute<br />&#160;&#160;new : unit -&gt; ReflectedDefinitionAttribute<br />&#160;&#160;new : includeValue:bool -&gt; ReflectedDefinitionAttribute<br />&#160;&#160;member IncludeValue : bool<br /><br />Full name: Microsoft.FSharp.Core.ReflectedDefinitionAttribute<br /><br />--------------------<br />new : unit -&gt; ReflectedDefinitionAttribute<br />new : includeValue:bool -&gt; ReflectedDefinitionAttribute</div>
-<div class="tip" id="fs81">val add : x:&#39;a -&gt; y:&#39;b -&gt; &#39;c<br /><br />Full name: Index2.add</div>
-<div class="tip" id="fs82">val x : &#39;a</div>
-<div class="tip" id="fs83">val y : &#39;b</div>
-<div class="tip" id="fs84">member MBrace.Runtime.MBraceClient.Run : workflow:MBrace.Core.Cloud&lt;&#39;T&gt; * ?cancellationToken:MBrace.Core.ICloudCancellationToken * ?faultPolicy:MBrace.Core.FaultPolicy * ?target:MBrace.Core.IWorkerRef * ?additionalResources:ResourceRegistry * ?taskName:string -&gt; &#39;T</div>
-<div class="tip" id="fs85">type IContext =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Resolve : unit -&gt; &#39;TResource<br />&#160;&#160;end<br /><br />Full name: Index2.IContext</div>
-<div class="tip" id="fs86">abstract member IContext.Resolve : unit -&gt; &#39;TResource<br /><br />Full name: Index2.IContext.Resolve</div>
-<div class="tip" id="fs87">Multiple items<br />type Cloud =<br />&#160;&#160;private new : unit -&gt; Cloud<br />&#160;&#160;static member FromContinuations : body:(ExecutionContext -&gt; Continuation&lt;&#39;T&gt; -&gt; unit) -&gt; Cloud&lt;&#39;T&gt;<br />&#160;&#160;static member GetExecutionContext : unit -&gt; LocalCloud&lt;ExecutionContext&gt;<br />&#160;&#160;static member GetResource : unit -&gt; LocalCloud&lt;&#39;TResource&gt;<br />&#160;&#160;static member GetResourceRegistry : unit -&gt; LocalCloud&lt;ResourceRegistry&gt;<br />&#160;&#160;static member RunSynchronously : workflow:Cloud&lt;&#39;T&gt; * ?resources:ResourceRegistry * ?cancellationToken:ICloudCancellationToken -&gt; &#39;T<br />&#160;&#160;static member Start : workflow:Cloud&lt;unit&gt; * ?resources:ResourceRegistry * ?cancellationToken:ICloudCancellationToken -&gt; unit<br />&#160;&#160;static member StartAsTask : workflow:Cloud&lt;&#39;T&gt; * ?resources:ResourceRegistry * ?cancellationToken:ICloudCancellationToken * ?taskCreationOptions:TaskCreationOptions -&gt; Task&lt;&#39;T&gt;<br />&#160;&#160;static member StartImmediate : workflow:Cloud&lt;unit&gt; * ?resources:ResourceRegistry * ?cancellationToken:ICloudCancellationToken -&gt; unit<br />&#160;&#160;static member StartImmediateWithContinuations : workflow:Cloud&lt;&#39;T&gt; * continuation:Continuation&lt;&#39;T&gt; * context:ExecutionContext -&gt; unit<br />&#160;&#160;...<br /><br />Full name: MBrace.Core.Internals.Cloud<br /><br />--------------------<br />type Cloud&lt;&#39;T&gt; = IContext -&gt; (IContext -&gt; &#39;T -&gt; unit) -&gt; unit<br /><br />Full name: Index2.Cloud&lt;_&gt;</div>
-<div class="tip" id="fs88">type IScheduler =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Enqueue : (IContext -&gt; unit) -&gt; unit<br />&#160;&#160;end<br /><br />Full name: Index2.IScheduler</div>
-<div class="tip" id="fs89">abstract member IScheduler.Enqueue : (IContext -&gt; unit) -&gt; unit<br /><br />Full name: Index2.IScheduler.Enqueue</div>
-<div class="tip" id="fs90">Multiple items<br />type Cloud =<br />&#160;&#160;static member GetResource : unit -&gt; Cloud&lt;&#39;TResource&gt;<br />&#160;&#160;static member Parallel : children:Cloud&lt;&#39;T&gt; [] -&gt; Cloud&lt;&#39;T []&gt;<br /><br />Full name: Index2.Cloud<br /><br />--------------------<br />type Cloud&lt;&#39;T&gt; = IContext -&gt; (IContext -&gt; &#39;T -&gt; unit) -&gt; unit<br /><br />Full name: Index2.Cloud&lt;_&gt;</div>
-<div class="tip" id="fs91">Multiple items<br />static member Cloud.Parallel : children:Cloud&lt;&#39;T&gt; [] -&gt; Cloud&lt;&#39;T []&gt;<br /><br />Full name: Index2.Cloud.Parallel<br /><br />--------------------<br />type Parallel =<br />&#160;&#160;static member For : fromInclusive:int * toExclusive:int * body:Action&lt;int&gt; -&gt; ParallelLoopResult + 11 overloads<br />&#160;&#160;static member ForEach&lt;&#39;TSource&gt; : source:IEnumerable&lt;&#39;TSource&gt; * body:Action&lt;&#39;TSource&gt; -&gt; ParallelLoopResult + 19 overloads<br />&#160;&#160;static member Invoke : [&lt;ParamArray&gt;] actions:Action[] -&gt; unit + 1 overload<br /><br />Full name: System.Threading.Tasks.Parallel</div>
-<div class="tip" id="fs92">val children : Cloud&lt;&#39;T&gt; []</div>
-<div class="tip" id="fs93">val ctx : IContext</div>
-<div class="tip" id="fs94">val k : (IContext -&gt; &#39;T [] -&gt; unit)</div>
-<div class="tip" id="fs95">val sched : IScheduler</div>
-<div class="tip" id="fs96">abstract member IContext.Resolve : unit -&gt; &#39;TResource</div>
-<div class="tip" id="fs97">val n : int ref</div>
-<div class="tip" id="fs98">val ts : &#39;T []</div>
-<div class="tip" id="fs99">Multiple items<br />val ref : value:&#39;T -&gt; &#39;T ref<br /><br />Full name: Microsoft.FSharp.Core.Operators.ref<br /><br />--------------------<br />type &#39;T ref = Ref&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Core.ref&lt;_&gt;</div>
-<div class="tip" id="fs100">type Array =<br />&#160;&#160;member Clone : unit -&gt; obj<br />&#160;&#160;member CopyTo : array:Array * index:int -&gt; unit + 1 overload<br />&#160;&#160;member GetEnumerator : unit -&gt; IEnumerator<br />&#160;&#160;member GetLength : dimension:int -&gt; int<br />&#160;&#160;member GetLongLength : dimension:int -&gt; int64<br />&#160;&#160;member GetLowerBound : dimension:int -&gt; int<br />&#160;&#160;member GetUpperBound : dimension:int -&gt; int<br />&#160;&#160;member GetValue : [&lt;ParamArray&gt;] indices:int[] -&gt; obj + 7 overloads<br />&#160;&#160;member Initialize : unit -&gt; unit<br />&#160;&#160;member IsFixedSize : bool<br />&#160;&#160;...<br /><br />Full name: System.Array</div>
-<div class="tip" id="fs101">val zeroCreate : count:int -&gt; &#39;T []<br /><br />Full name: Microsoft.FSharp.Collections.Array.zeroCreate</div>
-<div class="tip" id="fs102">property Array.Length: int</div>
-<div class="tip" id="fs103">val runChild : (int -&gt; (IContext -&gt; (&#39;a -&gt; &#39;T -&gt; unit) -&gt; unit) -&gt; unit)</div>
-<div class="tip" id="fs104">val i : int</div>
-<div class="tip" id="fs105">val ch : (IContext -&gt; (&#39;a -&gt; &#39;T -&gt; unit) -&gt; unit)</div>
-<div class="tip" id="fs106">abstract member IScheduler.Enqueue : (IContext -&gt; unit) -&gt; unit</div>
-<div class="tip" id="fs107">val t : &#39;T</div>
-<div class="tip" id="fs108">type Interlocked =<br />&#160;&#160;static member Add : location1:int * value:int -&gt; int + 1 overload<br />&#160;&#160;static member CompareExchange : location1:int * value:int * comparand:int -&gt; int + 6 overloads<br />&#160;&#160;static member Decrement : location:int -&gt; int + 1 overload<br />&#160;&#160;static member Exchange : location1:int * value:int -&gt; int + 6 overloads<br />&#160;&#160;static member Increment : location:int -&gt; int + 1 overload<br />&#160;&#160;static member Read : location:int64 -&gt; int64<br /><br />Full name: System.Threading.Interlocked</div>
-<div class="tip" id="fs109">Interlocked.Increment(location: byref&lt;int64&gt;) : int64<br />Interlocked.Increment(location: byref&lt;int&gt;) : int</div>
-<div class="tip" id="fs110">val iteri : action:(int -&gt; &#39;T -&gt; unit) -&gt; array:&#39;T [] -&gt; unit<br /><br />Full name: Microsoft.FSharp.Collections.Array.iteri</div>
-<div class="tip" id="fs111">type IFileSystem =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member FileExists : path:string -&gt; bool<br />&#160;&#160;end<br /><br />Full name: Index2.IFileSystem</div>
-<div class="tip" id="fs112">abstract member IFileSystem.FileExists : path:string -&gt; bool<br /><br />Full name: Index2.IFileSystem.FileExists</div>
-<div class="tip" id="fs113">type bool = Boolean<br /><br />Full name: Microsoft.FSharp.Core.bool</div>
-<div class="tip" id="fs114">type CloudFile =<br />&#160;&#160;static member Exists : path:string -&gt; Cloud&lt;bool&gt;<br /><br />Full name: Index2.CloudFile</div>
-<div class="tip" id="fs115">static member CloudFile.Exists : path:string -&gt; Cloud&lt;bool&gt;<br /><br />Full name: Index2.CloudFile.Exists</div>
-<div class="tip" id="fs116">val path : string</div>
-<div class="tip" id="fs117">val k : (IContext -&gt; bool -&gt; unit)</div>
-<div class="tip" id="fs118">val fileSystem : IFileSystem</div>
-<div class="tip" id="fs119">abstract member IFileSystem.FileExists : path:string -&gt; bool</div>
-<div class="tip" id="fs120">static member Cloud.GetResource : unit -&gt; Cloud&lt;&#39;TResource&gt;<br /><br />Full name: Index2.Cloud.GetResource</div>
-<div class="tip" id="fs121">val k : (IContext -&gt; &#39;TResource -&gt; unit)</div>
-<div class="tip" id="fs122">type IScheduler =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Enqueue : (&#39;a0 -&gt; unit) -&gt; unit<br />&#160;&#160;end<br /><br />Full name: index.IScheduler</div>
-<div class="tip" id="fs123">abstract member IScheduler.Enqueue : (&#39;a0 -&gt; unit) -&gt; unit<br /><br />Full name: index.IScheduler.Enqueue</div>
-<div class="tip" id="fs124">Multiple items<br />type ThreadPoolContext =<br />&#160;&#160;interface IContext<br />&#160;&#160;new : unit -&gt; ThreadPoolContext<br /><br />Full name: Index2.ThreadPoolContext<br /><br />--------------------<br />new : unit -&gt; ThreadPoolContext</div>
-<div class="tip" id="fs125">override ThreadPoolContext.Resolve : unit -&gt; &#39;T<br /><br />Full name: Index2.ThreadPoolContext.Resolve</div>
-<div class="tip" id="fs126">Multiple items<br />type ThreadPoolScheduler =<br />&#160;&#160;interface IScheduler<br />&#160;&#160;new : unit -&gt; ThreadPoolScheduler<br /><br />Full name: Index2.ThreadPoolScheduler<br /><br />--------------------<br />new : unit -&gt; ThreadPoolScheduler</div>
-<div class="tip" id="fs127">val unbox : value:obj -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.unbox</div>
-<div class="tip" id="fs128">override ThreadPoolScheduler.Enqueue : job:(IContext -&gt; unit) -&gt; unit<br /><br />Full name: Index2.ThreadPoolScheduler.Enqueue</div>
-<div class="tip" id="fs129">val job : (IContext -&gt; unit)</div>
-<div class="tip" id="fs130">type ThreadPool =<br />&#160;&#160;static member Run : workflow:Cloud&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Index2.ThreadPool</div>
-<div class="tip" id="fs131">static member ThreadPool.Run : workflow:Cloud&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Index2.ThreadPool.Run</div>
-<div class="tip" id="fs132">val workflow : Cloud&lt;&#39;T&gt;</div>
-<div class="tip" id="fs133">val tcs : TaskCompletionSource&lt;&#39;T&gt;</div>
-<div class="tip" id="fs134">Multiple items<br />type TaskCompletionSource&lt;&#39;TResult&gt; =<br />&#160;&#160;new : unit -&gt; TaskCompletionSource&lt;&#39;TResult&gt; + 3 overloads<br />&#160;&#160;member SetCanceled : unit -&gt; unit<br />&#160;&#160;member SetException : exception:Exception -&gt; unit + 1 overload<br />&#160;&#160;member SetResult : result:&#39;TResult -&gt; unit<br />&#160;&#160;member Task : Task&lt;&#39;TResult&gt;<br />&#160;&#160;member TrySetCanceled : unit -&gt; bool<br />&#160;&#160;member TrySetException : exception:Exception -&gt; bool + 1 overload<br />&#160;&#160;member TrySetResult : result:&#39;TResult -&gt; bool<br /><br />Full name: System.Threading.Tasks.TaskCompletionSource&lt;_&gt;<br /><br />--------------------<br />TaskCompletionSource() : unit<br />TaskCompletionSource(creationOptions: TaskCreationOptions) : unit<br />TaskCompletionSource(state: obj) : unit<br />TaskCompletionSource(state: obj, creationOptions: TaskCreationOptions) : unit</div>
-<div class="tip" id="fs135">TaskCompletionSource.SetResult(result: &#39;T) : unit</div>
-<div class="tip" id="fs136">property TaskCompletionSource.Task: Task&lt;&#39;T&gt;</div>
-<div class="tip" id="fs137">property Task.Result: &#39;T</div>
-<div class="tip" id="fs138">Multiple items<br />type AzureScheduler =<br />&#160;&#160;interface IScheduler<br />&#160;&#160;new : unit -&gt; AzureScheduler<br /><br />Full name: Index2.AzureScheduler<br /><br />--------------------<br />new : unit -&gt; AzureScheduler</div>
-<div class="tip" id="fs139">override AzureScheduler.Enqueue : job:(IContext -&gt; unit) -&gt; unit<br /><br />Full name: Index2.AzureScheduler.Enqueue</div>
-<div class="tip" id="fs140">val mkFunc : unit -&gt; (int -&gt; int)<br /><br />Full name: Index2.mkFunc</div>
-<div class="tip" id="fs141">val rand : int</div>
-<div class="tip" id="fs142">Multiple items<br />type Random =<br />&#160;&#160;new : unit -&gt; Random + 1 overload<br />&#160;&#160;member Next : unit -&gt; int + 2 overloads<br />&#160;&#160;member NextBytes : buffer:byte[] -&gt; unit<br />&#160;&#160;member NextDouble : unit -&gt; float<br /><br />Full name: System.Random<br /><br />--------------------<br />Random() : unit<br />Random(Seed: int) : unit</div>
-<div class="tip" id="fs143">val x : int</div>
-<div class="tip" id="fs144">static member FsPickler.PickleToJson : x:&#39;T -&gt; string</div>
-<div class="tip" id="fs145">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
-<div class="tip" id="fs146">Multiple items<br />type CloudBuilder =<br />&#160;&#160;new : unit -&gt; CloudBuilder<br />&#160;&#160;member Bind : f:Cloud&lt;&#39;T&gt; * g:(&#39;T -&gt; Cloud&lt;&#39;S&gt;) -&gt; Cloud&lt;&#39;S&gt;<br />&#160;&#160;member Return : x:&#39;T -&gt; Cloud&lt;&#39;T&gt;<br />&#160;&#160;member ReturnFrom : f:Cloud&lt;&#39;T&gt; -&gt; (IContext -&gt; (IContext -&gt; &#39;T -&gt; unit) -&gt; unit)<br /><br />Full name: Index2.CloudBuilder<br /><br />--------------------<br />new : unit -&gt; CloudBuilder</div>
-<div class="tip" id="fs147">member CloudBuilder.Return : x:&#39;T -&gt; Cloud&lt;&#39;T&gt;<br /><br />Full name: Index2.CloudBuilder.Return</div>
-<div class="tip" id="fs148">val __ : CloudBuilder</div>
-<div class="tip" id="fs149">member CloudBuilder.Bind : f:Cloud&lt;&#39;T&gt; * g:(&#39;T -&gt; Cloud&lt;&#39;S&gt;) -&gt; Cloud&lt;&#39;S&gt;<br /><br />Full name: Index2.CloudBuilder.Bind</div>
-<div class="tip" id="fs150">val f : Cloud&lt;&#39;T&gt;</div>
-<div class="tip" id="fs151">val g : (&#39;T -&gt; Cloud&lt;&#39;S&gt;)</div>
-<div class="tip" id="fs152">member CloudBuilder.ReturnFrom : f:Cloud&lt;&#39;T&gt; -&gt; (IContext -&gt; (IContext -&gt; &#39;T -&gt; unit) -&gt; unit)<br /><br />Full name: Index2.CloudBuilder.ReturnFrom</div>
-<div class="tip" id="fs153">val cloud : CloudBuilder<br /><br />Full name: Index2.cloud</div>
-<div class="tip" id="fs154">member MBrace.Runtime.MBraceClient.Run : t:Cloud&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Index2.Run</div>
-<div class="tip" id="fs155">val t : Cloud&lt;&#39;T&gt;</div>
-<div class="tip" id="fs156">val pickleCC : unit -&gt; ctx:IContext -&gt; cont:(IContext -&gt; string -&gt; unit) -&gt; unit<br /><br />Full name: Index2.pickleCC</div>
-<div class="tip" id="fs157">val cont : (IContext -&gt; string -&gt; unit)</div>
-<div class="tip" id="fs158">val serializer : JsonSerializer</div>
-<div class="tip" id="fs159">static member FsPickler.CreateJsonSerializer : ?indent:bool * ?omitHeader:bool * ?typeConverter:ITypeNameConverter -&gt; JsonSerializer</div>
-<div class="tip" id="fs160">val pickle : string</div>
-<div class="tip" id="fs161">member FsPicklerTextSerializer.PickleToString : value:&#39;T * ?pickler:Pickler&lt;&#39;T&gt; * ?streamingContext:Runtime.Serialization.StreamingContext -&gt; string</div>
-<div class="tip" id="fs162">val dive : n:int -&gt; Cloud&lt;string&gt;<br /><br />Full name: Index2.dive</div>
-<div class="tip" id="fs163">val n : int</div>
-<div class="tip" id="fs164">val c : string</div>
-<div class="tip" id="fs165">member MBrace.Runtime.MBraceClient.Run : t:Cloud&lt;&#39;T&gt; -&gt; &#39;T<br />member MBrace.Runtime.MBraceClient.Run : workflow:MBrace.Core.Cloud&lt;&#39;T&gt; * ?cancellationToken:MBrace.Core.ICloudCancellationToken * ?faultPolicy:MBrace.Core.FaultPolicy * ?target:MBrace.Core.IWorkerRef * ?additionalResources:ResourceRegistry * ?taskName:string -&gt; &#39;T</div>
-<div class="tip" id="fs166">type obj = Object<br /><br />Full name: Microsoft.FSharp.Core.obj</div>
-<div class="tip" id="fs167">namespace System.Reflection</div>
-<div class="tip" id="fs168">type Assembly =<br />&#160;&#160;member CodeBase : string<br />&#160;&#160;member CreateInstance : typeName:string -&gt; obj + 2 overloads<br />&#160;&#160;member EntryPoint : MethodInfo<br />&#160;&#160;member Equals : o:obj -&gt; bool<br />&#160;&#160;member EscapedCodeBase : string<br />&#160;&#160;member Evidence : Evidence<br />&#160;&#160;member FullName : string<br />&#160;&#160;member GetCustomAttributes : inherit:bool -&gt; obj[] + 1 overload<br />&#160;&#160;member GetCustomAttributesData : unit -&gt; IList&lt;CustomAttributeData&gt;<br />&#160;&#160;member GetExportedTypes : unit -&gt; Type[]<br />&#160;&#160;...<br /><br />Full name: System.Reflection.Assembly</div>
+<div class="tip" id="fs6">namespace Microsoft.FSharp.Core</div>
+<div class="tip" id="fs7">namespace MBrace.Flow</div>
+<div class="tip" id="fs8"></div>
+<div class="tip" id="fs9">namespace Microsoft.FSharp</div>
+<div class="tip" id="fs10">namespace Microsoft.FSharp.Control</div>
+<div class="tip" id="fs11">module GoogleCharts<br /><br />from XPlot</div>
+<div class="tip" id="fs12">val defaultof&lt;&#39;T&gt; : &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.Unchecked.defaultof</div>
+<div class="tip" id="fs13">val f : (unit -&gt; unit)</div>
+<div class="tip" id="fs14">static member ThreadPool.QueueUserWorkItem : f:(unit -&gt; unit) -&gt; unit<br />ThreadPool.QueueUserWorkItem(callBack: WaitCallback) : bool<br />ThreadPool.QueueUserWorkItem(callBack: WaitCallback, state: obj) : bool</div>
+<div class="tip" id="fs15">val zip : list1:&#39;T1 list -&gt; list2:&#39;T2 list -&gt; (&#39;T1 * &#39;T2) list<br /><br />Full name: Microsoft.FSharp.Collections.List.zip</div>
+<div class="tip" id="fs16">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; list:&#39;T list -&gt; &#39;U list<br /><br />Full name: Microsoft.FSharp.Collections.List.map</div>
+<div class="tip" id="fs17">val c : int</div>
+<div class="tip" id="fs18">val d : int</div>
+<div class="tip" id="fs19">static member Chart.Column : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />static member Chart.Column : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart</div>
+<div class="tip" id="fs20">static member Chart.WithXTitle : xTitle:string -&gt; chart:GoogleChart -&gt; GoogleChart</div>
+<div class="tip" id="fs21">static member Chart.WithYTitle : yTitle:string -&gt; chart:GoogleChart -&gt; GoogleChart</div>
+<div class="tip" id="fs22">static member Chart.WithSize : size:(int * int) -&gt; chart:GoogleChart -&gt; GoogleChart</div>
+<div class="tip" id="fs23">static member Chart.Show : chart:GoogleChart -&gt; GoogleChart</div>
+<div class="tip" id="fs24">val t : float</div>
+<div class="tip" id="fs25">property GoogleChart.Html: string</div>
+<div class="tip" id="fs26">static member Chart.Bar : data:seq&lt;#seq&lt;&#39;K * &#39;V&gt;&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart (requires &#39;K :&gt; key and &#39;V :&gt; value)<br />static member Chart.Bar : data:seq&lt;#key * #value&gt; * ?Labels:seq&lt;string&gt; * ?Options:Options -&gt; GoogleChart</div>
+<div class="tip" id="fs27">static member Async.RunSynchronously : computation:Async&lt;&#39;T&gt; * ?timeout:int * ?cancellationToken:CancellationToken -&gt; &#39;T</div>
+<div class="tip" id="fs28">static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;</div>
+<div class="tip" id="fs29">val t : &#39;T</div>
+<div class="tip" id="fs30">val k : (&#39;T -&gt; unit)</div>
+<div class="tip" id="fs31">val f : Async&lt;&#39;T&gt;</div>
+<div class="tip" id="fs32">val g : (&#39;T -&gt; Async&lt;&#39;S&gt;)</div>
+<div class="tip" id="fs33">val c : CancellationToken</div>
+<div class="tip" id="fs34">val k : (&#39;S -&gt; unit)</div>
+<div class="tip" id="fs35">property CancellationToken.IsCancellationRequested: bool</div>
+<div class="tip" id="fs36">val w : Async&lt;&#39;T&gt;</div>
+<div class="tip" id="fs37">TaskCompletionSource.SetResult(result: &#39;T) : unit</div>
+<div class="tip" id="fs38">property TaskCompletionSource.Task: Task&lt;&#39;T&gt;</div>
+<div class="tip" id="fs39">property Task.Result: &#39;T</div>
+<div class="tip" id="fs40">val k : (&#39;T [] -&gt; unit)</div>
+<div class="tip" id="fs41">val n : int ref</div>
+<div class="tip" id="fs42">val zeroCreate : count:int -&gt; &#39;T []<br /><br />Full name: Microsoft.FSharp.Collections.Array.zeroCreate</div>
+<div class="tip" id="fs43">property Array.Length: int</div>
+<div class="tip" id="fs44">val i : int</div>
+<div class="tip" id="fs45">Interlocked.Increment(location: byref&lt;int64&gt;) : int64<br />Interlocked.Increment(location: byref&lt;int&gt;) : int</div>
+<div class="tip" id="fs46">abstract member IScheduler.Enqueue : (unit -&gt; unit) -&gt; unit</div>
+<div class="tip" id="fs47">Multiple items<br />static member Async.Parallel : xs:Async&lt;&#39;T&gt; [] -&gt; Async&lt;&#39;T []&gt;<br />static member Async.Parallel : xs:Async2&lt;&#39;T&gt; [] -&gt; Async2&lt;&#39;T []&gt;<br />static member Async.Parallel : xs:Async&lt;&#39;T&gt; [] * scheduler:IScheduler -&gt; (CancellationToken -&gt; (&#39;T [] -&gt; unit) -&gt; unit)<br /><br />--------------------<br />static member Async.Parallel : computations:seq&lt;Async&lt;&#39;T&gt;&gt; -&gt; Async&lt;&#39;T []&gt;</div>
+<div class="tip" id="fs48">val x : Async2&lt;&#39;T&gt;</div>
+<div class="tip" id="fs49">val w : Cloud&lt;&#39;T&gt;</div>
+<div class="tip" id="fs50">abstract member IResourceContainer.Resolve : unit -&gt; &#39;TResource</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
@@ -222,178 +104,80 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </section>
 <section >
-<h3>Common Misconceptions</h3>
-<ul>
-<li>"MBrace is an F# only framework"</li>
-<li>"MBrace is based on F# quotations"</li>
-</ul>
-</section>
-<section >
-<h3>In the Past</h3>
+<h3>Async Workflows</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp">[&lt;<span onmouseout="hideTip(event, 'fs80', 174)" onmouseover="showTip(event, 'fs80', 174)" class="t">ReflectedDefinition</span>&gt;]
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs81', 175)" onmouseover="showTip(event, 'fs81', 175)" class="f">add</span> <span onmouseout="hideTip(event, 'fs82', 176)" onmouseover="showTip(event, 'fs82', 176)" class="i">x</span> <span onmouseout="hideTip(event, 'fs83', 177)" onmouseover="showTip(event, 'fs83', 177)" class="i">y</span> <span class="o">=</span> <span class="i">cloud</span> { <span class="k">return</span> <span onmouseout="hideTip(event, 'fs82', 178)" onmouseover="showTip(event, 'fs82', 178)" class="i">x</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs83', 179)" onmouseover="showTip(event, 'fs83', 179)" class="i">y</span> }
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 156)" onmouseover="showTip(event, 'fs8', 156)" class="i">task1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 157)" onmouseover="showTip(event, 'fs8', 157)" class="i">async</span> { <span class="k">return</span> <span class="n">10</span> <span class="o">+</span> <span class="n">10</span> }
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 158)" onmouseover="showTip(event, 'fs8', 158)" class="i">task2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 159)" onmouseover="showTip(event, 'fs8', 159)" class="i">async</span> { <span class="k">return</span> <span class="n">20</span> <span class="o">+</span> <span class="n">20</span> }
 
-<span onmouseout="hideTip(event, 'fs32', 180)" onmouseover="showTip(event, 'fs32', 180)" class="i">cluster</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs84', 181)" onmouseover="showTip(event, 'fs84', 181)" class="f">Run</span> &lt;@ <span onmouseout="hideTip(event, 'fs81', 182)" onmouseover="showTip(event, 'fs81', 182)" class="i">add</span> <span class="n">1</span> <span class="n">2</span> @&gt;
+<span onmouseout="hideTip(event, 'fs8', 160)" onmouseover="showTip(event, 'fs8', 160)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 161)" onmouseover="showTip(event, 'fs27', 161)" class="f">RunSynchronously</span> (<span onmouseout="hideTip(event, 'fs8', 162)" onmouseover="showTip(event, 'fs8', 162)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs28', 163)" onmouseover="showTip(event, 'fs28', 163)" class="f">Parallel</span> [<span onmouseout="hideTip(event, 'fs8', 164)" onmouseover="showTip(event, 'fs8', 164)" class="i">task1</span> ; <span onmouseout="hideTip(event, 'fs8', 165)" onmouseover="showTip(event, 'fs8', 165)" class="i">task2</span>])
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<h3>Now</h3>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs81', 183)" onmouseover="showTip(event, 'fs81', 183)" class="f">add</span> <span onmouseout="hideTip(event, 'fs82', 184)" onmouseover="showTip(event, 'fs82', 184)" class="i">x</span> <span onmouseout="hideTip(event, 'fs83', 185)" onmouseover="showTip(event, 'fs83', 185)" class="i">y</span> <span class="o">=</span> <span class="i">cloud</span> { <span class="k">return</span> <span onmouseout="hideTip(event, 'fs82', 186)" onmouseover="showTip(event, 'fs82', 186)" class="i">x</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs83', 187)" onmouseover="showTip(event, 'fs83', 187)" class="i">y</span> }
-
-<span onmouseout="hideTip(event, 'fs32', 188)" onmouseover="showTip(event, 'fs32', 188)" class="i">cluster</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs84', 189)" onmouseover="showTip(event, 'fs84', 189)" class="f">Run</span> (<span onmouseout="hideTip(event, 'fs81', 190)" onmouseover="showTip(event, 'fs81', 190)" class="f">add</span> <span class="n">1</span> <span class="n">2</span>)
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<h3>Now</h3>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="o">&gt;</span> <span class="k">double</span> add(<span class="k">double</span> x, <span class="k">double</span> y) { <span class="k">return</span> x <span class="o">+</span> y; }
-
-<span class="o">&gt;</span> cluster.Run(CloudBuilder.FromFunc(() <span class="o">=</span><span class="o">&gt;</span> add(<span class="n">1</span>,<span class="n">2</span>)))
-</code></pre></td></tr></table>
-</section>
-<section >
-<p>No interpretation or expression tree compilation!</p>
-</section>
-<section >
-<p><img src="images/cloud-debug.png" alt="Debugging cloud code!" /></p>
-</section>
-<section >
-<h3>How does it all work?</h3>
-</section>
-<section >
-<h3>MBrace.Core</h3>
-<em>A continuation-based library for<br/>
-orchestrating distributed .NET code</em>
-</section>
-<section >
-<p>Cloud<'T> = Async<'T> + context</p>
-</section>
-<section >
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs85', 191)" onmouseover="showTip(event, 'fs85', 191)" class="t">IContext</span> <span class="o">=</span>
-    <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs86', 192)" onmouseover="showTip(event, 'fs86', 192)" class="f">Resolve</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">TResource</span><span class="o">&gt;</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs38', 193)" onmouseover="showTip(event, 'fs38', 193)" class="t">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">TResource</span>
-</code></pre></td>
-</tr>
-</table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs87', 194)" onmouseover="showTip(event, 'fs87', 194)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs85', 195)" onmouseover="showTip(event, 'fs85', 195)" class="t">IContext</span> <span class="k">-&gt;</span> (<span onmouseout="hideTip(event, 'fs85', 196)" onmouseover="showTip(event, 'fs85', 196)" class="t">IContext</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 197)" onmouseover="showTip(event, 'fs38', 197)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 198)" onmouseover="showTip(event, 'fs38', 198)" class="t">unit</span>
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs88', 199)" onmouseover="showTip(event, 'fs88', 199)" class="t">IScheduler</span> <span class="o">=</span>
-    <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs89', 200)" onmouseover="showTip(event, 'fs89', 200)" class="f">Enqueue</span> <span class="o">:</span> (<span onmouseout="hideTip(event, 'fs85', 201)" onmouseover="showTip(event, 'fs85', 201)" class="t">IContext</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 202)" onmouseover="showTip(event, 'fs38', 202)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 203)" onmouseover="showTip(event, 'fs38', 203)" class="t">unit</span>
-</code></pre></td>
-</tr>
-</table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs90', 204)" onmouseover="showTip(event, 'fs90', 204)" class="t">Cloud</span> <span class="o">=</span>
-  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs91', 205)" onmouseover="showTip(event, 'fs91', 205)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs92', 206)" onmouseover="showTip(event, 'fs92', 206)" class="i">children</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs90', 207)" onmouseover="showTip(event, 'fs90', 207)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>[]) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 208)" onmouseover="showTip(event, 'fs90', 208)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span>[]<span class="o">&gt;</span> <span class="o">=</span>
-    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 209)" onmouseover="showTip(event, 'fs93', 209)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs94', 210)" onmouseover="showTip(event, 'fs94', 210)" class="f">k</span> <span class="k">-&gt;</span>
-      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs95', 211)" onmouseover="showTip(event, 'fs95', 211)" class="i">sched</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs93', 212)" onmouseover="showTip(event, 'fs93', 212)" class="i">ctx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs96', 213)" onmouseover="showTip(event, 'fs96', 213)" class="f">Resolve</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs88', 214)" onmouseover="showTip(event, 'fs88', 214)" class="t">IScheduler</span><span class="o">&gt;</span>()
-      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs97', 215)" onmouseover="showTip(event, 'fs97', 215)" class="v">n</span>, <span onmouseout="hideTip(event, 'fs98', 216)" onmouseover="showTip(event, 'fs98', 216)" class="i">ts</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs99', 217)" onmouseover="showTip(event, 'fs99', 217)" class="f">ref</span> <span class="n">0</span>, <span onmouseout="hideTip(event, 'fs100', 218)" onmouseover="showTip(event, 'fs100', 218)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs101', 219)" onmouseover="showTip(event, 'fs101', 219)" class="f">zeroCreate</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span onmouseout="hideTip(event, 'fs92', 220)" onmouseover="showTip(event, 'fs92', 220)" class="i">children</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs102', 221)" onmouseover="showTip(event, 'fs102', 221)" class="i">Length</span>
-      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs103', 222)" onmouseover="showTip(event, 'fs103', 222)" class="f">runChild</span> <span onmouseout="hideTip(event, 'fs104', 223)" onmouseover="showTip(event, 'fs104', 223)" class="i">i</span> <span onmouseout="hideTip(event, 'fs105', 224)" onmouseover="showTip(event, 'fs105', 224)" class="f">ch</span> <span class="o">=</span>
-        <span onmouseout="hideTip(event, 'fs95', 225)" onmouseover="showTip(event, 'fs95', 225)" class="i">sched</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs106', 226)" onmouseover="showTip(event, 'fs106', 226)" class="f">Enqueue</span>(<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 227)" onmouseover="showTip(event, 'fs93', 227)" class="i">ctx</span> <span class="k">-&gt;</span>
-          <span onmouseout="hideTip(event, 'fs105', 228)" onmouseover="showTip(event, 'fs105', 228)" class="f">ch</span> <span onmouseout="hideTip(event, 'fs93', 229)" onmouseover="showTip(event, 'fs93', 229)" class="i">ctx</span> (<span class="k">fun</span> _ <span onmouseout="hideTip(event, 'fs107', 230)" onmouseover="showTip(event, 'fs107', 230)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs98', 231)" onmouseover="showTip(event, 'fs98', 231)" class="i">ts</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs104', 232)" onmouseover="showTip(event, 'fs104', 232)" class="i">i</span>] <span class="o">&lt;-</span> <span onmouseout="hideTip(event, 'fs107', 233)" onmouseover="showTip(event, 'fs107', 233)" class="i">t</span>)
-          <span class="k">if</span> <span onmouseout="hideTip(event, 'fs108', 234)" onmouseover="showTip(event, 'fs108', 234)" class="t">Interlocked</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs109', 235)" onmouseover="showTip(event, 'fs109', 235)" class="f">Increment</span> <span onmouseout="hideTip(event, 'fs97', 236)" onmouseover="showTip(event, 'fs97', 236)" class="v">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs98', 237)" onmouseover="showTip(event, 'fs98', 237)" class="i">ts</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs102', 238)" onmouseover="showTip(event, 'fs102', 238)" class="i">Length</span> <span class="k">then</span> <span onmouseout="hideTip(event, 'fs94', 239)" onmouseover="showTip(event, 'fs94', 239)" class="f">k</span> <span onmouseout="hideTip(event, 'fs93', 240)" onmouseover="showTip(event, 'fs93', 240)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs98', 241)" onmouseover="showTip(event, 'fs98', 241)" class="i">ts</span>)
-
-      <span onmouseout="hideTip(event, 'fs92', 242)" onmouseover="showTip(event, 'fs92', 242)" class="i">children</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs100', 243)" onmouseover="showTip(event, 'fs100', 243)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs110', 244)" onmouseover="showTip(event, 'fs110', 244)" class="f">iteri</span> <span onmouseout="hideTip(event, 'fs103', 245)" onmouseover="showTip(event, 'fs103', 245)" class="f">runChild</span>
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<h3>Async vs. Cloud</h3>
 <ul>
-<li>Async has hard-wired dependency on .NET thread pool</li>
-<li>Cloud scheduler parameterized by context</li>
-<li>Cloud parameterizable by other resources</li>
+<li>Async workflows are a <em>library</em> feature.</li>
+<li>Based on computation expressions.</li>
+<li>Can easily implement our own variations.</li>
 </ul>
 </section>
 <section >
+<h3>A Simplified Async</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs111', 246)" onmouseover="showTip(event, 'fs111', 246)" class="t">IFileSystem</span> <span class="o">=</span>
-    <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs112', 247)" onmouseover="showTip(event, 'fs112', 247)" class="f">FileExists</span> <span class="o">:</span> <span class="i">path</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs20', 248)" onmouseover="showTip(event, 'fs20', 248)" class="t">string</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs113', 249)" onmouseover="showTip(event, 'fs113', 249)" class="t">bool</span>
-    <span class="c">(* ... *)</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 166)" onmouseover="showTip(event, 'fs8', 166)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 167)" onmouseover="showTip(event, 'fs8', 167)" class="t">CancellationToken</span> <span class="k">-&gt;</span> (<span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 168)" onmouseover="showTip(event, 'fs8', 168)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 169)" onmouseover="showTip(event, 'fs8', 169)" class="t">unit</span>
 </code></pre></td>
 </tr>
 </table>
+</section>
+<section >
+<h3>A Simplified Async</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 170)" onmouseover="showTip(event, 'fs8', 170)" class="t">AsyncBuilder</span>() <span class="o">=</span>
+    <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 171)" onmouseover="showTip(event, 'fs8', 171)" class="i">__</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 172)" onmouseover="showTip(event, 'fs8', 172)" class="f">Return</span>(<span onmouseout="hideTip(event, 'fs29', 173)" onmouseover="showTip(event, 'fs29', 173)" class="i">t</span><span class="o">:</span><span class="o">&#39;</span><span class="i">T</span>) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 174)" onmouseover="showTip(event, 'fs8', 174)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">fun</span> _ <span onmouseout="hideTip(event, 'fs30', 175)" onmouseover="showTip(event, 'fs30', 175)" class="f">k</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs30', 176)" onmouseover="showTip(event, 'fs30', 176)" class="f">k</span> <span onmouseout="hideTip(event, 'fs29', 177)" onmouseover="showTip(event, 'fs29', 177)" class="i">t</span>
+    <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 178)" onmouseover="showTip(event, 'fs8', 178)" class="i">__</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 179)" onmouseover="showTip(event, 'fs8', 179)" class="f">Bind</span>(<span onmouseout="hideTip(event, 'fs31', 180)" onmouseover="showTip(event, 'fs31', 180)" class="f">f</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 181)" onmouseover="showTip(event, 'fs8', 181)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>, <span onmouseout="hideTip(event, 'fs32', 182)" onmouseover="showTip(event, 'fs32', 182)" class="f">g</span><span class="o">:</span><span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 183)" onmouseover="showTip(event, 'fs8', 183)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">S</span><span class="o">&gt;</span>) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 184)" onmouseover="showTip(event, 'fs8', 184)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">S</span><span class="o">&gt;</span> <span class="o">=</span>
+        <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs33', 185)" onmouseover="showTip(event, 'fs33', 185)" class="i">c</span> <span onmouseout="hideTip(event, 'fs34', 186)" onmouseover="showTip(event, 'fs34', 186)" class="f">k</span> <span class="k">-&gt;</span> 
+            <span class="k">if</span> <span onmouseout="hideTip(event, 'fs33', 187)" onmouseover="showTip(event, 'fs33', 187)" class="i">c</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs35', 188)" onmouseover="showTip(event, 'fs35', 188)" class="i">IsCancellationRequested</span> <span class="k">then</span> () 
+            <span class="k">else</span> <span onmouseout="hideTip(event, 'fs31', 189)" onmouseover="showTip(event, 'fs31', 189)" class="f">f</span> <span onmouseout="hideTip(event, 'fs33', 190)" onmouseover="showTip(event, 'fs33', 190)" class="i">c</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 191)" onmouseover="showTip(event, 'fs29', 191)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs32', 192)" onmouseover="showTip(event, 'fs32', 192)" class="f">g</span> <span onmouseout="hideTip(event, 'fs29', 193)" onmouseover="showTip(event, 'fs29', 193)" class="i">t</span> <span onmouseout="hideTip(event, 'fs33', 194)" onmouseover="showTip(event, 'fs33', 194)" class="i">c</span> <span onmouseout="hideTip(event, 'fs34', 195)" onmouseover="showTip(event, 'fs34', 195)" class="f">k</span>)
+</code></pre></td>
+</tr>
+</table>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 196)" onmouseover="showTip(event, 'fs8', 196)" class="i">async</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs8', 197)" onmouseover="showTip(event, 'fs8', 197)" class="t">AsyncBuilder</span>()
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>A Simplified Async</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs114', 250)" onmouseover="showTip(event, 'fs114', 250)" class="t">CloudFile</span> <span class="o">=</span>
-    <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs115', 251)" onmouseover="showTip(event, 'fs115', 251)" class="f">Exists</span>(<span onmouseout="hideTip(event, 'fs116', 252)" onmouseover="showTip(event, 'fs116', 252)" class="i">path</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs20', 253)" onmouseover="showTip(event, 'fs20', 253)" class="t">string</span>) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 254)" onmouseover="showTip(event, 'fs90', 254)" class="t">Cloud</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs113', 255)" onmouseover="showTip(event, 'fs113', 255)" class="t">bool</span><span class="o">&gt;</span> <span class="o">=</span>
-      <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 256)" onmouseover="showTip(event, 'fs93', 256)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs117', 257)" onmouseover="showTip(event, 'fs117', 257)" class="f">k</span> <span class="k">-&gt;</span>
-        <span class="k">let</span> <span onmouseout="hideTip(event, 'fs118', 258)" onmouseover="showTip(event, 'fs118', 258)" class="i">fileSystem</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs93', 259)" onmouseover="showTip(event, 'fs93', 259)" class="i">ctx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs96', 260)" onmouseover="showTip(event, 'fs96', 260)" class="f">Resolve</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs111', 261)" onmouseover="showTip(event, 'fs111', 261)" class="t">IFileSystem</span><span class="o">&gt;</span>()
-        <span onmouseout="hideTip(event, 'fs117', 262)" onmouseover="showTip(event, 'fs117', 262)" class="f">k</span> <span onmouseout="hideTip(event, 'fs93', 263)" onmouseover="showTip(event, 'fs93', 263)" class="i">ctx</span> (<span onmouseout="hideTip(event, 'fs118', 264)" onmouseover="showTip(event, 'fs118', 264)" class="i">fileSystem</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs119', 265)" onmouseover="showTip(event, 'fs119', 265)" class="f">FileExists</span>(<span onmouseout="hideTip(event, 'fs116', 266)" onmouseover="showTip(event, 'fs116', 266)" class="i">path</span>))
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 198)" onmouseover="showTip(event, 'fs8', 198)" class="t">Async</span> <span class="o">=</span>
+    <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 199)" onmouseover="showTip(event, 'fs8', 199)" class="f">RunSynchronously</span>(<span onmouseout="hideTip(event, 'fs36', 200)" onmouseover="showTip(event, 'fs36', 200)" class="f">w</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 201)" onmouseover="showTip(event, 'fs8', 201)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>, <span onmouseout="hideTip(event, 'fs33', 202)" onmouseover="showTip(event, 'fs33', 202)" class="i">c</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 203)" onmouseover="showTip(event, 'fs8', 203)" class="t">CancellationToken</span>) <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">=</span>
+        <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 204)" onmouseover="showTip(event, 'fs8', 204)" class="i">tcs</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs8', 205)" onmouseover="showTip(event, 'fs8', 205)" class="t">TaskCompletionSource</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
+        <span onmouseout="hideTip(event, 'fs36', 206)" onmouseover="showTip(event, 'fs36', 206)" class="f">w</span> <span onmouseout="hideTip(event, 'fs33', 207)" onmouseover="showTip(event, 'fs33', 207)" class="i">c</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 208)" onmouseover="showTip(event, 'fs29', 208)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 209)" onmouseover="showTip(event, 'fs8', 209)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs37', 210)" onmouseover="showTip(event, 'fs37', 210)" class="f">SetResult</span> <span onmouseout="hideTip(event, 'fs29', 211)" onmouseover="showTip(event, 'fs29', 211)" class="i">t</span>)
+        <span onmouseout="hideTip(event, 'fs8', 212)" onmouseover="showTip(event, 'fs8', 212)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs38', 213)" onmouseover="showTip(event, 'fs38', 213)" class="i">Task</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs39', 214)" onmouseover="showTip(event, 'fs39', 214)" class="i">Result</span>
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs90', 267)" onmouseover="showTip(event, 'fs90', 267)" class="t">Cloud</span> <span class="k">with</span>
-    <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs120', 268)" onmouseover="showTip(event, 'fs120', 268)" class="f">GetResource</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">TResource</span><span class="o">&gt;</span>() <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 269)" onmouseover="showTip(event, 'fs90', 269)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">TResource</span><span class="o">&gt;</span> <span class="o">=</span>
-        <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 270)" onmouseover="showTip(event, 'fs93', 270)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs121', 271)" onmouseover="showTip(event, 'fs121', 271)" class="f">k</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs121', 272)" onmouseover="showTip(event, 'fs121', 272)" class="f">k</span> <span onmouseout="hideTip(event, 'fs93', 273)" onmouseover="showTip(event, 'fs93', 273)" class="i">ctx</span> (<span onmouseout="hideTip(event, 'fs93', 274)" onmouseover="showTip(event, 'fs93', 274)" class="i">ctx</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs96', 275)" onmouseover="showTip(event, 'fs96', 275)" class="f">Resolve</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">TResource</span><span class="o">&gt;</span> ())
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs122', 276)" onmouseover="showTip(event, 'fs122', 276)" class="t">IScheduler</span> <span class="o">=</span>
-    <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs123', 277)" onmouseover="showTip(event, 'fs123', 277)" class="f">Enqueue</span> <span class="o">:</span> (<span class="i">IContext</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 278)" onmouseover="showTip(event, 'fs38', 278)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 279)" onmouseover="showTip(event, 'fs38', 279)" class="t">unit</span>
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<h3>A thread pool scheduler</h3>
+<p>Async.Parallel</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -405,66 +189,41 @@ orchestrating distributed .NET code</em>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 <span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs124', 280)" onmouseover="showTip(event, 'fs124', 280)" class="t">ThreadPoolContext</span>() <span class="o">=</span>
-  <span class="k">interface</span> <span onmouseout="hideTip(event, 'fs85', 281)" onmouseover="showTip(event, 'fs85', 281)" class="t">IContext</span> <span class="k">with</span>
-    <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs125', 282)" onmouseover="showTip(event, 'fs125', 282)" class="f">Resolve</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>() <span class="o">=</span> <span onmouseout="hideTip(event, 'fs126', 283)" onmouseover="showTip(event, 'fs126', 283)" class="t">ThreadPoolScheduler</span>() <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs127', 284)" onmouseover="showTip(event, 'fs127', 284)" class="f">unbox</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 215)" onmouseover="showTip(event, 'fs8', 215)" class="t">Async</span> <span class="k">with</span>
+  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 216)" onmouseover="showTip(event, 'fs8', 216)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 217)" onmouseover="showTip(event, 'fs8', 217)" class="i">xs</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 218)" onmouseover="showTip(event, 'fs8', 218)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>[]) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 219)" onmouseover="showTip(event, 'fs8', 219)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span>[]<span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs33', 220)" onmouseover="showTip(event, 'fs33', 220)" class="i">c</span> <span onmouseout="hideTip(event, 'fs40', 221)" onmouseover="showTip(event, 'fs40', 221)" class="f">k</span> <span class="k">-&gt;</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs41', 222)" onmouseover="showTip(event, 'fs41', 222)" class="v">n</span>,<span onmouseout="hideTip(event, 'fs8', 223)" onmouseover="showTip(event, 'fs8', 223)" class="i">results</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 224)" onmouseover="showTip(event, 'fs8', 224)" class="f">ref</span> <span class="n">0</span>, <span onmouseout="hideTip(event, 'fs8', 225)" onmouseover="showTip(event, 'fs8', 225)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs42', 226)" onmouseover="showTip(event, 'fs42', 226)" class="f">zeroCreate</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span onmouseout="hideTip(event, 'fs8', 227)" onmouseover="showTip(event, 'fs8', 227)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 228)" onmouseover="showTip(event, 'fs43', 228)" class="i">Length</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 229)" onmouseover="showTip(event, 'fs8', 229)" class="f">runChild</span> (<span onmouseout="hideTip(event, 'fs44', 230)" onmouseover="showTip(event, 'fs44', 230)" class="i">i</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 231)" onmouseover="showTip(event, 'fs8', 231)" class="t">int</span>) (<span onmouseout="hideTip(event, 'fs8', 232)" onmouseover="showTip(event, 'fs8', 232)" class="f">ch</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 233)" onmouseover="showTip(event, 'fs8', 233)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs8', 234)" onmouseover="showTip(event, 'fs8', 234)" class="f">ch</span> <span onmouseout="hideTip(event, 'fs33', 235)" onmouseover="showTip(event, 'fs33', 235)" class="i">c</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 236)" onmouseover="showTip(event, 'fs29', 236)" class="i">t</span> <span class="k">-&gt;</span>
+          <span onmouseout="hideTip(event, 'fs8', 237)" onmouseover="showTip(event, 'fs8', 237)" class="i">results</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 238)" onmouseover="showTip(event, 'fs44', 238)" class="i">i</span>] <span class="o">&lt;-</span> <span onmouseout="hideTip(event, 'fs29', 239)" onmouseover="showTip(event, 'fs29', 239)" class="i">t</span>
+          <span class="k">if</span> <span onmouseout="hideTip(event, 'fs8', 240)" onmouseover="showTip(event, 'fs8', 240)" class="t">Interlocked</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 241)" onmouseover="showTip(event, 'fs45', 241)" class="f">Increment</span> <span onmouseout="hideTip(event, 'fs41', 242)" onmouseover="showTip(event, 'fs41', 242)" class="v">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 243)" onmouseover="showTip(event, 'fs8', 243)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 244)" onmouseover="showTip(event, 'fs43', 244)" class="i">Length</span> <span class="k">then</span> <span onmouseout="hideTip(event, 'fs40', 245)" onmouseover="showTip(event, 'fs40', 245)" class="f">k</span> <span onmouseout="hideTip(event, 'fs8', 246)" onmouseover="showTip(event, 'fs8', 246)" class="i">results</span>)
 
-<span class="k">and</span> <span onmouseout="hideTip(event, 'fs126', 285)" onmouseover="showTip(event, 'fs126', 285)" class="t">ThreadPoolScheduler</span>() <span class="o">=</span>
-  <span class="k">interface</span> <span onmouseout="hideTip(event, 'fs88', 286)" onmouseover="showTip(event, 'fs88', 286)" class="t">IScheduler</span> <span class="k">with</span>
-    <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs128', 287)" onmouseover="showTip(event, 'fs128', 287)" class="f">Enqueue</span>(<span onmouseout="hideTip(event, 'fs129', 288)" onmouseover="showTip(event, 'fs129', 288)" class="f">job</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs85', 289)" onmouseover="showTip(event, 'fs85', 289)" class="t">IContext</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 290)" onmouseover="showTip(event, 'fs38', 290)" class="t">unit</span>) <span class="o">=</span>
-      <span onmouseout="hideTip(event, 'fs35', 291)" onmouseover="showTip(event, 'fs35', 291)" class="t">ThreadPool</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs39', 292)" onmouseover="showTip(event, 'fs39', 292)" class="f">QueueUserWorkItem</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs129', 293)" onmouseover="showTip(event, 'fs129', 293)" class="f">job</span> (<span onmouseout="hideTip(event, 'fs124', 294)" onmouseover="showTip(event, 'fs124', 294)" class="t">ThreadPoolContext</span>()))
-
-<span class="k">type</span> <span onmouseout="hideTip(event, 'fs130', 295)" onmouseover="showTip(event, 'fs130', 295)" class="t">ThreadPool</span> <span class="o">=</span>
-  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs131', 296)" onmouseover="showTip(event, 'fs131', 296)" class="f">Run</span>(<span onmouseout="hideTip(event, 'fs132', 297)" onmouseover="showTip(event, 'fs132', 297)" class="f">workflow</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 298)" onmouseover="showTip(event, 'fs90', 298)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">=</span>
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs133', 299)" onmouseover="showTip(event, 'fs133', 299)" class="i">tcs</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs134', 300)" onmouseover="showTip(event, 'fs134', 300)" class="t">TaskCompletionSource</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs95', 301)" onmouseover="showTip(event, 'fs95', 301)" class="i">sched</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs126', 302)" onmouseover="showTip(event, 'fs126', 302)" class="t">ThreadPoolScheduler</span>() <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs88', 303)" onmouseover="showTip(event, 'fs88', 303)" class="t">IScheduler</span>
-    <span onmouseout="hideTip(event, 'fs95', 304)" onmouseover="showTip(event, 'fs95', 304)" class="i">sched</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs106', 305)" onmouseover="showTip(event, 'fs106', 305)" class="f">Enqueue</span>(<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 306)" onmouseover="showTip(event, 'fs93', 306)" class="i">ctx</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs132', 307)" onmouseover="showTip(event, 'fs132', 307)" class="f">workflow</span> <span onmouseout="hideTip(event, 'fs93', 308)" onmouseover="showTip(event, 'fs93', 308)" class="i">ctx</span> (<span class="k">fun</span> _ <span onmouseout="hideTip(event, 'fs107', 309)" onmouseover="showTip(event, 'fs107', 309)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs133', 310)" onmouseover="showTip(event, 'fs133', 310)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs135', 311)" onmouseover="showTip(event, 'fs135', 311)" class="f">SetResult</span> <span onmouseout="hideTip(event, 'fs107', 312)" onmouseover="showTip(event, 'fs107', 312)" class="i">t</span>))
-    <span onmouseout="hideTip(event, 'fs133', 313)" onmouseover="showTip(event, 'fs133', 313)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs136', 314)" onmouseover="showTip(event, 'fs136', 314)" class="i">Task</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs137', 315)" onmouseover="showTip(event, 'fs137', 315)" class="i">Result</span>
+      <span class="k">for</span> <span onmouseout="hideTip(event, 'fs44', 247)" onmouseover="showTip(event, 'fs44', 247)" class="i">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">to</span> <span onmouseout="hideTip(event, 'fs8', 248)" onmouseover="showTip(event, 'fs8', 248)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 249)" onmouseover="showTip(event, 'fs43', 249)" class="i">Length</span> <span class="o">-</span> <span class="n">1</span> <span class="k">do</span>
+        <span onmouseout="hideTip(event, 'fs8', 250)" onmouseover="showTip(event, 'fs8', 250)" class="t">ThreadPool</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs14', 251)" onmouseover="showTip(event, 'fs14', 251)" class="f">QueueUserWorkItem</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 252)" onmouseover="showTip(event, 'fs8', 252)" class="f">runChild</span> <span onmouseout="hideTip(event, 'fs44', 253)" onmouseover="showTip(event, 'fs44', 253)" class="i">i</span> <span onmouseout="hideTip(event, 'fs8', 254)" onmouseover="showTip(event, 'fs8', 254)" class="i">xs</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 255)" onmouseover="showTip(event, 'fs44', 255)" class="i">i</span>])
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<p>How does one implement a distributed scheduler?</p>
+<p>Can you identify what introduces the parallelism effect?</p>
+</section>
+<section >
+<p><code>ThreadPool.QueueUserWorkItem</code> introduces a hard-coded
+dependency on the local thread pool.</p>
+</section>
+<section >
+<p>Can we parameterize scheduling in async?</p>
 </section>
 <section >
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
-<span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs138', 316)" onmouseover="showTip(event, 'fs138', 316)" class="t">AzureScheduler</span>() <span class="o">=</span>
-   <span class="k">interface</span> <span onmouseout="hideTip(event, 'fs88', 317)" onmouseover="showTip(event, 'fs88', 317)" class="t">IScheduler</span> <span class="k">with</span>
-     <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs139', 318)" onmouseover="showTip(event, 'fs139', 318)" class="f">Enqueue</span>(<span onmouseout="hideTip(event, 'fs129', 319)" onmouseover="showTip(event, 'fs129', 319)" class="f">job</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs85', 320)" onmouseover="showTip(event, 'fs85', 320)" class="t">IContext</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 321)" onmouseover="showTip(event, 'fs38', 321)" class="t">unit</span>) <span class="o">=</span> <span onmouseout="hideTip(event, 'fs31', 322)" onmouseover="showTip(event, 'fs31', 322)" class="i">``???``</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 256)" onmouseover="showTip(event, 'fs8', 256)" class="t">IScheduler</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs8', 257)" onmouseover="showTip(event, 'fs8', 257)" class="f">Enqueue</span> <span class="o">:</span> (<span onmouseout="hideTip(event, 'fs8', 258)" onmouseover="showTip(event, 'fs8', 258)" class="t">unit</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 259)" onmouseover="showTip(event, 'fs8', 259)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 260)" onmouseover="showTip(event, 'fs8', 260)" class="t">unit</span>
 </code></pre></td>
 </tr>
 </table>
-</section>
-<section >
-<p>Require capacity to serialize <em>arbitrary</em> lambdas</p>
-</section>
-<section >
-<p>What is the runtime representation of an F# lambda?</p>
-</section>
-<section >
-<h3>The code</h3>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs140', 330)" onmouseover="showTip(event, 'fs140', 330)" class="f">mkFunc</span> () <span class="o">=</span>
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs141', 331)" onmouseover="showTip(event, 'fs141', 331)" class="i">rand</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs1', 332)" onmouseover="showTip(event, 'fs1', 332)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs142', 333)" onmouseover="showTip(event, 'fs142', 333)" class="t">Random</span>()<span class="o">.</span><span class="f">Next</span>()
-    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs143', 334)" onmouseover="showTip(event, 'fs143', 334)" class="i">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs141', 335)" onmouseover="showTip(event, 'fs141', 335)" class="i">rand</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs143', 336)" onmouseover="showTip(event, 'fs143', 336)" class="i">x</span>
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<h3>Compiles to</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -476,54 +235,53 @@ orchestrating distributed .NET code</em>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 <span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp">[Serializable]
-<span class="k">internal</span> <span class="k">class</span> mkFunc@<span class="n">5</span> <span class="o">:</span> FSharpFunc&lt;<span class="k">int</span>, <span class="k">int</span>&gt;
-{
-  <span class="k">public</span> <span class="k">int</span> rand;
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 261)" onmouseover="showTip(event, 'fs8', 261)" class="t">Async</span> <span class="k">with</span>
+  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 262)" onmouseover="showTip(event, 'fs8', 262)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 263)" onmouseover="showTip(event, 'fs8', 263)" class="i">xs</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 264)" onmouseover="showTip(event, 'fs8', 264)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> [], <span onmouseout="hideTip(event, 'fs8', 265)" onmouseover="showTip(event, 'fs8', 265)" class="i">scheduler</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 266)" onmouseover="showTip(event, 'fs8', 266)" class="t">IScheduler</span>) <span class="o">=</span>
+    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs33', 267)" onmouseover="showTip(event, 'fs33', 267)" class="i">c</span> <span onmouseout="hideTip(event, 'fs40', 268)" onmouseover="showTip(event, 'fs40', 268)" class="f">k</span> <span class="k">-&gt;</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs41', 269)" onmouseover="showTip(event, 'fs41', 269)" class="v">n</span>,<span onmouseout="hideTip(event, 'fs8', 270)" onmouseover="showTip(event, 'fs8', 270)" class="i">results</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 271)" onmouseover="showTip(event, 'fs8', 271)" class="f">ref</span> <span class="n">0</span>, <span onmouseout="hideTip(event, 'fs8', 272)" onmouseover="showTip(event, 'fs8', 272)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs42', 273)" onmouseover="showTip(event, 'fs42', 273)" class="f">zeroCreate</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span onmouseout="hideTip(event, 'fs8', 274)" onmouseover="showTip(event, 'fs8', 274)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 275)" onmouseover="showTip(event, 'fs43', 275)" class="i">Length</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 276)" onmouseover="showTip(event, 'fs8', 276)" class="f">runChild</span> (<span onmouseout="hideTip(event, 'fs44', 277)" onmouseover="showTip(event, 'fs44', 277)" class="i">i</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 278)" onmouseover="showTip(event, 'fs8', 278)" class="t">int</span>) (<span onmouseout="hideTip(event, 'fs8', 279)" onmouseover="showTip(event, 'fs8', 279)" class="f">ch</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 280)" onmouseover="showTip(event, 'fs8', 280)" class="t">Async</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs8', 281)" onmouseover="showTip(event, 'fs8', 281)" class="f">ch</span> <span onmouseout="hideTip(event, 'fs33', 282)" onmouseover="showTip(event, 'fs33', 282)" class="i">c</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 283)" onmouseover="showTip(event, 'fs29', 283)" class="i">t</span> <span class="k">-&gt;</span>
+          <span onmouseout="hideTip(event, 'fs8', 284)" onmouseover="showTip(event, 'fs8', 284)" class="i">results</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 285)" onmouseover="showTip(event, 'fs44', 285)" class="i">i</span>] <span class="o">&lt;-</span> <span onmouseout="hideTip(event, 'fs29', 286)" onmouseover="showTip(event, 'fs29', 286)" class="i">t</span>
+          <span class="k">if</span> <span onmouseout="hideTip(event, 'fs8', 287)" onmouseover="showTip(event, 'fs8', 287)" class="t">Interlocked</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 288)" onmouseover="showTip(event, 'fs45', 288)" class="f">Increment</span> <span onmouseout="hideTip(event, 'fs41', 289)" onmouseover="showTip(event, 'fs41', 289)" class="v">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 290)" onmouseover="showTip(event, 'fs8', 290)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 291)" onmouseover="showTip(event, 'fs43', 291)" class="i">Length</span> <span class="k">then</span> <span onmouseout="hideTip(event, 'fs40', 292)" onmouseover="showTip(event, 'fs40', 292)" class="f">k</span> <span onmouseout="hideTip(event, 'fs8', 293)" onmouseover="showTip(event, 'fs8', 293)" class="i">results</span>)
 
-  <span class="k">internal</span> mkFunc@<span class="n">5</span>(<span class="k">int</span> rand)
-  {
-    <span class="k">this</span>.rand <span class="o">=</span> rand;
-  }
-
-  <span class="k">public</span> <span class="k">override</span> <span class="k">int</span> Invoke(<span class="k">int</span> x)
-  {
-    <span class="k">return</span> <span class="k">this</span>.rand <span class="o">+</span> x;
-  }
+      <span class="k">for</span> <span onmouseout="hideTip(event, 'fs44', 294)" onmouseover="showTip(event, 'fs44', 294)" class="i">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">to</span> <span onmouseout="hideTip(event, 'fs8', 295)" onmouseover="showTip(event, 'fs8', 295)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 296)" onmouseover="showTip(event, 'fs43', 296)" class="i">Length</span> <span class="o">-</span> <span class="n">1</span> <span class="k">do</span>
+        <span onmouseout="hideTip(event, 'fs8', 297)" onmouseover="showTip(event, 'fs8', 297)" class="i">scheduler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs46', 298)" onmouseover="showTip(event, 'fs46', 298)" class="f">Enqueue</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 299)" onmouseover="showTip(event, 'fs8', 299)" class="f">runChild</span> <span onmouseout="hideTip(event, 'fs44', 300)" onmouseover="showTip(event, 'fs44', 300)" class="i">i</span> <span onmouseout="hideTip(event, 'fs8', 301)" onmouseover="showTip(event, 'fs8', 301)" class="i">xs</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 302)" onmouseover="showTip(event, 'fs44', 302)" class="i">i</span>])
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<p>User responsibility to pass scheduler implementation!</p>
+</section>
+<section >
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs8', 315)" onmouseover="showTip(event, 'fs8', 315)" class="i">async</span> {
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 316)" onmouseover="showTip(event, 'fs8', 316)" class="i">scheduler</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs8', 317)" onmouseover="showTip(event, 'fs8', 317)" class="t">MyScheduler</span>()
+    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs8', 318)" onmouseover="showTip(event, 'fs8', 318)" class="i">results1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 319)" onmouseover="showTip(event, 'fs8', 319)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs47', 320)" onmouseover="showTip(event, 'fs47', 320)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 321)" onmouseover="showTip(event, 'fs8', 321)" class="i">jobs1</span>, <span onmouseout="hideTip(event, 'fs8', 322)" onmouseover="showTip(event, 'fs8', 322)" class="i">scheduler</span>)
+    <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs8', 323)" onmouseover="showTip(event, 'fs8', 323)" class="i">results2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 324)" onmouseover="showTip(event, 'fs8', 324)" class="t">Async</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs47', 325)" onmouseover="showTip(event, 'fs47', 325)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 326)" onmouseover="showTip(event, 'fs8', 326)" class="i">jobs2</span>, <span onmouseout="hideTip(event, 'fs8', 327)" onmouseover="showTip(event, 'fs8', 327)" class="i">scheduler</span>)
+    <span class="k">return</span> ()
 }
-</code></pre></td></tr></table>
-</section>
-<section >
-<h3>Remarks</h3>
-<ul>
-<li>F# lambdas are instances of compiler generated classes</li>
-<li>that inherit the abstract class <code>FSharpFunc&lt;'T,'U&gt;</code></li>
-<li>Lambda body found in the <code>Invoke</code> method override</li>
-<li>Captured variables represented as instance fields</li>
-</ul>
-</section>
-<section >
-<p>What does a serialized lambda look like?</p>
-</section>
-<section >
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs140', 330)" onmouseover="showTip(event, 'fs140', 330)" class="f">mkFunc</span> () <span class="o">=</span>
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs141', 331)" onmouseover="showTip(event, 'fs141', 331)" class="i">rand</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs1', 332)" onmouseover="showTip(event, 'fs1', 332)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs142', 333)" onmouseover="showTip(event, 'fs142', 333)" class="t">Random</span>()<span class="o">.</span><span class="f">Next</span>()
-    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs143', 334)" onmouseover="showTip(event, 'fs143', 334)" class="i">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs141', 335)" onmouseover="showTip(event, 'fs141', 335)" class="i">rand</span> <span class="o">+</span> <span onmouseout="hideTip(event, 'fs143', 336)" onmouseover="showTip(event, 'fs143', 336)" class="i">x</span>
 </code></pre></td>
 </tr>
 </table>
+</section>
+<section >
+<p>Abstracting away scheduler from workflow</p>
+</section>
+<section >
+<p>Can we thread <code>IScheduler</code> like <code>CancellationToken</code>?</p>
+</section>
+<section >
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs17', 337)" onmouseover="showTip(event, 'fs17', 337)" class="t">FsPickler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs144', 338)" onmouseover="showTip(event, 'fs144', 338)" class="f">PickleToJson</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs145', 339)" onmouseover="showTip(event, 'fs145', 339)" class="t">int</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs145', 340)" onmouseover="showTip(event, 'fs145', 340)" class="t">int</span><span class="o">&gt;</span>(<span onmouseout="hideTip(event, 'fs140', 341)" onmouseover="showTip(event, 'fs140', 341)" class="f">mkFunc</span>())
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 328)" onmouseover="showTip(event, 'fs8', 328)" class="t">Async2</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 329)" onmouseover="showTip(event, 'fs8', 329)" class="t">IScheduler</span> <span class="k">-&gt;</span> (<span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 330)" onmouseover="showTip(event, 'fs8', 330)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 331)" onmouseover="showTip(event, 'fs8', 331)" class="t">unit</span>
 </code></pre></td>
 </tr>
 </table>
@@ -540,30 +298,21 @@ orchestrating distributed .NET code</em>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 <span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="json">{
-  "subtype": {
-    "Case": "NamedType",
-    "Name": "FSI_0022+mkLambda@32-1",
-    "Assembly": {
-      "Name": "FSI-ASSEMBLY",
-      "Version": "0.0.0.0",
-      "Culture": "neutral",
-      "PublicKeyToken": ""
-    }
-  },
-  "instance": {
-    "rand": 824280236
-  }
-}
-</code></pre></td></tr></table>
-</section>
-<section >
-<p>Continuations can be extremely complex objects</p>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 332)" onmouseover="showTip(event, 'fs8', 332)" class="t">Async</span> <span class="k">with</span>
+  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 333)" onmouseover="showTip(event, 'fs8', 333)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 334)" onmouseover="showTip(event, 'fs8', 334)" class="i">xs</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 335)" onmouseover="showTip(event, 'fs8', 335)" class="t">Async2</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>[]) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 336)" onmouseover="showTip(event, 'fs8', 336)" class="t">Async2</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span>[]<span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs8', 337)" onmouseover="showTip(event, 'fs8', 337)" class="i">scheduler</span> <span onmouseout="hideTip(event, 'fs40', 338)" onmouseover="showTip(event, 'fs40', 338)" class="f">k</span> <span class="k">-&gt;</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs41', 339)" onmouseover="showTip(event, 'fs41', 339)" class="v">n</span>,<span onmouseout="hideTip(event, 'fs8', 340)" onmouseover="showTip(event, 'fs8', 340)" class="i">results</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 341)" onmouseover="showTip(event, 'fs8', 341)" class="f">ref</span> <span class="n">0</span>, <span onmouseout="hideTip(event, 'fs8', 342)" onmouseover="showTip(event, 'fs8', 342)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs42', 343)" onmouseover="showTip(event, 'fs42', 343)" class="f">zeroCreate</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span onmouseout="hideTip(event, 'fs8', 344)" onmouseover="showTip(event, 'fs8', 344)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 345)" onmouseover="showTip(event, 'fs43', 345)" class="i">Length</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 346)" onmouseover="showTip(event, 'fs8', 346)" class="f">runChild</span> (<span onmouseout="hideTip(event, 'fs44', 347)" onmouseover="showTip(event, 'fs44', 347)" class="i">i</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 348)" onmouseover="showTip(event, 'fs8', 348)" class="t">int</span>) (<span onmouseout="hideTip(event, 'fs8', 349)" onmouseover="showTip(event, 'fs8', 349)" class="f">ch</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 350)" onmouseover="showTip(event, 'fs8', 350)" class="t">Async2</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs8', 351)" onmouseover="showTip(event, 'fs8', 351)" class="f">ch</span> <span onmouseout="hideTip(event, 'fs8', 352)" onmouseover="showTip(event, 'fs8', 352)" class="i">scheduler</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 353)" onmouseover="showTip(event, 'fs29', 353)" class="i">t</span> <span class="k">-&gt;</span>
+          <span onmouseout="hideTip(event, 'fs8', 354)" onmouseover="showTip(event, 'fs8', 354)" class="i">results</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 355)" onmouseover="showTip(event, 'fs44', 355)" class="i">i</span>] <span class="o">&lt;-</span> <span onmouseout="hideTip(event, 'fs29', 356)" onmouseover="showTip(event, 'fs29', 356)" class="i">t</span>
+          <span class="k">if</span> <span onmouseout="hideTip(event, 'fs8', 357)" onmouseover="showTip(event, 'fs8', 357)" class="t">Interlocked</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 358)" onmouseover="showTip(event, 'fs45', 358)" class="f">Increment</span> <span onmouseout="hideTip(event, 'fs41', 359)" onmouseover="showTip(event, 'fs41', 359)" class="v">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 360)" onmouseover="showTip(event, 'fs8', 360)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 361)" onmouseover="showTip(event, 'fs43', 361)" class="i">Length</span> <span class="k">then</span> <span onmouseout="hideTip(event, 'fs40', 362)" onmouseover="showTip(event, 'fs40', 362)" class="f">k</span> <span onmouseout="hideTip(event, 'fs8', 363)" onmouseover="showTip(event, 'fs8', 363)" class="i">results</span>)
+
+      <span class="k">for</span> <span onmouseout="hideTip(event, 'fs44', 364)" onmouseover="showTip(event, 'fs44', 364)" class="i">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">to</span> <span onmouseout="hideTip(event, 'fs8', 365)" onmouseover="showTip(event, 'fs8', 365)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 366)" onmouseover="showTip(event, 'fs43', 366)" class="i">Length</span> <span class="o">-</span> <span class="n">1</span> <span class="k">do</span>
+        <span onmouseout="hideTip(event, 'fs8', 367)" onmouseover="showTip(event, 'fs8', 367)" class="i">scheduler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs46', 368)" onmouseover="showTip(event, 'fs46', 368)" class="f">Enqueue</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 369)" onmouseover="showTip(event, 'fs8', 369)" class="f">runChild</span> <span onmouseout="hideTip(event, 'fs44', 370)" onmouseover="showTip(event, 'fs44', 370)" class="i">i</span> <span onmouseout="hideTip(event, 'fs8', 371)" onmouseover="showTip(event, 'fs8', 371)" class="i">xs</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 372)" onmouseover="showTip(event, 'fs44', 372)" class="i">i</span>])
+</code></pre></td>
+</tr>
+</table>
 </section>
 <section >
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -572,106 +321,19 @@ orchestrating distributed .NET code</em>
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs156', 372)" onmouseover="showTip(event, 'fs156', 372)" class="f">pickleCC</span> () <span class="o">:</span> <span onmouseout="hideTip(event, 'fs90', 373)" onmouseover="showTip(event, 'fs90', 373)" class="t">Cloud</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs20', 374)" onmouseover="showTip(event, 'fs20', 374)" class="t">string</span><span class="o">&gt;</span> <span class="o">=</span> 
-  <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs93', 375)" onmouseover="showTip(event, 'fs93', 375)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs157', 376)" onmouseover="showTip(event, 'fs157', 376)" class="f">cont</span> <span class="k">-&gt;</span> 
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs158', 377)" onmouseover="showTip(event, 'fs158', 377)" class="i">serializer</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs17', 378)" onmouseover="showTip(event, 'fs17', 378)" class="t">FsPickler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs159', 379)" onmouseover="showTip(event, 'fs159', 379)" class="f">CreateJsonSerializer</span>(<span class="i">indent</span> <span class="o">=</span> <span class="k">true</span>)
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs160', 380)" onmouseover="showTip(event, 'fs160', 380)" class="i">pickle</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs158', 381)" onmouseover="showTip(event, 'fs158', 381)" class="i">serializer</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs161', 382)" onmouseover="showTip(event, 'fs161', 382)" class="f">PickleToString</span> <span onmouseout="hideTip(event, 'fs157', 383)" onmouseover="showTip(event, 'fs157', 383)" class="f">cont</span>
-    <span onmouseout="hideTip(event, 'fs157', 384)" onmouseover="showTip(event, 'fs157', 384)" class="f">cont</span> <span onmouseout="hideTip(event, 'fs93', 385)" onmouseover="showTip(event, 'fs93', 385)" class="i">ctx</span> <span onmouseout="hideTip(event, 'fs160', 386)" onmouseover="showTip(event, 'fs160', 386)" class="i">pickle</span>
-</code></pre></td>
-</tr>
-</table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs162', 387)" onmouseover="showTip(event, 'fs162', 387)" class="f">dive</span> <span onmouseout="hideTip(event, 'fs163', 388)" onmouseover="showTip(event, 'fs163', 388)" class="i">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs153', 389)" onmouseover="showTip(event, 'fs153', 389)" class="i">cloud</span> {
-    <span class="k">if</span> <span onmouseout="hideTip(event, 'fs163', 390)" onmouseover="showTip(event, 'fs163', 390)" class="i">n</span> <span class="o">=</span> <span class="n">0</span> <span class="k">then</span>
-        <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs164', 391)" onmouseover="showTip(event, 'fs164', 391)" class="i">c</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs156', 392)" onmouseover="showTip(event, 'fs156', 392)" class="f">pickleCC</span> ()
-        <span class="k">return</span> <span onmouseout="hideTip(event, 'fs164', 393)" onmouseover="showTip(event, 'fs164', 393)" class="i">c</span>
-    <span class="k">else</span>
-        <span class="k">let!</span> <span onmouseout="hideTip(event, 'fs164', 394)" onmouseover="showTip(event, 'fs164', 394)" class="i">c</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs162', 395)" onmouseover="showTip(event, 'fs162', 395)" class="f">dive</span> (<span onmouseout="hideTip(event, 'fs163', 396)" onmouseover="showTip(event, 'fs163', 396)" class="i">n</span><span class="o">-</span><span class="n">1</span>)
-        <span class="k">return</span> <span onmouseout="hideTip(event, 'fs164', 397)" onmouseover="showTip(event, 'fs164', 397)" class="i">c</span>
-}
-
-<span onmouseout="hideTip(event, 'fs32', 398)" onmouseover="showTip(event, 'fs32', 398)" class="i">cluster</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs165', 399)" onmouseover="showTip(event, 'fs165', 399)" class="f">Run</span>(<span onmouseout="hideTip(event, 'fs162', 400)" onmouseover="showTip(event, 'fs162', 400)" class="f">dive</span> <span class="n">5</span>)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 373)" onmouseover="showTip(event, 'fs8', 373)" class="t">Async</span> <span class="k">with</span>
+  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 374)" onmouseover="showTip(event, 'fs8', 374)" class="f">RunSynchronously</span>(<span onmouseout="hideTip(event, 'fs48', 375)" onmouseover="showTip(event, 'fs48', 375)" class="f">x</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 376)" onmouseover="showTip(event, 'fs8', 376)" class="t">Async2</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>, <span onmouseout="hideTip(event, 'fs8', 377)" onmouseover="showTip(event, 'fs8', 377)" class="i">scheduler</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 378)" onmouseover="showTip(event, 'fs8', 378)" class="t">IScheduler</span>) <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">=</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 379)" onmouseover="showTip(event, 'fs8', 379)" class="i">tcs</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs8', 380)" onmouseover="showTip(event, 'fs8', 380)" class="t">TaskCompletionSource</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
+    <span onmouseout="hideTip(event, 'fs8', 381)" onmouseover="showTip(event, 'fs8', 381)" class="i">scheduler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs46', 382)" onmouseover="showTip(event, 'fs46', 382)" class="f">Enqueue</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs48', 383)" onmouseover="showTip(event, 'fs48', 383)" class="f">x</span> <span onmouseout="hideTip(event, 'fs8', 384)" onmouseover="showTip(event, 'fs8', 384)" class="i">scheduler</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 385)" onmouseover="showTip(event, 'fs29', 385)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 386)" onmouseover="showTip(event, 'fs8', 386)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs37', 387)" onmouseover="showTip(event, 'fs37', 387)" class="f">SetResult</span> <span onmouseout="hideTip(event, 'fs29', 388)" onmouseover="showTip(event, 'fs29', 388)" class="i">t</span>))
+    <span onmouseout="hideTip(event, 'fs8', 389)" onmouseover="showTip(event, 'fs8', 389)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs38', 390)" onmouseover="showTip(event, 'fs38', 390)" class="i">Task</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs39', 391)" onmouseover="showTip(event, 'fs39', 391)" class="i">Result</span>
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<h3>Serializes to</h3>
-<p><a href="https://gist.github.com/eiriktsarpalis/4f6e913e31533d92408f580c55d15506">gist.github.io/eiriktsarpalis</a></p>
+<h2>Problem Solved!</h2>
 </section>
 <section >
-<p>MBrace uses FsPickler for serialization</p>
-</section>
-<section >
-<p>FsPickler</p>
-<ul>
-<li>Messaging Serializer</li>
-<li>Multi-format</li>
-<li>Support most "serializable" .NET object graphs</li>
-<li>Fast</li>
-<li>Pickler combinators</li>
-</ul>
-</section>
-<section >
-<h3>But, there's a catch!</h3>
-</section>
-<section >
-<p>A .NET process cannot deserialize a lambda unless<br/>
-<em>it already knows about its corresponding class definition.</em></p>
-</section>
-<section >
-<p>This holds trivially in "closed" distributed systems, <br/>
-where every node contains a fixed set of assemblies.</p>
-</section>
-<section >
-<p>Not so in "dynamic" systems, where code can<br/>
-be generated at runtime or introduced after deployment.</p>
-</section>
-<section >
-<h3>Vagabond</h3>
-<ul>
-<li>Runtime assembly dependency management library</li>
-<li>Lets .NET applications execute <em>arbitrary code</em></li>
-<li>Incremental accumulation of client-defined code and data</li>
-<li>Built-in support for F# and C# REPLs</li>
-</ul>
-</section>
-<section >
-<p>In essense, Vagabond is two methods:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">val</span> <span class="i">computeDependencies</span> <span class="o">:</span> <span class="i">graph</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs166', 401)" onmouseover="showTip(event, 'fs166', 401)" class="i">obj</span> <span class="k">-&gt;</span> <span class="i">AssemblyPackage</span> []
-<span class="k">val</span> <span class="i">loadDependency</span> <span class="o">:</span> <span class="i">AssemblyPackage</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs1', 402)" onmouseover="showTip(event, 'fs1', 402)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs167', 403)" onmouseover="showTip(event, 'fs167', 403)" class="i">Reflection</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs168', 404)" onmouseover="showTip(event, 'fs168', 404)" class="i">Assembly</span>
-</code></pre></td>
-</tr>
-</table>
-</section>
-<section >
-<p>Example: Thunk Execution as a Service</p>
-<p><a href="https://github.com/nessos/Vagabond/blob/master/samples/ThunkServer/ThunkServer.fs"><img src="images/thunkserver.png" alt="Thunk Server" /></a></p>
-<p><a href="https://github.com/nessos/Vagabond/blob/master/samples/ThunkServer/ThunkServer.fs">Source Code</a></p>
-</section>
-<section >
-<h3>Implementing Azure Scheduler</h3>
-<ul>
-<li>FsPickler/Vagabond for serialization</li>
-<li>Use Blob Storage for storing new assemblies</li>
-<li>Use Service Bus for queueing jobs</li>
-</ul>
-</section>
-<section >
-<h3>Implementing Azure Scheduler</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -680,31 +342,94 @@ be generated at runtime or introduced after deployment.</p>
 <span class="l">6: </span>
 <span class="l">7: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs138', 405)" onmouseover="showTip(event, 'fs138', 405)" class="i">AzureScheduler</span>() <span class="o">=</span>
-  <span class="k">interface</span> <span onmouseout="hideTip(event, 'fs88', 406)" onmouseover="showTip(event, 'fs88', 406)" class="i">IScheduler</span> <span class="k">with</span>
-    <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Enqueue</span>(<span class="i">job</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs85', 407)" onmouseover="showTip(event, 'fs85', 407)" class="i">IContext</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs38', 408)" onmouseover="showTip(event, 'fs38', 408)" class="i">unit</span>) <span class="o">=</span>
-      <span class="k">let</span> <span class="i">dependencies</span> <span class="o">=</span> <span class="i">Vagabond</span><span class="o">.</span><span class="i">computeDependencies</span>(<span class="i">job</span>)
-      <span class="i">Blob</span><span class="o">.</span><span class="i">PersistAssemblies</span>(<span class="i">dependencies</span>)
-      <span class="k">let</span> <span class="i">json</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs17', 409)" onmouseover="showTip(event, 'fs17', 409)" class="i">FsPickler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs144', 410)" onmouseover="showTip(event, 'fs144', 410)" class="i">PickleToJson</span>(<span class="i">job</span>)
-      <span class="i">ServiceBus</span><span class="o">.</span><span class="i">EnqueueJob</span>(<span class="i">json</span>)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 397)" onmouseover="showTip(event, 'fs8', 397)" class="t">Async3</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 398)" onmouseover="showTip(event, 'fs8', 398)" class="t">CancellationToken</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 399)" onmouseover="showTip(event, 'fs8', 399)" class="t">IScheduler</span>
+                                    <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 400)" onmouseover="showTip(event, 'fs8', 400)" class="t">ISerializer</span>
+                                    <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 401)" onmouseover="showTip(event, 'fs8', 401)" class="t">IResultCellProvider</span>
+                                    <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 402)" onmouseover="showTip(event, 'fs8', 402)" class="t">ICounterProvider</span>
+                                    <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 403)" onmouseover="showTip(event, 'fs8', 403)" class="t">IFileSystem</span>
+                                    <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 404)" onmouseover="showTip(event, 'fs8', 404)" class="t">ISurrealismProvider</span>
+                                    <span class="k">-&gt;</span> (<span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 405)" onmouseover="showTip(event, 'fs8', 405)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 406)" onmouseover="showTip(event, 'fs8', 406)" class="t">unit</span>
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<h3>MBrace.Runtime</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 407)" onmouseover="showTip(event, 'fs8', 407)" class="t">IResourceContainer</span> <span class="o">=</span>
+  <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs8', 408)" onmouseover="showTip(event, 'fs8', 408)" class="f">Resolve</span><span class="o">&lt;</span><span class="o">&#39;</span><span onmouseout="hideTip(event, 'fs8', 409)" onmouseover="showTip(event, 'fs8', 409)" class="i">TResource</span><span class="o">&gt;</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 410)" onmouseover="showTip(event, 'fs8', 410)" class="t">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span onmouseout="hideTip(event, 'fs8', 411)" onmouseover="showTip(event, 'fs8', 411)" class="i">TResource</span>
+</code></pre></td>
+</tr>
+</table>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 412)" onmouseover="showTip(event, 'fs8', 412)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 413)" onmouseover="showTip(event, 'fs8', 413)" class="t">IResourceContainer</span> <span class="k">-&gt;</span> (<span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 414)" onmouseover="showTip(event, 'fs8', 414)" class="t">unit</span>) <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 415)" onmouseover="showTip(event, 'fs8', 415)" class="t">unit</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 416)" onmouseover="showTip(event, 'fs8', 416)" class="t">Cloud</span> <span class="o">=</span>
+    <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 417)" onmouseover="showTip(event, 'fs8', 417)" class="f">RunSynchronously</span>(<span onmouseout="hideTip(event, 'fs49', 418)" onmouseover="showTip(event, 'fs49', 418)" class="f">w</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 419)" onmouseover="showTip(event, 'fs8', 419)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>, <span onmouseout="hideTip(event, 'fs8', 420)" onmouseover="showTip(event, 'fs8', 420)" class="i">resources</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 421)" onmouseover="showTip(event, 'fs8', 421)" class="t">IResourceContainer</span>) <span class="o">=</span>
+        <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 422)" onmouseover="showTip(event, 'fs8', 422)" class="i">tcs</span> <span class="o">=</span> <span class="k">new</span> <span onmouseout="hideTip(event, 'fs8', 423)" onmouseover="showTip(event, 'fs8', 423)" class="t">TaskCompletionSource</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
+        <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 424)" onmouseover="showTip(event, 'fs8', 424)" class="i">scheduler</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 425)" onmouseover="showTip(event, 'fs8', 425)" class="i">resources</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs50', 426)" onmouseover="showTip(event, 'fs50', 426)" class="f">Resolve</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs8', 427)" onmouseover="showTip(event, 'fs8', 427)" class="t">IScheduler</span><span class="o">&gt;</span>()
+        <span onmouseout="hideTip(event, 'fs8', 428)" onmouseover="showTip(event, 'fs8', 428)" class="i">scheduler</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs46', 429)" onmouseover="showTip(event, 'fs46', 429)" class="f">Enqueue</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs49', 430)" onmouseover="showTip(event, 'fs49', 430)" class="f">w</span> <span onmouseout="hideTip(event, 'fs8', 431)" onmouseover="showTip(event, 'fs8', 431)" class="i">resources</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 432)" onmouseover="showTip(event, 'fs29', 432)" class="i">t</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 433)" onmouseover="showTip(event, 'fs8', 433)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs37', 434)" onmouseover="showTip(event, 'fs37', 434)" class="f">SetResult</span> <span onmouseout="hideTip(event, 'fs29', 435)" onmouseover="showTip(event, 'fs29', 435)" class="i">t</span>))
+        <span onmouseout="hideTip(event, 'fs8', 436)" onmouseover="showTip(event, 'fs8', 436)" class="i">tcs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs38', 437)" onmouseover="showTip(event, 'fs38', 437)" class="i">Task</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs39', 438)" onmouseover="showTip(event, 'fs39', 438)" class="i">Result</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs8', 439)" onmouseover="showTip(event, 'fs8', 439)" class="t">Cloud</span> <span class="k">with</span>
+  <span class="k">static</span> <span class="k">member</span> <span onmouseout="hideTip(event, 'fs8', 440)" onmouseover="showTip(event, 'fs8', 440)" class="f">Parallel</span>(<span onmouseout="hideTip(event, 'fs8', 441)" onmouseover="showTip(event, 'fs8', 441)" class="i">xs</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 442)" onmouseover="showTip(event, 'fs8', 442)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>[]) <span class="o">:</span> <span onmouseout="hideTip(event, 'fs8', 443)" onmouseover="showTip(event, 'fs8', 443)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span>[]<span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs8', 444)" onmouseover="showTip(event, 'fs8', 444)" class="i">resources</span> <span onmouseout="hideTip(event, 'fs40', 445)" onmouseover="showTip(event, 'fs40', 445)" class="f">k</span> <span class="k">-&gt;</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 446)" onmouseover="showTip(event, 'fs8', 446)" class="i">sched</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 447)" onmouseover="showTip(event, 'fs8', 447)" class="i">resources</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs50', 448)" onmouseover="showTip(event, 'fs50', 448)" class="f">Resolve</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs8', 449)" onmouseover="showTip(event, 'fs8', 449)" class="t">IScheduler</span><span class="o">&gt;</span>()
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs41', 450)" onmouseover="showTip(event, 'fs41', 450)" class="v">n</span>,<span onmouseout="hideTip(event, 'fs8', 451)" onmouseover="showTip(event, 'fs8', 451)" class="i">results</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 452)" onmouseover="showTip(event, 'fs8', 452)" class="f">ref</span> <span class="n">0</span>, <span onmouseout="hideTip(event, 'fs8', 453)" onmouseover="showTip(event, 'fs8', 453)" class="t">Array</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs42', 454)" onmouseover="showTip(event, 'fs42', 454)" class="f">zeroCreate</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span onmouseout="hideTip(event, 'fs8', 455)" onmouseover="showTip(event, 'fs8', 455)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 456)" onmouseover="showTip(event, 'fs43', 456)" class="i">Length</span>
+      <span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 457)" onmouseover="showTip(event, 'fs8', 457)" class="f">runChild</span> (<span onmouseout="hideTip(event, 'fs44', 458)" onmouseover="showTip(event, 'fs44', 458)" class="i">i</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 459)" onmouseover="showTip(event, 'fs8', 459)" class="t">int</span>) (<span onmouseout="hideTip(event, 'fs8', 460)" onmouseover="showTip(event, 'fs8', 460)" class="f">ch</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs8', 461)" onmouseover="showTip(event, 'fs8', 461)" class="t">Cloud</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span>
+        <span onmouseout="hideTip(event, 'fs8', 462)" onmouseover="showTip(event, 'fs8', 462)" class="f">ch</span> <span onmouseout="hideTip(event, 'fs8', 463)" onmouseover="showTip(event, 'fs8', 463)" class="i">resources</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs29', 464)" onmouseover="showTip(event, 'fs29', 464)" class="i">t</span> <span class="k">-&gt;</span>
+          <span onmouseout="hideTip(event, 'fs8', 465)" onmouseover="showTip(event, 'fs8', 465)" class="i">results</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 466)" onmouseover="showTip(event, 'fs44', 466)" class="i">i</span>] <span class="o">&lt;-</span> <span onmouseout="hideTip(event, 'fs29', 467)" onmouseover="showTip(event, 'fs29', 467)" class="i">t</span>
+          <span class="k">if</span> <span onmouseout="hideTip(event, 'fs8', 468)" onmouseover="showTip(event, 'fs8', 468)" class="t">Interlocked</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs45', 469)" onmouseover="showTip(event, 'fs45', 469)" class="f">Increment</span> <span onmouseout="hideTip(event, 'fs41', 470)" onmouseover="showTip(event, 'fs41', 470)" class="v">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs8', 471)" onmouseover="showTip(event, 'fs8', 471)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 472)" onmouseover="showTip(event, 'fs43', 472)" class="i">Length</span> <span class="k">then</span> <span onmouseout="hideTip(event, 'fs40', 473)" onmouseover="showTip(event, 'fs40', 473)" class="f">k</span> <span onmouseout="hideTip(event, 'fs8', 474)" onmouseover="showTip(event, 'fs8', 474)" class="i">results</span>)
+
+      <span class="k">for</span> <span onmouseout="hideTip(event, 'fs44', 475)" onmouseover="showTip(event, 'fs44', 475)" class="i">i</span> <span class="o">=</span> <span class="n">0</span> <span class="k">to</span> <span onmouseout="hideTip(event, 'fs8', 476)" onmouseover="showTip(event, 'fs8', 476)" class="i">xs</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs43', 477)" onmouseover="showTip(event, 'fs43', 477)" class="i">Length</span> <span class="o">-</span> <span class="n">1</span> <span class="k">do</span>
+        <span onmouseout="hideTip(event, 'fs8', 478)" onmouseover="showTip(event, 'fs8', 478)" class="i">sched</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs46', 479)" onmouseover="showTip(event, 'fs46', 479)" class="f">Enqueue</span>(<span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs8', 480)" onmouseover="showTip(event, 'fs8', 480)" class="f">runChild</span> <span onmouseout="hideTip(event, 'fs44', 481)" onmouseover="showTip(event, 'fs44', 481)" class="i">i</span> <span onmouseout="hideTip(event, 'fs8', 482)" onmouseover="showTip(event, 'fs8', 482)" class="i">xs</span><span class="o">.</span>[<span onmouseout="hideTip(event, 'fs44', 483)" onmouseover="showTip(event, 'fs44', 483)" class="i">i</span>])
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<p>An MBrace runtime is 3 components:</p>
 <ul>
-<li>Runtime foundation based on FsPickler/Vagabond.</li>
-<li>Common semantics/architecture for distributed runtimes.</li>
-<li>Easy runtime authoring.</li>
+<li>Cloud<'T> abstractions (MBrace.Core)</li>
+<li>FsPickler/Vagabond</li>
+<li>Scheduling implementation</li>
 </ul>
 </section>
 <section >
-<h3>Benefiting from FsPickler/Vagabond</h3>
-<ul>
-<li>Akka.Net, Prajna, Mobius</li>
-<li>Your project!</li>
-</ul>
+<h2>MBrace.Core: Async on Steroids!</h2>
+</section>
+<section >
+<p><a href="https://github.com/mbraceproject/MBrace.StarterKit/blob/master/HandsOnTutorial/going-further/400-advanced-core-internals.fsx">MBrace.Core.Internals Tutorial</a></p>
 </section>
 <section >
 <h2>Thank you!</h2>
