@@ -698,7 +698,7 @@ type TypeShape = ∃'T. TypeShape&lt;'T&gt;
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeTuple&lt;'T1,'T2&gt; = ShapeTuple
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeTuple&lt;'T1,'T2&gt; = TypeShape&lt;'T1 * 'T2&gt;
 
 type ShapeTuple = ∃'T1,'T2. ShapeTuple&lt;'T1,'T2&gt;
 
@@ -761,7 +761,7 @@ val (|ShapeTuple|_|) : System.Type -&gt; ShapeTuple option
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeSet&lt;'T when 'T : comparison&gt; = ShapeSet
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeSet&lt;'T when 'T : comparison&gt; = TypeShape&lt;Set&lt;'T&gt;&gt;
 
 type ShapeSet = ∃'T. ShapeSet&lt;'T&gt;
 
