@@ -151,13 +151,13 @@
 <div class="tip" id="fs103">union case Option.Some: Value: &#39;T -&gt; Option&lt;&#39;T&gt;</div>
 <div class="tip" id="fs104">union case Option.None: Option&lt;&#39;T&gt;</div>
 <div class="tip" id="fs105">type ISetVisitor&lt;&#39;R&gt; =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Visit : unit -&gt; &#39;R<br />&#160;&#160;end<br /><br />Full name: Index.ISetVisitor&lt;_&gt;</div>
-<div class="tip" id="fs106">abstract member ISetVisitor.Visit : unit -&gt; &#39;R<br /><br />Full name: Index.ISetVisitor`1.Visit<br /><em><br /><br />&#160;Visits Set&lt;&#39;T&gt;</em></div>
+<div class="tip" id="fs106">abstract member ISetVisitor.Visit : unit -&gt; &#39;R<br /><br />Full name: Index.ISetVisitor`1.Visit</div>
 <div class="tip" id="fs107">type ShapeSet =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Accept : ISetVisitor&lt;&#39;R&gt; -&gt; &#39;R<br />&#160;&#160;end<br /><br />Full name: Index.ShapeSet</div>
 <div class="tip" id="fs108">abstract member ShapeSet.Accept : ISetVisitor&lt;&#39;R&gt; -&gt; &#39;R<br /><br />Full name: Index.ShapeSet.Accept</div>
 <div class="tip" id="fs109">Multiple items<br />type ShapeSet =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member Accept : ISetVisitor&lt;&#39;R&gt; -&gt; &#39;R<br />&#160;&#160;end<br /><br />Full name: Index.ShapeSet<br /><br />--------------------<br />type ShapeSet&lt;&#39;T (requires comparison)&gt; =<br />&#160;&#160;interface ShapeSet<br />&#160;&#160;new : unit -&gt; ShapeSet&lt;&#39;T&gt;<br /><br />Full name: Index.ShapeSet&lt;_&gt;<br /><br />--------------------<br />new : unit -&gt; ShapeSet&lt;&#39;T&gt;</div>
 <div class="tip" id="fs110">override ShapeSet.Accept : v:ISetVisitor&lt;&#39;a&gt; -&gt; &#39;a<br /><br />Full name: Index.ShapeSet`1.Accept</div>
 <div class="tip" id="fs111">val v : ISetVisitor&lt;&#39;a&gt;</div>
-<div class="tip" id="fs112">abstract member ISetVisitor.Visit : unit -&gt; &#39;R<br /><em><br /><br />&#160;Visits Set&lt;&#39;T&gt;</em></div>
+<div class="tip" id="fs112">abstract member ISetVisitor.Visit : unit -&gt; &#39;R</div>
 <div class="tip" id="fs113">Multiple items<br />module Set<br /><br />from Microsoft.FSharp.Collections<br /><br />--------------------<br />type Set&lt;&#39;T (requires comparison)&gt; =<br />&#160;&#160;interface IComparable<br />&#160;&#160;interface IEnumerable<br />&#160;&#160;interface IEnumerable&lt;&#39;T&gt;<br />&#160;&#160;interface ICollection&lt;&#39;T&gt;<br />&#160;&#160;new : elements:seq&lt;&#39;T&gt; -&gt; Set&lt;&#39;T&gt;<br />&#160;&#160;member Add : value:&#39;T -&gt; Set&lt;&#39;T&gt;<br />&#160;&#160;member Contains : value:&#39;T -&gt; bool<br />&#160;&#160;override Equals : obj -&gt; bool<br />&#160;&#160;member IsProperSubsetOf : otherSet:Set&lt;&#39;T&gt; -&gt; bool<br />&#160;&#160;member IsProperSupersetOf : otherSet:Set&lt;&#39;T&gt; -&gt; bool<br />&#160;&#160;...<br /><br />Full name: Microsoft.FSharp.Collections.Set&lt;_&gt;<br /><br />--------------------<br />new : elements:seq&lt;&#39;T&gt; -&gt; Set&lt;&#39;T&gt;</div>
 <div class="tip" id="fs114">val st : Type</div>
 <div class="tip" id="fs115">type Lens&lt;&#39;T,&#39;F&gt; =<br />&#160;&#160;{Get: &#39;T -&gt; &#39;F;<br />&#160;&#160;&#160;Set: &#39;T -&gt; &#39;F -&gt; &#39;T;}<br /><br />Full name: Index.Lens&lt;_,_&gt;</div>
@@ -770,19 +770,17 @@ val (|ShapeSet|_|) : System.Type -&gt; ShapeSet option
 </section>
 <section >
 <h3>Other Shapes</h3>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs105', 235)" onmouseover="showTip(event, 'fs105', 235)" class="t">ISetVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
-    <span class="c">/// Visits Set&lt;&#39;T&gt;</span>
     <span class="k">abstract</span> <span onmouseout="hideTip(event, 'fs106', 236)" onmouseover="showTip(event, 'fs106', 236)" class="f">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span> <span class="k">when</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">:</span> <span class="i">comparison</span><span class="o">&gt;</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs61', 237)" onmouseover="showTip(event, 'fs61', 237)" class="t">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
 
 <span class="k">type</span> <span onmouseout="hideTip(event, 'fs107', 238)" onmouseover="showTip(event, 'fs107', 238)" class="t">ShapeSet</span> <span class="o">=</span>
