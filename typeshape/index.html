@@ -56,7 +56,7 @@
 <div class="tip" id="fs8">namespace Microsoft.FSharp</div>
 <div class="tip" id="fs9">namespace Microsoft.FSharp.Reflection</div>
 <div class="tip" id="fs10">module TypeShape</div>
-<div class="tip" id="fs11">val prettyPrint : value:obj -&gt; string<br /><br />Full name: Index.prettyPrint</div>
+<div class="tip" id="fs11">val print : value:obj -&gt; string<br /><br />Full name: Index.print</div>
 <div class="tip" id="fs12">val value : obj</div>
 <div class="tip" id="fs13">type obj = Object<br /><br />Full name: Microsoft.FSharp.Core.obj</div>
 <div class="tip" id="fs14">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
@@ -262,27 +262,23 @@ module Arb =
 </section>
 <section >
 <h3>Implementing Print</h3>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let rec print (value : 'T) : string =
     match value with
     | :? int as i -&gt; string i
     | :? string as s -&gt; s
-    | :? ('a * 'b) as (a,b) -&gt; sprintf "(%s, %s)" (prettyPrint a) (prettyPrint b)
+    | :? ('a * 'b) as (a,b) -&gt; sprintf "(%s, %s)" (print a) (print b)
     | :? ('a option) as None -&gt; "None"
-    | :? ('a option) as Some a -&gt; sprintf "Some %s" (prettyPrint a)
+    | :? ('a option) as Some a -&gt; sprintf "Some %s" (print a)
     | _ -&gt; value.ToString()
-
-prettyPrint (Some (1,"2"), "12")
 </code></pre></td></tr></table>
 </section>
 <section >
@@ -312,7 +308,7 @@ prettyPrint (Some (1,"2"), "12")
 <span class="l">17: </span>
 <span class="l">18: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs11', 14)" onmouseover="showTip(event, 'fs11', 14)" class="f">prettyPrint</span> (<span onmouseout="hideTip(event, 'fs12', 15)" onmouseover="showTip(event, 'fs12', 15)" class="i">value</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs13', 16)" onmouseover="showTip(event, 'fs13', 16)" class="t">obj</span>) <span class="o">=</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs11', 14)" onmouseover="showTip(event, 'fs11', 14)" class="f">print</span> (<span onmouseout="hideTip(event, 'fs12', 15)" onmouseover="showTip(event, 'fs12', 15)" class="i">value</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs13', 16)" onmouseover="showTip(event, 'fs13', 16)" class="t">obj</span>) <span class="o">=</span>
     <span class="k">match</span> <span onmouseout="hideTip(event, 'fs12', 17)" onmouseover="showTip(event, 'fs12', 17)" class="i">value</span> <span class="k">with</span>
     | <span class="k">null</span> <span class="k">-&gt;</span> <span class="s">&quot;&lt;null&gt;&quot;</span>
     | <span class="o">:?</span> <span onmouseout="hideTip(event, 'fs14', 18)" onmouseover="showTip(event, 'fs14', 18)" class="t">int</span> <span class="k">as</span> <span onmouseout="hideTip(event, 'fs15', 19)" onmouseover="showTip(event, 'fs15', 19)" class="i">i</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs16', 20)" onmouseover="showTip(event, 'fs16', 20)" class="f">string</span> <span onmouseout="hideTip(event, 'fs15', 21)" onmouseover="showTip(event, 'fs15', 21)" class="i">i</span>
@@ -323,11 +319,11 @@ prettyPrint (Some (1,"2"), "12")
             <span onmouseout="hideTip(event, 'fs18', 31)" onmouseover="showTip(event, 'fs18', 31)" class="i">t</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs23', 32)" onmouseover="showTip(event, 'fs23', 32)" class="i">IsGenericType</span> <span class="o">&amp;&amp;</span> <span onmouseout="hideTip(event, 'fs21', 33)" onmouseover="showTip(event, 'fs21', 33)" class="i">gt</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs18', 34)" onmouseover="showTip(event, 'fs18', 34)" class="i">t</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs24', 35)" onmouseover="showTip(event, 'fs24', 35)" class="f">GetGenericTypeDefinition</span>()
         <span class="k">if</span> <span onmouseout="hideTip(event, 'fs20', 36)" onmouseover="showTip(event, 'fs20', 36)" class="f">isGenTypeOf</span> <span onmouseout="hideTip(event, 'fs25', 37)" onmouseover="showTip(event, 'fs25', 37)" class="i">typedefof</span><span class="o">&lt;</span>_ <span onmouseout="hideTip(event, 'fs26', 38)" onmouseover="showTip(event, 'fs26', 38)" class="t">option</span><span class="o">&gt;</span> <span class="k">then</span>
             <span class="k">let</span> <span onmouseout="hideTip(event, 'fs12', 39)" onmouseover="showTip(event, 'fs12', 39)" class="i">value</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs18', 40)" onmouseover="showTip(event, 'fs18', 40)" class="i">t</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 41)" onmouseover="showTip(event, 'fs27', 41)" class="f">GetProperty</span>(<span class="s">&quot;Value&quot;</span>)<span class="o">.</span><span class="f">GetValue</span>(<span onmouseout="hideTip(event, 'fs12', 42)" onmouseover="showTip(event, 'fs12', 42)" class="i">value</span>)
-            <span onmouseout="hideTip(event, 'fs28', 43)" onmouseover="showTip(event, 'fs28', 43)" class="f">sprintf</span> <span class="s">&quot;Some </span><span class="pf">%s</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs11', 44)" onmouseover="showTip(event, 'fs11', 44)" class="f">prettyPrint</span> <span onmouseout="hideTip(event, 'fs12', 45)" onmouseover="showTip(event, 'fs12', 45)" class="i">value</span>)
+            <span onmouseout="hideTip(event, 'fs28', 43)" onmouseover="showTip(event, 'fs28', 43)" class="f">sprintf</span> <span class="s">&quot;Some </span><span class="pf">%s</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs11', 44)" onmouseover="showTip(event, 'fs11', 44)" class="f">print</span> <span onmouseout="hideTip(event, 'fs12', 45)" onmouseover="showTip(event, 'fs12', 45)" class="i">value</span>)
         <span class="k">elif</span> <span onmouseout="hideTip(event, 'fs20', 46)" onmouseover="showTip(event, 'fs20', 46)" class="f">isGenTypeOf</span> <span onmouseout="hideTip(event, 'fs25', 47)" onmouseover="showTip(event, 'fs25', 47)" class="i">typedefof</span><span class="o">&lt;</span>_ <span class="o">*</span> _<span class="o">&gt;</span> <span class="k">then</span>
             <span class="k">let</span> <span onmouseout="hideTip(event, 'fs29', 48)" onmouseover="showTip(event, 'fs29', 48)" class="i">v1</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs18', 49)" onmouseover="showTip(event, 'fs18', 49)" class="i">t</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 50)" onmouseover="showTip(event, 'fs27', 50)" class="f">GetProperty</span>(<span class="s">&quot;Item1&quot;</span>)<span class="o">.</span><span class="f">GetValue</span>(<span onmouseout="hideTip(event, 'fs12', 51)" onmouseover="showTip(event, 'fs12', 51)" class="i">value</span>)
             <span class="k">let</span> <span onmouseout="hideTip(event, 'fs30', 52)" onmouseover="showTip(event, 'fs30', 52)" class="i">v2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs18', 53)" onmouseover="showTip(event, 'fs18', 53)" class="i">t</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 54)" onmouseover="showTip(event, 'fs27', 54)" class="f">GetProperty</span>(<span class="s">&quot;Item2&quot;</span>)<span class="o">.</span><span class="f">GetValue</span>(<span onmouseout="hideTip(event, 'fs12', 55)" onmouseover="showTip(event, 'fs12', 55)" class="i">value</span>)
-            <span onmouseout="hideTip(event, 'fs28', 56)" onmouseover="showTip(event, 'fs28', 56)" class="f">sprintf</span> <span class="s">&quot;(</span><span class="pf">%s</span><span class="s">, </span><span class="pf">%s</span><span class="s">)&quot;</span> (<span onmouseout="hideTip(event, 'fs11', 57)" onmouseover="showTip(event, 'fs11', 57)" class="f">prettyPrint</span> <span onmouseout="hideTip(event, 'fs29', 58)" onmouseover="showTip(event, 'fs29', 58)" class="i">v1</span>) (<span onmouseout="hideTip(event, 'fs11', 59)" onmouseover="showTip(event, 'fs11', 59)" class="f">prettyPrint</span> <span onmouseout="hideTip(event, 'fs30', 60)" onmouseover="showTip(event, 'fs30', 60)" class="i">v2</span>)
+            <span onmouseout="hideTip(event, 'fs28', 56)" onmouseover="showTip(event, 'fs28', 56)" class="f">sprintf</span> <span class="s">&quot;(</span><span class="pf">%s</span><span class="s">, </span><span class="pf">%s</span><span class="s">)&quot;</span> (<span onmouseout="hideTip(event, 'fs11', 57)" onmouseover="showTip(event, 'fs11', 57)" class="f">print</span> <span onmouseout="hideTip(event, 'fs29', 58)" onmouseover="showTip(event, 'fs29', 58)" class="i">v1</span>) (<span onmouseout="hideTip(event, 'fs11', 59)" onmouseover="showTip(event, 'fs11', 59)" class="f">print</span> <span onmouseout="hideTip(event, 'fs30', 60)" onmouseover="showTip(event, 'fs30', 60)" class="i">v2</span>)
         <span class="k">else</span>
             <span onmouseout="hideTip(event, 'fs12', 61)" onmouseover="showTip(event, 'fs12', 61)" class="i">value</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs31', 62)" onmouseover="showTip(event, 'fs31', 62)" class="f">ToString</span>()
 </code></pre></td>
