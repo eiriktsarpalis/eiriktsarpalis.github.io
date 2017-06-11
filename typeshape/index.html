@@ -270,9 +270,9 @@ val pack : Cell&lt;'a&gt; -&gt; Cell
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">pack { Items = [] }
-pack { Items = [1;2] } : Cell
-pack { Items = ["a";"b"] } : Cell
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let c : Cell = pack { Items = [] }
+let c : Cell = pack { Items = [1;2] }
+let c : Cell = pack { Items = ["a";"b"] }
 </code></pre></td></tr></table>
 </section>
 <section >
