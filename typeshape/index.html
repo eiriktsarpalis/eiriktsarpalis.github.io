@@ -1,0 +1,849 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TypeShape: Practical Generic Programming in F#</title>
+    <meta name="description" content="TypeShape: Practical Generic Programming in F#">
+    <meta name="author" content="Eirik Tsarpalis">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="//code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="//code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/style.css" />
+    <link type="text/css" rel="stylesheet" href="fsharp.formatting/styles/deedle.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script src="fsharp.formatting/styles/tips.js" type="text/javascript"></script>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fsreveal.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <div class="reveal">
+        
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section >
+<h3>TypeShape: Practical Generic Programming in F#</h3>
+<h4>Eirik Tsarpalis</h4>
+<h6><a href="https://eiriktsarpalis.github.io/typeshape"><a href="https://eiriktsarpalis.github.io/typeshape">https://eiriktsarpalis.github.io/typeshape</a></a></h6>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</section>
+<section >
+<h3>About Me</h3>
+<ul>
+<li>Mathematician</li>
+<li>F#/.NET developer</li>
+<li>Co-Author of <a href="http://mbrace.io">MBrace</a></li>
+<li>Working at <a href="http://jet.com">Jet</a> in Dublin</li>
+</ul>
+</section>
+<section >
+<h3>Datatype Generic Programming</h3>
+<blockquote>
+<p>"Programs parameterized by shapes of datatypes"</p>
+</blockquote>
+</section>
+<section >
+<p><a href="https://ldpreload.com/p/syb/hmap.pdf"><img src="images/syb.png" alt="Scrap your Boilerplate" /></a></p>
+</section>
+<section >
+<h3>Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val print : 'T -&gt; string
+</code></pre></td></tr></table>
+<h9></h9>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">&gt; print false ;;
+val it : string = "false"
+&gt; print 42
+val it : string = "42"
+&gt; print [Some (false, 42)] ;;
+val it : string = "[Some (false, 42)]"
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Another Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">namespace Newtonsoft.Json
+
+val serialize   : 'T -&gt; string
+val deserialize : string -&gt; 'T
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Yet Another Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">namespace FsCheck
+
+module Arb =
+    val generate&lt;'T&gt; : Gen&lt;'T&gt;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Yet Another Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val mkComparer&lt;'T&gt; : unit -&gt; IComparer&lt;'T&gt;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Implementing Print?</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val print : 'T -&gt; string
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Implementing Print</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let rec print (value : 'T) : string =
+    match value with
+    | :? int as i -&gt; string i
+    | :? string as s -&gt; s
+    | :? ('a * 'b) as (a,b) -&gt; sprintf "(%s, %s)" (print a) (print b)
+    | :? ('a option) as None -&gt; "None"
+    | :? ('a option) as Some a -&gt; sprintf "Some %s" (print a)
+    | _ -&gt; value.ToString()
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>That's Invalid .NET!</h2>
+</section>
+<section >
+<h2>Reality?</h2>
+</section>
+<section >
+<h3>Reality: Reflection</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="k">rec</span> <span class="i">print</span> (<span class="i">value</span> <span class="o">:</span> <span class="i">obj</span>) <span class="o">=</span>
+    <span class="k">match</span> <span class="i">value</span> <span class="k">with</span>
+    | <span class="k">null</span> <span class="k">-&gt;</span> <span class="s">&quot;&lt;null&gt;&quot;</span>
+    | <span class="o">:?</span> <span class="i">int</span> <span class="k">as</span> <span class="i">i</span> <span class="k">-&gt;</span> <span class="i">string</span> <span class="i">i</span>
+    | <span class="o">:?</span> <span class="i">string</span> <span class="k">as</span> <span class="i">s</span> <span class="k">-&gt;</span> <span class="i">s</span>
+    | _ <span class="k">-&gt;</span>
+        <span class="k">let</span> <span class="i">t</span> <span class="o">=</span> <span class="i">value</span><span class="o">.</span><span class="i">GetType</span>()
+        <span class="k">let</span> <span class="i">isGenTypeOf</span> (<span class="i">gt</span> <span class="o">:</span> <span class="i">Type</span>) <span class="o">=</span>
+            <span class="i">t</span><span class="o">.</span><span class="i">IsGenericType</span> <span class="o">&amp;&amp;</span> <span class="i">gt</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetGenericTypeDefinition</span>()
+        <span class="k">if</span> <span class="i">isGenTypeOf</span> <span class="i">typedefof</span><span class="o">&lt;</span>_ <span class="i">option</span><span class="o">&gt;</span> <span class="k">then</span>
+            <span class="k">let</span> <span class="i">value</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetProperty</span>(<span class="s">&quot;Value&quot;</span>)<span class="o">.</span><span class="i">GetValue</span>(<span class="i">value</span>)
+            <span class="i">sprintf</span> <span class="s">&quot;Some %s&quot;</span> (<span class="i">print</span> <span class="i">value</span>)
+        <span class="k">elif</span> <span class="i">isGenTypeOf</span> <span class="i">typedefof</span><span class="o">&lt;</span>_ <span class="o">*</span> _<span class="o">&gt;</span> <span class="k">then</span>
+            <span class="k">let</span> <span class="i">v1</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetProperty</span>(<span class="s">&quot;Item1&quot;</span>)<span class="o">.</span><span class="i">GetValue</span>(<span class="i">value</span>)
+            <span class="k">let</span> <span class="i">v2</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetProperty</span>(<span class="s">&quot;Item2&quot;</span>)<span class="o">.</span><span class="i">GetValue</span>(<span class="i">value</span>)
+            <span class="i">sprintf</span> <span class="s">&quot;(%s, %s)&quot;</span> (<span class="i">print</span> <span class="i">v1</span>) (<span class="i">print</span> <span class="i">v2</span>)
+        <span class="k">else</span>
+            <span class="i">value</span><span class="o">.</span><span class="i">ToString</span>()
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Reflection: tedious, unsafe, ugly, slow.</h3>
+</section>
+<section >
+<h3>TypeShape</h3>
+<ul>
+<li>Library for generic programming</li>
+<li>Techniques originating from MBrace/FsPickler</li>
+<li>Founded on .NET Generics</li>
+</ul>
+</section>
+<section >
+<h1>Demo</h1>
+</section>
+<section >
+<h2>Interlude: Existential Types</h2>
+</section>
+<section >
+<h2>Universal Quantifiers</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val length : ∀'T. 'T list -&gt; int
+</code></pre></td></tr></table>
+<h1></h1>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">length [1;2;3]
+length ["a";"b"]
+length [(1,2);(3,4)]
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>Existential Quantifiers</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type Cell&lt;'T&gt; = { Items : 'T list }
+
+type Cell = ∃'T. Cell&lt;'T&gt;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>Existential Packing</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type Cell&lt;'T&gt; = { Items : 'T list }
+
+type Cell = ∃'T. Cell&lt;'T&gt;
+
+val pack : Cell&lt;'a&gt; -&gt; Cell
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>Existential Packing</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">pack { Items = [] }
+pack { Items = [1;2] } : Cell
+pack { Items = ["a";"b"] } : Cell
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Examples of Existential Packing in .NET?</h3>
+</section>
+<section >
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">open System.Threading.Tasks
+
+type Task = ∃'T. Task&lt;'T&gt;
+
+let pack (task : Task&lt;'T&gt;) = task :&gt; Task
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Encoding Existential Packing</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type Cell = interface end
+
+type Cell&lt;'T&gt; = { Items : 'T list }
+with interface Cell
+
+let pack (c : Cell&lt;'T&gt;) = c :&gt; Cell
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Existential Unpacking</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let getLength (cell : Cell) =  
+    let (cell : Cell&lt;'T&gt;) = unpack cell
+    in List.length cell.Items
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Again, not valid .NET code</h3>
+</section>
+<section >
+<h3>Encoding Existential Unpacking in .NET?</h3>
+</section>
+<section >
+<h3>Does this Work?</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let unpack&lt;'T&gt; (c : Cell) = c :?&gt; Cell&lt;'T&gt;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Nope!</h3>
+<ul>
+<li>Guessing the payload by passing a type argument.</li>
+<li>Wrong guesses result in runtime errors!</li>
+<li>Need to <em>safely</em> unpack the existential payload.</li>
+</ul>
+</section>
+<section >
+<h3>Existential Unpacking</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val unpack&lt;'R&gt; : (∃'T. Cell&lt;'T&gt;) -&gt; (∀'T. Cell&lt;'T&gt; -&gt; 'R) -&gt; 'R
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Rank-2 types</h3>
+<ul>
+<li>The second argument is a Rank-2 lambda.</li>
+<li>Polymorphic on the input type.</li>
+</ul>
+</section>
+<section >
+<h3>F# lambdas are not Rank-2.</h3>
+<p><img src="images/norank2.png" alt="F# funcs are not rank-2" /></p>
+</section>
+<section >
+<h3>F# Lambdas</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type FSharpFunc&lt;'T,'S&gt; =
+    abstract Invoke : 'T -&gt; 'S
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>A Rank-2 encoding</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">GFunc</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Invoke</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">let</span> <span class="i">test</span> (<span class="i">f</span> <span class="o">:</span> <span class="i">GFunc</span><span class="o">&lt;</span><span class="i">int</span><span class="o">&gt;</span>) <span class="o">=</span>
+    <span class="i">f</span><span class="o">.</span><span class="i">Invoke</span> <span class="n">42</span> <span class="o">+</span> <span class="i">f</span><span class="o">.</span><span class="i">Invoke</span> <span class="s">&quot;42&quot;</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Encoding Existentials</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">Cell</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Accept</span> <span class="o">:</span> <span class="i">CellFunc</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">and</span> <span class="i">Cell</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">=</span> { <span class="i">Items</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="i">list</span> }
+<span class="k">with</span> 
+    <span class="k">interface</span> <span class="i">Cell</span> <span class="k">with</span>
+      <span class="k">member</span> <span class="i">cell</span><span class="o">.</span><span class="i">Accept</span> <span class="i">f</span> <span class="o">=</span> <span class="i">f</span><span class="o">.</span><span class="i">Invoke</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="i">cell</span>
+
+<span class="k">and</span> <span class="i">CellFunc</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Invoke</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="i">Cell</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">let</span> <span class="i">pack</span> (<span class="i">cell</span> <span class="o">:</span> <span class="i">Cell</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span> <span class="i">cell</span> <span class="o">:&gt;</span> <span class="i">Cell</span>
+<span class="k">let</span> <span class="i">unpack</span> (<span class="i">cell</span> <span class="o">:</span> <span class="i">Cell</span>) (<span class="i">f</span> <span class="o">:</span> <span class="i">CellFunc</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span>) <span class="o">:</span> <span class="o">&#39;</span><span class="i">R</span> <span class="o">=</span> <span class="i">cell</span><span class="o">.</span><span class="i">Accept</span> <span class="i">f</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Using Unpack</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">getLength</span> <span class="i">cell</span> <span class="o">=</span>
+    <span class="i">unpack</span> <span class="i">cell</span> 
+        { <span class="k">new</span> <span class="i">CellFunc</span><span class="o">&lt;</span><span class="i">int</span><span class="o">&gt;</span> <span class="k">with</span> 
+            <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Invoke</span> (<span class="i">cell</span> <span class="o">:</span> <span class="i">Cell</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>) <span class="o">=</span>
+              <span class="i">List</span><span class="o">.</span><span class="i">length</span> <span class="i">cell</span><span class="o">.</span><span class="i">Items</span> }
+
+<span class="k">let</span> <span class="i">c1</span> <span class="o">:</span> <span class="i">Cell</span> <span class="o">=</span> <span class="i">pack</span> { <span class="i">Items</span> <span class="o">=</span> [<span class="s">&quot;value&quot;</span>] }
+<span class="k">let</span> <span class="i">c2</span> <span class="o">:</span> <span class="i">Cell</span> <span class="o">=</span> <span class="i">pack</span> { <span class="i">Items</span> <span class="o">=</span> [<span class="n">1</span> <span class="o">..</span> <span class="n">100</span>] }
+
+<span class="i">getLength</span> <span class="i">c1</span>
+<span class="i">getLength</span> <span class="i">c2</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h2>TypeShape as Existential Types</h2>
+</section>
+<section >
+<h2>TypeShape</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type TypeShape&lt;'T&gt; = TypeShape // phantom type
+
+type TypeShape = ∃'T. TypeShape&lt;'T&gt;
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>TypeShape</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">ITypeVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="i">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">TypeShape</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Accept</span> <span class="o">:</span> <span class="i">ITypeVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">TypeShape</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>() <span class="o">=</span>
+    <span class="k">interface</span> <span class="i">TypeShape</span> <span class="k">with</span>
+        <span class="k">override</span> <span class="i">__</span><span class="o">.</span><span class="i">Accept</span> <span class="i">v</span> <span class="o">=</span> <span class="i">v</span><span class="o">.</span><span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Generating Existentials</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">mkShape</span> (<span class="i">t</span> <span class="o">:</span> <span class="i">Type</span>) <span class="o">=</span>
+    <span class="k">let</span> <span class="i">tsty</span> <span class="o">=</span> <span class="i">typedefof</span><span class="o">&lt;</span><span class="i">TypeShape</span><span class="o">&lt;</span>_<span class="o">&gt;</span><span class="o">&gt;</span><span class="o">.</span><span class="i">MakeGenericType</span> [|<span class="i">t</span>|]
+    <span class="i">Activator</span><span class="o">.</span><span class="i">CreateInstance</span> <span class="i">tsty</span> <span class="o">:?&gt;</span> <span class="i">TypeShape</span> 
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>A Simple Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">mkShape</span>(<span class="i">Type</span><span class="o">.</span><span class="i">GetType</span> <span class="s">&quot;System.Int32&quot;</span>)
+    <span class="o">.</span><span class="i">Accept</span> { <span class="k">new</span> <span class="i">ITypeVisitor</span><span class="o">&lt;</span><span class="i">Type</span><span class="o">&gt;</span> <span class="k">with</span> 
+                <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>() <span class="o">=</span> <span class="i">typeof</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span> }
+</code></pre></td>
+</tr>
+</table>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val it : Type = System.Int32
+</code></pre></td></tr></table>
+</section>
+<section >
+<section >
+<h3>A Less Simple Example</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">MyApi</span> <span class="o">=</span>
+    <span class="k">static</span> <span class="k">member</span> <span class="i">MyMethod</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>(<span class="o">?</span><span class="i">value</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span>) <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="i">option</span> <span class="o">=</span> <span class="i">value</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Objective: Implement the untyped version</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">val myMethodUntyped : value:obj -&gt; obj
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Using Reflection</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">invokeUntyped</span> (<span class="i">value</span><span class="o">:</span><span class="i">obj</span>) <span class="o">=</span>
+    <span class="c">// Step 1: get the underlying System.Type for the value</span>
+    <span class="k">let</span> <span class="i">t</span> <span class="o">=</span> <span class="i">value</span><span class="o">.</span><span class="i">GetType</span>()
+    <span class="c">// Step 2: locate the required method and apply the type argument</span>
+    <span class="k">let</span> <span class="i">methodInfo</span> <span class="o">=</span>
+        <span class="i">typeof</span><span class="o">&lt;</span><span class="i">MyApi</span><span class="o">&gt;</span>
+            <span class="o">.</span><span class="i">GetMethod</span>(<span class="s">&quot;MyMethod&quot;</span>, <span class="i">BindingFlags</span><span class="o">.</span><span class="i">Public</span> <span class="o">|||</span> <span class="i">BindingFlags</span><span class="o">.</span><span class="i">Static</span>)
+            <span class="o">.</span><span class="i">MakeGenericMethod</span> [|<span class="i">t</span>|]
+ 
+    <span class="c">// Step 3: since the parameter is optional, it must be wrapped</span>
+    <span class="k">let</span> <span class="i">optTy</span> <span class="o">=</span> <span class="i">typedefof</span><span class="o">&lt;</span>_ <span class="i">option</span><span class="o">&gt;</span><span class="o">.</span><span class="i">MakeGenericType</span> [|<span class="i">t</span>|]
+    <span class="k">let</span> <span class="i">optCtor</span> <span class="o">=</span> <span class="i">optTy</span><span class="o">.</span><span class="i">GetConstructor</span> [|<span class="i">t</span>|]
+    <span class="k">let</span> <span class="i">optVal</span> <span class="o">=</span> <span class="i">optCtor</span><span class="o">.</span><span class="i">Invoke</span> [|<span class="i">value</span>|]
+ 
+    <span class="c">/// Step 4: invoke the method with constructed optional parameter</span>
+    <span class="i">methodInfo</span><span class="o">.</span><span class="i">Invoke</span>(<span class="k">null</span>, [|<span class="i">optVal</span>|])
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Using TypeShape</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">invokeUntyped&#39;</span> (<span class="i">value</span><span class="o">:</span><span class="i">obj</span>) <span class="o">=</span>
+    <span class="k">let</span> <span class="i">shape</span> <span class="o">=</span> <span class="i">mkShape</span>(<span class="i">value</span><span class="o">.</span><span class="i">GetType</span>())
+    <span class="i">shape</span><span class="o">.</span><span class="i">Accept</span> { <span class="k">new</span> <span class="i">ITypeVisitor</span><span class="o">&lt;</span><span class="i">obj</span><span class="o">&gt;</span> <span class="k">with</span>
+        <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>() <span class="o">=</span> <span class="i">MyApi</span><span class="o">.</span><span class="i">MyMethod</span>(<span class="i">value</span> <span class="o">:?&gt;</span> <span class="o">&#39;</span><span class="i">T</span>) <span class="o">:&gt;</span> <span class="i">obj</span>
+    }
+</code></pre></td>
+</tr>
+</table>
+</section>
+</section>
+<section >
+<h2>Other Shapes</h2>
+</section>
+<section >
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeTuple&lt;'T1,'T2&gt; = TypeShape&lt;'T1 * 'T2&gt;
+
+type ShapeTuple = ∃'T1,'T2. ShapeTuple&lt;'T1,'T2&gt;
+
+val (|ShapeTuple|_|) : System.Type -&gt; ShapeTuple option
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">ITupleVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T1</span>,<span class="o">&#39;</span><span class="i">T2</span><span class="o">&gt;</span> <span class="o">:</span> <span class="i">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">ShapeTuple</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Accept</span> <span class="o">:</span> <span class="i">ITupleVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">ShapeTuple</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T1</span>,<span class="o">&#39;</span><span class="i">T2</span><span class="o">&gt;</span>() <span class="o">=</span>
+    <span class="k">interface</span> <span class="i">ShapeTuple</span> <span class="k">with</span>
+        <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Accept</span> <span class="i">v</span> <span class="o">=</span> <span class="i">v</span><span class="o">.</span><span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T1</span>,<span class="o">&#39;</span><span class="i">T2</span><span class="o">&gt;</span> ()
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> (|<span class="i">ShapeTuple</span>|_|) (<span class="i">t</span> <span class="o">:</span> <span class="i">Type</span>) <span class="o">=</span>
+    <span class="k">if</span> <span class="i">t</span><span class="o">.</span><span class="i">IsGenericType</span> <span class="o">&amp;&amp;</span> <span class="i">t</span><span class="o">.</span><span class="i">GetGenericTypeDefinition</span>() <span class="o">=</span> <span class="i">typedefof</span><span class="o">&lt;</span>_ <span class="o">*</span> _<span class="o">&gt;</span> <span class="k">then</span>
+        <span class="k">let</span> <span class="i">typeArgs</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetGenericArguments</span>()
+        <span class="k">let</span> <span class="i">ty</span> <span class="o">=</span> <span class="i">typedefof</span><span class="o">&lt;</span><span class="i">ShapeTuple</span><span class="o">&lt;</span>_,_<span class="o">&gt;</span><span class="o">&gt;</span><span class="o">.</span><span class="i">MakeGenericType</span> <span class="i">typeArgs</span>
+        <span class="i">Activator</span><span class="o">.</span><span class="i">CreateInstance</span> <span class="i">ty</span> <span class="o">:?&gt;</span> <span class="i">ShapeTuple</span> <span class="o">|&gt;</span> <span class="i">Some</span>
+    <span class="k">else</span>
+        <span class="i">None</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+</section>
+<section >
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeSet&lt;'T when 'T : comparison&gt; = TypeShape&lt;Set&lt;'T&gt;&gt;
+
+type ShapeSet = ∃'T. ShapeSet&lt;'T&gt;
+
+val (|ShapeSet|_|) : System.Type -&gt; ShapeSet option
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">ISetVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span> <span class="k">when</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">:</span> <span class="i">comparison</span><span class="o">&gt;</span> <span class="o">:</span> <span class="i">unit</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">ShapeSet</span> <span class="o">=</span>
+    <span class="k">abstract</span> <span class="i">Accept</span> <span class="o">:</span> <span class="i">ISetVisitor</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">R</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">R</span>
+
+<span class="k">type</span> <span class="i">ShapeSet</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span> <span class="k">when</span> <span class="o">&#39;</span><span class="i">T</span> <span class="o">:</span> <span class="i">comparison</span><span class="o">&gt;</span>() <span class="o">=</span>
+    <span class="k">interface</span> <span class="i">ShapeSet</span> <span class="k">with</span>
+     <span class="k">member</span> <span class="i">__</span><span class="o">.</span><span class="i">Accept</span> <span class="i">v</span> <span class="o">=</span> <span class="i">v</span><span class="o">.</span><span class="i">Visit</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span><span class="o">&gt;</span>()
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Other Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> (|<span class="i">ShapeSet</span>|_|) (<span class="i">t</span> <span class="o">:</span> <span class="i">Type</span>) <span class="o">=</span>
+    <span class="k">if</span> <span class="i">t</span><span class="o">.</span><span class="i">IsGenericType</span> <span class="o">&amp;&amp;</span> <span class="i">t</span><span class="o">.</span><span class="i">GetGenericTypeDefinition</span>() <span class="o">=</span> <span class="i">typeof</span><span class="o">&lt;</span><span class="i">Set</span><span class="o">&lt;</span>_<span class="o">&gt;</span><span class="o">&gt;</span> <span class="k">then</span>
+        <span class="k">let</span> <span class="i">typeArgs</span> <span class="o">=</span> <span class="i">t</span><span class="o">.</span><span class="i">GetGenericArguments</span>()
+        <span class="k">let</span> <span class="i">st</span> <span class="o">=</span> <span class="i">typedefof</span><span class="o">&lt;</span><span class="i">ShapeSet</span><span class="o">&lt;</span>_<span class="o">&gt;</span><span class="o">&gt;</span><span class="o">.</span><span class="i">MakeGenericType</span> <span class="i">typeArgs</span>
+        <span class="i">Activator</span><span class="o">.</span><span class="i">CreateInstance</span> <span class="i">st</span> <span class="o">:?&gt;</span> <span class="i">ShapeSet</span> <span class="o">|&gt;</span> <span class="i">Some</span>
+    <span class="k">else</span>
+        <span class="i">None</span>
+</code></pre></td>
+</tr>
+</table>
+</section>
+</section>
+<section >
+<h2>Arbitrary Type Shapes</h2>
+</section>
+<section >
+<h3>Code Lenses</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">Lens</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">T</span>,<span class="o">&#39;</span><span class="i">F</span><span class="o">&gt;</span> <span class="o">=</span>
+    {
+        <span class="i">Get</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">F</span>
+        <span class="i">Set</span> <span class="o">:</span> <span class="o">&#39;</span><span class="i">T</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">F</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">T</span>
+    }
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Code Lenses</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">R</span> <span class="o">=</span> { <span class="i">A</span> <span class="o">:</span> <span class="i">int</span> ; <span class="i">B</span> <span class="o">:</span> <span class="i">string</span> }
+
+<span class="k">let</span> <span class="i">lensA</span> <span class="o">:</span> <span class="i">Lens</span><span class="o">&lt;</span><span class="i">R</span>, <span class="i">int</span><span class="o">&gt;</span> <span class="o">=</span> 
+    { <span class="i">Get</span> <span class="o">=</span> <span class="k">fun</span> <span class="i">r</span> <span class="k">-&gt;</span> <span class="i">r</span><span class="o">.</span><span class="i">A</span>
+    ; <span class="i">Set</span> <span class="o">=</span> <span class="k">fun</span> <span class="i">r</span> <span class="i">a</span> <span class="k">-&gt;</span> { <span class="i">r</span> <span class="k">with</span> <span class="i">A</span> <span class="o">=</span> <span class="i">a</span> }}
+
+<span class="k">let</span> <span class="i">lensB</span> <span class="o">:</span> <span class="i">Lens</span><span class="o">&lt;</span><span class="i">R</span>, <span class="i">string</span><span class="o">&gt;</span> <span class="o">=</span>
+    { <span class="i">Get</span> <span class="o">=</span> <span class="k">fun</span> <span class="i">r</span> <span class="k">-&gt;</span> <span class="i">r</span><span class="o">.</span><span class="i">B</span>
+    ; <span class="i">Set</span> <span class="o">=</span> <span class="k">fun</span> <span class="i">r</span> <span class="i">b</span> <span class="k">-&gt;</span> { <span class="i">r</span> <span class="k">with</span> <span class="i">B</span> <span class="o">=</span> <span class="i">b</span> }}
+</code></pre></td>
+</tr>
+</table>
+</section>
+<section >
+<h3>Field &amp; Record Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeField&lt;'T&gt; = ∃'F. Lens&lt;'T,'F&gt;
+
+type ShapeRecord&lt;'T&gt; = ShapeField&lt;'T&gt; list
+
+val (|ShapeRecord|_|) : TypeShape&lt;'T&gt; -&gt; ShapeRecord&lt;'T&gt; option
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Union Shapes</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type ShapeUnion&lt;'T&gt; = ShapeRecord&lt;'T&gt; list
+
+val (|ShapeUnion|_|) : TypeShape&lt;'T&gt; -&gt; ShapeUnion&lt;'T&gt; option
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Adding TypeShape to your project</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang=""bash""># paket.dependencies
+github eiriktsarpalis/TypeShape src/TypeShape/TypeShape.fs
+</code></pre></td></tr></table>
+</section>
+<section >
+<h2>Samples</h2>
+<h4><a href="https://github.com/eiriktsarpalis/TypeShape/tree/master/samples"><a href="https://github.com/eiriktsarpalis/TypeShape/">https://github.com/eiriktsarpalis/TypeShape/</a></a></h4>
+</section>
+<section >
+<h1>Thank You!</h1>
+</section>
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Add the nohighlight class and data-noescape attribute to code elements that have already been formatted by FSharp.Formatting
+        $('pre.highlighted code').addClass('nohighlight').attr('data-noescape', '');
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+</body>
+</html>
+
