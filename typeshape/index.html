@@ -254,25 +254,26 @@ type Cell = ∃'T. Cell&lt;'T&gt;
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
-<span class="l">4: </span>
-<span class="l">5: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip"><code lang=""fsharp"">type Cell&lt;'T&gt; = { Items : 'T list }
 
 type Cell = ∃'T. Cell&lt;'T&gt;
-
-val pack : Cell&lt;'a&gt; -&gt; Cell
 </code></pre></td></tr></table>
+<h1></h1>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">val</span> <span class="i">pack</span> <span class="o">:</span> <span class="i">Cell</span><span class="o">&lt;</span><span class="o">&#39;</span><span class="i">a</span><span class="o">&gt;</span> <span class="k">-&gt;</span> <span class="i">Cell</span>
+</code></pre></td>
+</tr>
+</table>
 </section>
 <section >
 <h2>Existential Packing</h2>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
-<span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let c : Cell = pack { Items = [] }
-let c : Cell = pack { Items = [1;2] }
-let c : Cell = pack { Items = ["a";"b"] }
+<td class="snippet"><pre class="fssnip"><code lang=""fsharp"">let c = pack { Items = [1;2] }     // Cell&lt;int&gt;    -&gt; ∃'T. Cell&lt;'T&gt;
+let c = pack { Items = ["a";"b"] } // Cell&lt;string&gt; -&gt; ∃'T. Cell&lt;'T&gt;
 </code></pre></td></tr></table>
 </section>
 <section >
